@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Res" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="Res" Bypassed="0" Name="Delay"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+            <Nodes>
+              <Node ID="global_cable16" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable16" NodeColour="4286400434">
+                <Properties>
+                  <Property ID="Connection" Value="DelayTime"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_pack1" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable17" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable16" NodeColour="4289873834">
+                <Properties>
+                  <Property ID="Connection" Value="DelayDivide"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable2" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable18" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable16" NodeColour="4282954383">
+                <Properties>
+                  <Property ID="Connection" Value="DelayPreFilter"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable8" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable19" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable16" NodeColour="4289874089">
+                <Properties>
+                  <Property ID="Connection" Value="DelayPostFilter"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable12" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable20" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable16" NodeColour="4282942898">
+                <Properties>
+                  <Property ID="Connection" Value="DelayMix"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable15" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="4....f+."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                         Value="32.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="split64" FactoryPath="container.split" Bypassed="0" Name="split64">
+            <Nodes>
+              <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole" ParameterId="Frequency"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole" ParameterId="Mode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable12" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole1" ParameterId="Frequency"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole1" ParameterId="Mode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable15" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable15">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="xfader1" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable16" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable15">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="pma3" ParameterId="Multiply"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable17" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable15">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack1">
+            <ModulationTargets>
+              <Connection NodeId="pma3" ParameterId="Add"/>
+            </ModulationTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="64.CWOJ+vdT37Cov0yOjBWO+fT357i8nvwOtdT39vdT35CWOJjOtdT38vdT31SyLybOOJb87HEtd5iT35oORgqm9."/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         Value="32.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+            ShowClones="1" ShowParameters="1">
+        <Properties>
+          <Property ID="IsVertical" Value="0"/>
+        </Properties>
+        <Nodes>
+          <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                NodeColour="4287927444">
+            <Nodes>
+              <Node ID="one_pole" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                <ComplexData>
+                  <Filters>
+                    <Filter Index="-1"/>
+                  </Filters>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                             ID="Frequency" Automated="1"/>
+                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="Q" Value="2.702486011372196"/>
+                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                             ID="Smoothing" Value="0.009999999776482582"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="midichain" FactoryPath="container.midichain" Bypassed="0"
+                    Name="midichain">
+                <Nodes>
+                  <Node ID="midi1" FactoryPath="control.midi" Bypassed="0" Name="midi1">
+                    <Properties>
+                      <Property ID="Mode" Value="NoteNumber"/>
+                    </Properties>
+                    <ModulationTargets>
+                      <Connection NodeId="pma3" ParameterId="Value"/>
+                    </ModulationTargets>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
+                        Name="modchain1">
+                    <Nodes>
+                      <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma3">
+                        <ModulationTargets>
+                          <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
+                          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+                        </ModulationTargets>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                          <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                    Name="tempo_sync">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             ID="UnsyncedTime" Automated="1"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="jdelay_thiran1" ParameterId="DelayTime"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="xfader1" FactoryPath="control.xfader" Bypassed="0" Name="xfader1">
+                <Properties>
+                  <Property ID="NumParameters" Value="2"/>
+                  <Property ID="Mode" Value="Linear"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain2" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="gain3" ParameterId="Gain"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split">
+                <Nodes>
+                  <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                    <Nodes>
+                      <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain1">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive1" FactoryPath="routing.receive" Bypassed="0" Name="receive2">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jdelay_thiran1" FactoryPath="jdsp.jdelay_thiran" Bypassed="0"
+                            Name="jdelay_thiran">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                     ID="Limit" Value="1000.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                     ID="DelayTime" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole1" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1"/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency" Automated="1"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="2.702486011372196"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send1" FactoryPath="routing.send" Bypassed="0" Name="send2">
+                        <Properties>
+                          <Property ID="Connection" Value="receive1"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Value="32.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                     Value="2.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Feedback" MinValue="0.0" MaxValue="1.0" Value="0.583649658203125">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PreApFilterMode" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable9" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PostApFilterMode" MinValue="0.0" MaxValue="1.0" Value="0.08015576171874998">
+        <Connections>
+          <Connection NodeId="clone_cable11" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="temposync" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Track" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable16" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Gain" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable17" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

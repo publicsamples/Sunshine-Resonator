@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Verb" AllowCompilation="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Verb" Bypassed="0" Name="Verb"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="split65" FactoryPath="container.split" Bypassed="0" Name="split65">
+            <Nodes>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282888785">
+                <Properties>
+                  <Property ID="Connection" Value="VerbOffset"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_pack" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4286531506">
+                <Properties>
+                  <Property ID="Connection" Value="VerbDamp"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282951602">
+                <Properties>
+                  <Property ID="Connection" Value="VerbMix"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="xfader" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                Name="pack_resizer">
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0" EmbeddedData="128....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                         Value="32.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack">
+            <ModulationTargets>
+              <Connection NodeId="reverb" ParameterId="Size"/>
+            </ModulationTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         Value="32.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="split32" FactoryPath="container.split" Bypassed="0" Name="split32">
+            <Nodes>
+              <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="reverb" ParameterId="Damping"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="gain64" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="Linear"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain1" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+            <Nodes>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                <Nodes>
+                  <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                <Nodes>
+                  <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+                        ShowClones="0" ShowParameters="1">
+                    <Properties>
+                      <Property ID="IsVertical" Value="0"/>
+                    </Properties>
+                    <Nodes>
+                      <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                            NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain64" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb1" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain158" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb2" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain159" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb3" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain160" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb4" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain161" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb5" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain162" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb6" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain163" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb7" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain164" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb8" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain165" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb9" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain166" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb10" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain167" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb11" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain168" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb12" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain169" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb13" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain170" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb14" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain171" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb15" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain172" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child16" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb16" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain173" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child17" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb17" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain174" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child18" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb18" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain175" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child19" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb19" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain176" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child20" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb20" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain177" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child21" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb21" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain178" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child22" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb22" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain179" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child23" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb23" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain180" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child24" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb24" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain181" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child25" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb25" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain182" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child26" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb26" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain183" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child27" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb27" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain184" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child28" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb28" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain185" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child29" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb29" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain186" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child30" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb30" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain187" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child31" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="reverb31" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain188" FactoryPath="core.gain" Bypassed="0" Name="gain64">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="-12.99999870359899"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Value="32.0"/>
+                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                 Value="2.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="Gain" MinValue="0.0" MaxValue="0.24" Value="0.10501646484375">
+        <Connections>
+          <Connection NodeId="clone_cable3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

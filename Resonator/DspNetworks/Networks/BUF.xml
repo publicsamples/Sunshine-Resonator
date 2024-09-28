@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="BUF" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="BUF" Bypassed="0" Name="BUF">
+    <Nodes>
+      <Node ID="fix_blockx" FactoryPath="container.fix_blockx" Bypassed="1"
+            Name="fix_blockx" ShowParameters="1">
+        <Properties>
+          <Property ID="BlockSize" Value="8"/>
+        </Properties>
+        <Nodes>
+          <Node ID="oversample" FactoryPath="container.oversample" Bypassed="1"
+                Name="oversample" ShowParameters="1">
+            <Nodes>
+              <Node ID="oscillator" FactoryPath="core.oscillator" Bypassed="0" Name="oscillator">
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Value="0.0"/>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2299045622348785" ID="Frequency" Value="28.20000012218952"/>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Freq Ratio"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gain" Value="0.9978857421875"/>
+                </Parameters>
+              </Node>
+              <Node ID="expr" FactoryPath="math.expr" Bypassed="0" Name="expr">
+                <Properties>
+                  <Property ID="Code" Value="input * Math.sin(Math.PI * 12.0 * value * input) * (1 - Math.PI);"/>
+                  <Property ID="Debug" Value="0"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.05555517578125004"/>
+                </Parameters>
+              </Node>
+              <Node ID="fmod" FactoryPath="math.fmod" Bypassed="0" Name="fmod">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.8748356933593751"/>
+                </Parameters>
+              </Node>
+              <Node ID="clip" FactoryPath="math.clip" Bypassed="1" Name="clip">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.462657958984375"/>
+                </Parameters>
+              </Node>
+              <Node ID="sub" FactoryPath="math.sub" Bypassed="1" Name="sub">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.8133853759765626"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="1" Name="gain">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-14.3999987244606"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Oversampling"
+                         Value="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="oscilloscope" FactoryPath="analyse.oscilloscope" Bypassed="0"
+            Name="oscilloscope">
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="-1" EmbeddedData=""/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

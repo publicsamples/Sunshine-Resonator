@@ -1,0 +1,1802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="AP" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="AP" Bypassed="0" Name="AP"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
+            <Nodes>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289886536">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorOffset"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="sliderbank" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable6" NodeColour="4289882695">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorOffset2"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="sliderbank1" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable6" NodeColour="4289882695">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorOffset3"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="sliderbank2" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable9" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable6" NodeColour="4289882695">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorOffset4"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="sliderbank3" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable10" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable10" NodeColour="4288628658">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorXfade"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="xfader3" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282861490">
+                <Properties>
+                  <Property ID="Connection" Value="Q"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="OneAP" ParameterId="res"/>
+                  <Connection NodeId="OneAP4" ParameterId="res"/>
+                  <Connection NodeId="OneAP3" ParameterId="res"/>
+                  <Connection NodeId="OneAP2" ParameterId="res"/>
+                  <Connection NodeId="OneAP1" ParameterId="res"/>
+                  <Connection NodeId="OneAP5" ParameterId="res"/>
+                  <Connection NodeId="OneAP6" ParameterId="res"/>
+                  <Connection NodeId="OneAP28" ParameterId="res"/>
+                  <Connection NodeId="OneAP19" ParameterId="res"/>
+                  <Connection NodeId="OneAP20" ParameterId="res"/>
+                  <Connection NodeId="OneAP21" ParameterId="res"/>
+                  <Connection NodeId="OneAP22" ParameterId="res"/>
+                  <Connection NodeId="OneAP23" ParameterId="res"/>
+                  <Connection NodeId="OneAP24" ParameterId="res"/>
+                  <Connection NodeId="OneAP25" ParameterId="res"/>
+                  <Connection NodeId="OneAP26" ParameterId="res"/>
+                  <Connection NodeId="OneAP29" ParameterId="res"/>
+                  <Connection NodeId="OneAP34" ParameterId="res"/>
+                  <Connection NodeId="OneAP35" ParameterId="res"/>
+                  <Connection NodeId="OneAP36" ParameterId="res"/>
+                  <Connection NodeId="OneAP7" ParameterId="res"/>
+                  <Connection NodeId="OneAP8" ParameterId="res"/>
+                  <Connection NodeId="OneAP9" ParameterId="res"/>
+                  <Connection NodeId="OneAP10" ParameterId="res"/>
+                  <Connection NodeId="OneAP11" ParameterId="res"/>
+                  <Connection NodeId="OneAP12" ParameterId="res"/>
+                  <Connection NodeId="OneAP13" ParameterId="res"/>
+                  <Connection NodeId="OneAP14" ParameterId="res"/>
+                  <Connection NodeId="OneAP15" ParameterId="res"/>
+                  <Connection NodeId="OneAP16" ParameterId="res"/>
+                  <Connection NodeId="OneAP18" ParameterId="res"/>
+                  <Connection NodeId="OneAP17" ParameterId="res"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289677234">
+                <Properties>
+                  <Property ID="Connection" Value="PreResFilter"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole" ParameterId="Frequency"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4286165576">
+                <Properties>
+                  <Property ID="Connection" Value="PostResFilter"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="one_pole1" ParameterId="Frequency"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4282888846">
+                <Properties>
+                  <Property ID="Connection" Value="Spread"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable4" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable5" NodeColour="4289480626">
+                <Properties>
+                  <Property ID="Connection" Value="DtimeOfffset"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_pack1" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable7" NodeColour="4282942898">
+                <Properties>
+                  <Property ID="Connection" Value="DelayMix"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="xfader2" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="split7">
+            <Nodes>
+              <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank">
+                <Properties>
+                  <Property ID="NumParameters" Value="8"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP" ParameterId="frq"/>
+                      <Connection NodeId="OneAP" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP4" ParameterId="frq"/>
+                      <Connection NodeId="OneAP4" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP3" ParameterId="frq"/>
+                      <Connection NodeId="OneAP3" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP2" ParameterId="frq"/>
+                      <Connection NodeId="OneAP2" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP1" ParameterId="frq"/>
+                      <Connection NodeId="OneAP1" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP5" ParameterId="frq"/>
+                      <Connection NodeId="OneAP5" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP6" ParameterId="frq"/>
+                      <Connection NodeId="OneAP6" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP28" ParameterId="frq"/>
+                      <Connection NodeId="OneAP28" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="1" EmbeddedData="128.jBWu9Lb8n7ydT3xOyLyL+LyLy7yLyLyOyLyL+LyLy7yLyLyOyLyL+LyLy7y0iByO6QgK+7Qgq7yv0ixOlYlI+nv0i7iqGExORgqG+XOJb7ilYlwOEtdD+zLyL7CtdTvO....+b8nv6iYlYtOlYl49b8nv6yGEttOeT3597Qgq6C"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="sliderbank1" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank1">
+                <Properties>
+                  <Property ID="NumParameters" Value="8"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP29" ParameterId="frq"/>
+                      <Connection NodeId="OneAP29" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP34" ParameterId="frq"/>
+                      <Connection NodeId="OneAP34" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP35" ParameterId="frq"/>
+                      <Connection NodeId="OneAP35" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP36" ParameterId="frq"/>
+                      <Connection NodeId="OneAP36" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP7" ParameterId="frq"/>
+                      <Connection NodeId="OneAP7" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP8" ParameterId="frq"/>
+                      <Connection NodeId="OneAP8" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP9" ParameterId="frq"/>
+                      <Connection NodeId="OneAP9" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP10" ParameterId="frq"/>
+                      <Connection NodeId="OneAP10" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="2"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="sliderbank2" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank2">
+                <Properties>
+                  <Property ID="NumParameters" Value="8"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP11" ParameterId="frq"/>
+                      <Connection NodeId="OneAP11" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP12" ParameterId="frq"/>
+                      <Connection NodeId="OneAP12" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP13" ParameterId="frq"/>
+                      <Connection NodeId="OneAP13" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP14" ParameterId="frq"/>
+                      <Connection NodeId="OneAP14" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP15" ParameterId="frq"/>
+                      <Connection NodeId="OneAP15" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP16" ParameterId="frq"/>
+                      <Connection NodeId="OneAP16" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP17" ParameterId="frq"/>
+                      <Connection NodeId="OneAP17" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP18" ParameterId="frq"/>
+                      <Connection NodeId="OneAP18" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="3"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="sliderbank3" FactoryPath="control.sliderbank" Bypassed="0"
+                    Name="sliderbank3">
+                <Properties>
+                  <Property ID="NumParameters" Value="8"/>
+                </Properties>
+                <SwitchTargets>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP19" ParameterId="frq"/>
+                      <Connection NodeId="OneAP19" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP20" ParameterId="frq"/>
+                      <Connection NodeId="OneAP20" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP21" ParameterId="frq"/>
+                      <Connection NodeId="OneAP21" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP22" ParameterId="frq"/>
+                      <Connection NodeId="OneAP22" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP23" ParameterId="frq"/>
+                      <Connection NodeId="OneAP23" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP24" ParameterId="frq"/>
+                      <Connection NodeId="OneAP24" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP25" ParameterId="frq"/>
+                      <Connection NodeId="OneAP25" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                  <SwitchTarget>
+                    <Connections>
+                      <Connection NodeId="OneAP26" ParameterId="frq"/>
+                      <Connection NodeId="OneAP26" ParameterId="freqquant"/>
+                    </Connections>
+                  </SwitchTarget>
+                </SwitchTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="4" EmbeddedData="32....f+....9C...3OeT3Z+ziBW8CWOJzOHEtN+b8nv7C"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0"
+                Name="clone_pack1">
+            <ModulationTargets>
+              <Connection NodeId="smoothed_parameter" ParameterId="Value"/>
+            </ModulationTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="0"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                         Value="32.0"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+          <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+                Name="tempo_sync">
+            <ModulationTargets>
+              <Connection NodeId="clone_forward" ParameterId="Value"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" Value="18.0"/>
+              <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                         Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Automated="1"/>
+              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                         ID="UnsyncedTime" Value="1000.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+            <Nodes>
+              <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable4">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="jpanner" ParameterId="Pan"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="smoothed_parameter" ParameterId="SmoothingTime"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="jdelay_cubic" ParameterId="Limit"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             Value="32.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                             ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
+            <Properties>
+              <Property ID="NumParameters" Value="2"/>
+              <Property ID="Mode" Value="Linear"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="gain1" ParameterId="Gain"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="xfader2" FactoryPath="control.xfader" Bypassed="0" Name="xfader1">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="Linear"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain223" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain224" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+        <Nodes>
+          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+            <Nodes>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                <Nodes>
+                  <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
+                <Nodes>
+                  <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain3">
+                    <Nodes>
+                      <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain3">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="one_pole" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole">
+                        <ComplexData>
+                          <Filters>
+                            <Filter Index="-1"/>
+                          </Filters>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="Frequency" Automated="1"/>
+                          <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                     ID="Q" Value="0.300000011920929"/>
+                          <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                     ID="Smoothing" Value="0.009999999776482582"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split3">
+                        <Nodes>
+                          <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                            <Nodes>
+                              <Node ID="gain223" FactoryPath="core.gain" Bypassed="0" Name="gain221">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.30000030249357"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                            <Nodes>
+                              <Node ID="receive" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="0.75" ID="Feedback" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="fix8_block" FactoryPath="container.fix8_block" Bypassed="0"
+                                    Name="fix8_block">
+                                <Nodes>
+                                  <Node ID="clone1" FactoryPath="container.clone" Bypassed="0" Name="clone1"
+                                        ShowClones="0" ShowParameters="1">
+                                    <Nodes>
+                                      <Node ID="clone1_child" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime" Automated="1"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit" Automated="1"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                    </Nodes>
+                                    <Parameters>
+                                      <Parameter MinValue="1.0" MaxValue="1" StepSize="1.0" ID="NumClones" Value="1.0"/>
+                                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                                 Value="0.0"/>
+                                    </Parameters>
+                                  </Node>
+                                </Nodes>
+                                <Parameters/>
+                              </Node>
+                              <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain2">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Value="-0.7999985218048233"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="send" FactoryPath="routing.send" Bypassed="0" Name="send">
+                                <Properties>
+                                  <Property ID="Connection" Value="receive"/>
+                                </Properties>
+                                <Parameters/>
+                              </Node>
+                              <Node ID="gain224" FactoryPath="core.gain" Bypassed="0" Name="gain221">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="xfader3" FactoryPath="control.xfader" Bypassed="0" Name="xfader3">
+                    <Properties>
+                      <Property ID="NumParameters" Value="4"/>
+                      <Property ID="Mode" Value="RMS"/>
+                    </Properties>
+                    <SwitchTargets>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="input_toggle" ParameterId="Value2"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="input_toggle1" ParameterId="Value2"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="input_toggle3" ParameterId="Value2"/>
+                        </Connections>
+                      </SwitchTarget>
+                      <SwitchTarget>
+                        <Connections>
+                          <Connection NodeId="input_toggle2" ParameterId="Value2"/>
+                        </Connections>
+                      </SwitchTarget>
+                    </SwitchTargets>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="split5"
+                        ShowParameters="1">
+                    <Nodes>
+                      <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
+                        <Nodes>
+                          <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3"
+                                ShowParameters="1" Folded="1">
+                            <Nodes>
+                              <Node ID="OneAP" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP4" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP3" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP2" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP1" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP5" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP6" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP28" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP28">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle">
+                            <ModulationTargets>
+                              <Connection NodeId="pma" ParameterId="Add"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                            <ModulationTargets>
+                              <Connection NodeId="gain5" ParameterId="Gain"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain5">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                        <Nodes>
+                          <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="split6"
+                                Folded="1">
+                            <Nodes>
+                              <Node ID="OneAP29" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP29">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP34" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP29">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP35" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP29">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP36" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP29">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP7" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP7">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP8" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP7">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP9" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP7">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP10" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP7">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="input_toggle1" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle1">
+                            <ModulationTargets>
+                              <Connection NodeId="pma1" ParameterId="Add"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="pma1">
+                            <ModulationTargets>
+                              <Connection NodeId="gain6" ParameterId="Gain"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain6" FactoryPath="core.gain" Bypassed="0" Name="gain6">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain5">
+                        <Nodes>
+                          <Node ID="split8" FactoryPath="container.split" Bypassed="0" Name="split8"
+                                Folded="1">
+                            <Nodes>
+                              <Node ID="OneAP11" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP12" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP13" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP14" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP15" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP16" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP17" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.3" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP18" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="input_toggle3" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle1">
+                            <ModulationTargets>
+                              <Connection NodeId="pma2" ParameterId="Add"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="pma1">
+                            <ModulationTargets>
+                              <Connection NodeId="gain7" ParameterId="Gain"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain7" FactoryPath="core.gain" Bypassed="0" Name="gain7">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="chain9" FactoryPath="container.chain" Bypassed="0" Name="chain9">
+                        <Nodes>
+                          <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="split8"
+                                Folded="1">
+                            <Nodes>
+                              <Node ID="OneAP19" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP20" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP21" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP22" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP23" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP24" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP25" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="OneAP26" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP11">
+                                <Parameters>
+                                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                             ID="res" Automated="1"/>
+                                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                             ID="frq" Automated="1"/>
+                                  <Parameter MinValue="6.661338147750939e-16" MaxValue="128.0" StepSize="1.0"
+                                             ID="freqquant" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="quant" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
+                          </Node>
+                          <Node ID="input_toggle2" FactoryPath="control.input_toggle" Bypassed="0"
+                                Name="input_toggle1">
+                            <ModulationTargets>
+                              <Connection NodeId="pma3" ParameterId="Add"/>
+                            </ModulationTargets>
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="pma1">
+                            <Parameters>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain8">
+                            <Parameters>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="one_pole1" FactoryPath="filters.one_pole" Bypassed="0" Name="one_pole1">
+                    <ComplexData>
+                      <Filters>
+                        <Filter Index="-1"/>
+                      </Filters>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                 ID="Frequency" Automated="1"/>
+                      <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                 ID="Q" Value="1.0"/>
+                      <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                 ID="Smoothing" Value="0.009999999776482582"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+                        ShowClones="0" ShowParameters="1">
+                    <Properties>
+                      <Property ID="IsVertical" Value="0"/>
+                    </Properties>
+                    <Nodes>
+                      <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                            NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner2" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner3" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner6" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner7" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child8" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner8" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child9" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner9" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child10" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner10" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child11" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner11" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child12" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner12" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child13" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner13" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child14" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner14" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child15" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner15" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child16" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child17" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child18" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child19" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child20" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child21" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child22" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner22" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child23" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner23" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child24" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner24" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child25" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner25" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child26" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner26" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child27" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner27" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child28" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner28" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child29" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner29" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child30" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner30" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone_child31" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+                        <Nodes>
+                          <Node ID="jpanner31" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                            <Parameters>
+                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Value="-0.02484667968749998"/>
+                              <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Value="32.0"/>
+                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                 Value="2.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain4" FactoryPath="core.gain" Bypassed="0" Name="gain4">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                    <Parameters>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="18.0000002682209"/>
+                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="PreFilterMode" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="one_pole" ParameterId="Mode"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="PostFilterMode" MinValue="0.0" MaxValue="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="one_pole1" ParameterId="Mode"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="gain" MinValue="0.0" MaxValue="1.0" Value="0.0708077026367188">
+        <Connections>
+          <Connection NodeId="gain3" ParameterId="Gain"/>
+          <Connection NodeId="gain4" ParameterId="Gain"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="DelaySync" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="DelayDiv" MinValue="1.0" MaxValue="16.0" StepSize="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Feedback" MinValue="0.0" MaxValue="0.75" Value="0.3429304275512696">
+        <Connections>
+          <Connection NodeId="receive" ParameterId="Feedback"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="mix" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="StQuant" MinValue="0.0" MaxValue="1.0" Value="1.0" StepSize="1.0">
+        <Connections>
+          <Connection NodeId="OneAP" ParameterId="quant"/>
+          <Connection NodeId="OneAP4" ParameterId="quant"/>
+          <Connection NodeId="OneAP3" ParameterId="quant"/>
+          <Connection NodeId="OneAP2" ParameterId="quant"/>
+          <Connection NodeId="OneAP1" ParameterId="quant"/>
+          <Connection NodeId="OneAP5" ParameterId="quant"/>
+          <Connection NodeId="OneAP6" ParameterId="quant"/>
+          <Connection NodeId="OneAP28" ParameterId="quant"/>
+          <Connection NodeId="OneAP19" ParameterId="quant"/>
+          <Connection NodeId="OneAP20" ParameterId="quant"/>
+          <Connection NodeId="OneAP21" ParameterId="quant"/>
+          <Connection NodeId="OneAP22" ParameterId="quant"/>
+          <Connection NodeId="OneAP23" ParameterId="quant"/>
+          <Connection NodeId="OneAP24" ParameterId="quant"/>
+          <Connection NodeId="OneAP25" ParameterId="quant"/>
+          <Connection NodeId="OneAP26" ParameterId="quant"/>
+          <Connection NodeId="OneAP29" ParameterId="quant"/>
+          <Connection NodeId="OneAP34" ParameterId="quant"/>
+          <Connection NodeId="OneAP35" ParameterId="quant"/>
+          <Connection NodeId="OneAP36" ParameterId="quant"/>
+          <Connection NodeId="OneAP7" ParameterId="quant"/>
+          <Connection NodeId="OneAP8" ParameterId="quant"/>
+          <Connection NodeId="OneAP9" ParameterId="quant"/>
+          <Connection NodeId="OneAP10" ParameterId="quant"/>
+          <Connection NodeId="OneAP11" ParameterId="quant"/>
+          <Connection NodeId="OneAP12" ParameterId="quant"/>
+          <Connection NodeId="OneAP13" ParameterId="quant"/>
+          <Connection NodeId="OneAP14" ParameterId="quant"/>
+          <Connection NodeId="OneAP15" ParameterId="quant"/>
+          <Connection NodeId="OneAP16" ParameterId="quant"/>
+          <Connection NodeId="OneAP18" ParameterId="quant"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfadeOnOf" MinValue="0.0" MaxValue="1.0" StepSize="1.0" Value="0.0">
+        <Connections>
+          <Connection NodeId="input_toggle" ParameterId="Input"/>
+          <Connection NodeId="input_toggle1" ParameterId="Input"/>
+          <Connection NodeId="input_toggle3" ParameterId="Input"/>
+          <Connection NodeId="input_toggle2" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="DelaySmooth" MinValue="0.0" MaxValue="1.0" Value="0.7244033813476562">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

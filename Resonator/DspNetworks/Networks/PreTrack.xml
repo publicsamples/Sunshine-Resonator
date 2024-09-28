@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="PreTrack" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="PreTrack" Bypassed="0" Name="PreTrack"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
+        <Nodes>
+          <Node ID="frame1_block" FactoryPath="container.frame1_block" Bypassed="1"
+                Name="frame1_block">
+            <Nodes>
+              <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+                <Nodes>
+                  <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                    <Nodes/>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain4">
+                    <Nodes>
+                      <Node ID="envelope_follower" FactoryPath="dynamics.envelope_follower"
+                            Bypassed="1" Name="envelope_follower">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.2313782125711441" ID="Attack" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.2313782125711441" ID="Release" Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ProcessSignal" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sig2mod" FactoryPath="math.sig2mod" Bypassed="1" Name="sig2mod">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="sig2mod1" FactoryPath="math.sig2mod" Bypassed="1" Name="sig2mod1">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="comp" FactoryPath="dynamics.comp" Bypassed="0" Name="comp">
+                        <ModulationTargets>
+                          <Connection NodeId="add" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Threshhold" Value="-36.89999905973674"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="Attack" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="Release" Automated="1"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.2968033850193024" ID="Ratio" Value="32.0"/>
+                          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="clear1" FactoryPath="math.clear" Bypassed="0" Name="clear1">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="add" FactoryPath="math.add" Bypassed="0" Name="add">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="peak1" FactoryPath="core.peak" Bypassed="0" Name="peak1">
+                        <ModulationTargets>
+                          <Connection NodeId="global_cable" ParameterId="Value"/>
+                        </ModulationTargets>
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="mod2sig" FactoryPath="math.mod2sig" Bypassed="1" Name="mod2sig">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                            Name="global_cable" NodeColour="4289894217">
+                        <Properties>
+                          <Property ID="Connection" Value="PreFollow"/>
+                        </Properties>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="atk" MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.4306765496730804" Value="36.0000005364418">
+        <Connections>
+          <Connection NodeId="comp" ParameterId="Attack"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="rel" MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                 SkewFactor="0.4306765496730804" Value="200.9000029936433">
+        <Connections>
+          <Connection NodeId="comp" ParameterId="Release"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

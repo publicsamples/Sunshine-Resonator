@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Processor Type="SynthChain" ID="res" Bypassed="0" Gain="0.3758373856544495"
+           Balance="0.0" VoiceLimit="64.0" KillFadeTime="20.0" IconColour="0"
+           packageName="" BuildVersion="650">
+  <ChildProcessors>
+    <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptProcessor" ID="Interface" Bypassed="0">
+          <ChildProcessors/>
+          <Content>
+            <Control type="ScriptSlider" id="ResOffset4" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset2" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset3" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset6" value="0.3899999856948853"/>
+            <Control type="ScriptSlider" id="ResOffset7" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset8" value="0.0"/>
+            <Control type="ScriptSlider" id="Knob6" value="0.0"/>
+            <Control type="ScriptButton" id="Button1" value="0.0"/>
+            <Control type="ScriptSlider" id="ResOffset5" value="1.0"/>
+            <Control type="ScriptSliderPack" id="SliderPack2" value="0.0" data="128.Jb8n9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5C"/>
+            <Control type="ScriptComboBox" id="ComboBox2" value="2.0"/>
+            <Control type="ScriptSlider" id="Knob3" value="-1.0"/>
+            <Control type="ScriptSlider" id="Knob4" value="0.1299999952316284"/>
+            <Control type="ScriptSlider" id="Knob7" value="0.5"/>
+            <Control type="ScriptButton" id="Button2" value="0.0"/>
+            <Control type="ScriptSlider" id="Knob8" value="1.0"/>
+            <Control type="ScriptButton" id="Button4" value="0.0"/>
+            <Control type="ScriptSliderPack" id="SliderPack1" value="7.0" data="32.rGEt9fqGE7yLyLyOEtdT+XOJb8SJb8zOrGEN+ziBW6C"/>
+            <Control type="ScriptSlider" id="ResOffset" value="0.8299999833106995"/>
+            <Control type="ScriptSlider" id="Knob2" value="2.081668171172169e-17"/>
+            <Control type="ScriptComboBox" id="ComboBox1" value="1.0"/>
+            <Control type="ScriptSlider" id="Knob5" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset1" value="1.0"/>
+            <Control type="ScriptSlider" id="ResOffset9" value="2.081668171172169e-17"/>
+            <Control type="ScriptSliderPack" id="SliderPack3" value="7.0" data="32.tdTH+zLyL8S35Q0O8nvU+ziBW8SgqG0OjBWO+Lb8n7C"/>
+            <Control type="ScriptSliderPack" id="SliderPack4" value="7.0" data="32.Jb8H+T35Q7CWOJvOtdT3935Qg6y0iBuOT35A+XOJb8C"/>
+            <Control type="ScriptSliderPack" id="SliderPack5" value="7.0" data="32.ov0S+nYlY7CtdTvOb8n.+fqGE7Sb8nvO1iBG+fqGE8C"/>
+            <Control type="ScriptSlider" id="Knob13" value="1.0"/>
+            <Control type="ScriptSlider" id="Knob14" value="1.0"/>
+            <Control type="ScriptComboBox" id="ComboBox6" value="1.0"/>
+            <Control type="ScriptSlider" id="Knob9" value="1.0"/>
+            <Control type="ScriptButton" id="Button3" value="0.0"/>
+            <Control type="ScriptButton" id="Button5" value="0.0"/>
+            <Control type="ScriptButton" id="ModPage" value="0.0"/>
+            <Control type="ScriptSlider" id="Tmod9" value="2.081668171172169e-17"/>
+            <Control type="ScriptComboBox" id="TrigMode20" value="2.0"/>
+            <Control type="ScriptSlider" id="Tmod10" value="-1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode21" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod11" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode22" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod12" value="0.8999999761581421"/>
+            <Control type="ScriptComboBox" id="TrigMode23" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod13" value="0.0"/>
+            <Control type="ScriptComboBox" id="TrigMode24" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod14" value="0.0"/>
+            <Control type="ScriptComboBox" id="TrigMode25" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod15" value="0.0"/>
+            <Control type="ScriptComboBox" id="TrigMode26" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod16" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode27" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod18" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode29" value="3.0"/>
+            <Control type="ScriptSlider" id="Tmod19" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode30" value="5.0"/>
+            <Control type="ScriptSlider" id="Tmod20" value="0.0"/>
+            <Control type="ScriptComboBox" id="TrigMode31" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod21" value="-0.2300000041723251"/>
+            <Control type="ScriptComboBox" id="TrigMode32" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod22" value="2.081668171172169e-17"/>
+            <Control type="ScriptComboBox" id="TrigMode33" value="1.0"/>
+            <Control type="ScriptSlider" id="Tmod23" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode34" value="5.0"/>
+            <Control type="ScriptSlider" id="Tmod24" value="2.081668171172169e-17"/>
+            <Control type="ScriptComboBox" id="TrigMode35" value="3.0"/>
+            <Control type="ScriptSlider" id="Tmod28" value="2.081668171172169e-17"/>
+            <Control type="ScriptComboBox" id="TrigMode43" value="1.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider20" value="13.0"/>
+            <Control type="ScriptSlider" id="TempoS4" value="0.0"/>
+            <Control type="ScriptTable" id="ScriptTable22" value="0.0" data=""/>
+            <Control type="ScriptSliderPack" id="ScriptSliderPack10" value="15.0"
+                     data="64.6Qgq9PJb85SyLyrO8nv09XlYl6yiBWuO35QA+PgqG7Sb8nvOgqGE+HEtd7yv0ixOyLyL+PJb87CEtdzOlYlY+."/>
+            <Control type="ScriptButton" id="GmodOneShot2" value="0.0"/>
+            <Control type="ScriptComboBox" id="GmodMode9" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode36" value="2.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider49" value="0.239999994635582"/>
+            <Control type="ScriptSlider" id="ScriptSlider21" value="1.0"/>
+            <Control type="ScriptSlider" id="TempoS5" value="6.0"/>
+            <Control type="ScriptTable" id="ScriptTable23" value="0.0" data=""/>
+            <Control type="ScriptSliderPack" id="ScriptSliderPack11" value="15.0"
+                     data="64.6Qgq9PJb85SyLyrO8nv09XlYl6yiBWuO35QA+PgqG7Sb8nvOgqGE+HEtd7yv0ixOyLyL+PJb87CEtdzOlYlY+."/>
+            <Control type="ScriptButton" id="GmodOneShot3" value="0.0"/>
+            <Control type="ScriptComboBox" id="GmodMode10" value="5.0"/>
+            <Control type="ScriptComboBox" id="TrigMode37" value="1.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider50" value="0.5299999713897705"/>
+            <Control type="ScriptSlider" id="ScriptSlider22" value="1.0"/>
+            <Control type="ScriptSlider" id="TempoS6" value="0.0"/>
+            <Control type="ScriptTable" id="ScriptTable24" value="0.0" data=""/>
+            <Control type="ScriptSliderPack" id="ScriptSliderPack12" value="15.0"
+                     data="64.6Qgq9PJb85SyLyrO8nv09XlYl6yiBWuO35QA+PgqG7Sb8nvOgqGE+HEtd7yv0ixOyLyL+PJb87CEtdzOlYlY+."/>
+            <Control type="ScriptButton" id="GmodOneShot4" value="0.0"/>
+            <Control type="ScriptComboBox" id="GmodMode11" value="1.0"/>
+            <Control type="ScriptComboBox" id="TrigMode38" value="2.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider51" value="0.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider23" value="1.0"/>
+            <Control type="ScriptSlider" id="TempoS7" value="8.0"/>
+            <Control type="ScriptTable" id="ScriptTable25" value="0.0" data=""/>
+            <Control type="ScriptSliderPack" id="ScriptSliderPack13" value="15.0"
+                     data="64.6Qgq9PJb85SyLyrO8nv09XlYl6yiBWuO35QA+PgqG7Sb8nvOgqGE+HEtd7yv0ixOyLyL+PJb87CEtdzOlYlY+."/>
+            <Control type="ScriptButton" id="GmodOneShot5" value="1.0"/>
+            <Control type="ScriptComboBox" id="GmodMode12" value="5.0"/>
+            <Control type="ScriptComboBox" id="TrigMode39" value="3.0"/>
+            <Control type="ScriptSlider" id="ScriptSlider52" value="0.0"/>
+            <Control type="ScriptButton" id="Button6" value="0.0"/>
+            <Control type="ScriptButton" id="EXTRAMOD" value="0.0"/>
+            <Control type="ScriptSlider" id="Knob10" value="0.0"/>
+            <Control type="ScriptSlider" id="Knob11" value="520.4199829101562"/>
+            <Control type="ScriptSlider" id="Knob12" value="0.1000000014901161"/>
+            <Control type="ScriptSlider" id="ResOffset10" value="0.1500000059604645"/>
+          </Content>
+          <UIData Source="resUIData"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="1" Intensity="0.0">
+      <ChildProcessors/>
+    </Processor>
+    <Processor Type="EffectChain" ID="FX" Bypassed="0">
+      <ChildProcessors>
+        <Processor Type="ScriptFX" ID="Track" Bypassed="0">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="PreTrack" Version="0.0.0"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+        <Processor Type="ScriptFX" ID="Reverb" Bypassed="1">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <Content/>
+          <Networks>
+            <Network ID="reverb" Version="0.0.0"/>
+          </Networks>
+          <UIData>
+            <ContentProperties DeviceType="Desktop"/>
+          </UIData>
+        </Processor>
+        <Processor Type="Hardcoded Master FX" ID="Resonator" Bypassed="0" Network="AP"
+                   PreFilterMode="0.0" PostFilterMode="0.0" gain="0.1500000059604645"
+                   DelaySync="0.0" DelayDiv="1.0" Feedback="0.5" mix="1.0" StQuant="0.0"
+                   XfadeOnOf="0.0">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+          <SliderPacks>
+            <SliderPack EmbeddedData="128.Jb8n9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOw0ih9DWOJ5Sb8nnOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5SJb8nOov0i9jBWO5C"/>
+            <SliderPack EmbeddedData="32.rGEt9fqGE7yLyLyOEtdT+XOJb8SJb8zOrGEN+ziBW6C"/>
+            <SliderPack EmbeddedData="32.ov0S+nYlY7CtdTvOb8n.+fqGE7Sb8nvO1iBG+fqGE8C"/>
+            <SliderPack EmbeddedData="32.tdTH+zLyL8S35Q0O8nvU+ziBW8SgqG0OjBWO+Lb8n7C"/>
+            <SliderPack EmbeddedData="32.Jb8H+T35Q7CWOJvOtdT3935Qg6y0iBuOT35A+XOJb8C"/>
+          </SliderPacks>
+        </Processor>
+        <Processor Type="Dynamics" ID="Dynamics1" Bypassed="0" GateEnabled="0.0"
+                   GateThreshold="0.0" GateAttack="1.0" GateRelease="100.0" CompressorEnabled="0.0"
+                   CompressorThreshold="0.0" CompressorRatio="1.0" CompressorAttack="10.0"
+                   CompressorRelease="100.0" LimiterEnabled="1.0" LimiterThreshold="-2.700000047683716"
+                   LimiterAttack="9.25" LimiterRelease="0.2899999916553497" CompressorMakeup="0.0"
+                   LimiterMakeup="0.0">
+          <ChildProcessors/>
+          <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+        </Processor>
+      </ChildProcessors>
+    </Processor>
+    <Processor Type="GlobalModulatorContainer" ID="Global Modulator Container1"
+               Bypassed="0" Gain="0.25" Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0"
+               IconColour="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="Global Modulators" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="Hardcoded Timevariant Modulator" ID="Mod1" Bypassed="0"
+                       Intensity="1.0" Bipolar="0" Network="modtest1" Tempo="0.0" TempoMod="2.081668171172169e-17"
+                       TempoSrc="2.0" Div="13.0" Shape="0.0" Modifiers="2.0" ModiferShape="0.239999994635582"
+                       ModifierShapeMod="0.0" ModifierShapeModSrc="1.0" out="1.016000032424927"
+                       trigmode="1.0" oneshot="0.0" OUTPUT="0.0" Daw="0.0">
+              <ChildProcessors/>
+              <Tables>
+                <Table EmbeddedData=""/>
+              </Tables>
+              <SliderPacks>
+                <SliderPack EmbeddedData="64.6Qgq9PJb85SyLyrO8nv09XlYl6yiBWuO35QA+PgqG7Sb8nvOgqGE+HEtd7yv0ixOyLyL+PJb87CEtdzOlYlY+."/>
+              </SliderPacks>
+            </Processor>
+            <Processor Type="Hardcoded Timevariant Modulator" ID="Mod2" Bypassed="0"
+                       Intensity="1.0" Bipolar="0" Network="modtest1" Tempo="6.0" TempoMod="-1.0"
+                       TempoSrc="1.0" Div="1.0" Shape="4.800000190734863" Modifiers="1.0"
+                       ModiferShape="0.5299999713897705" ModifierShapeMod="0.0" ModifierShapeModSrc="1.0"
+                       out="1.016000032424927" trigmode="1.0" oneshot="0.0" OUTPUT="3.0"
+                       Daw="0.0">
+              <ChildProcessors/>
+              <Tables>
+                <Table EmbeddedData=""/>
+              </Tables>
+              <SliderPacks>
+                <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+              </SliderPacks>
+            </Processor>
+            <Processor Type="Hardcoded Timevariant Modulator" ID="Mod3" Bypassed="0"
+                       Intensity="1.0" Bipolar="0" Network="modtest1" Tempo="0.0" TempoMod="1.0"
+                       TempoSrc="1.0" Div="1.0" Shape="0.0" Modifiers="2.0" ModiferShape="0.0"
+                       ModifierShapeMod="1.0" ModifierShapeModSrc="1.0" out="1.016000032424927"
+                       trigmode="0.0" oneshot="0.0" OUTPUT="5.0" Daw="0.0">
+              <ChildProcessors/>
+              <Tables>
+                <Table EmbeddedData=""/>
+              </Tables>
+              <SliderPacks>
+                <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+              </SliderPacks>
+            </Processor>
+            <Processor Type="Hardcoded Timevariant Modulator" ID="Mod4" Bypassed="0"
+                       Intensity="1.0" Bipolar="0" Network="modtest1" Tempo="8.0" TempoMod="0.8999999761581421"
+                       TempoSrc="1.0" Div="1.0" Shape="4.800000190734863" Modifiers="3.0"
+                       ModiferShape="0.0" ModifierShapeMod="0.0" ModifierShapeModSrc="1.0"
+                       out="1.016000032424927" trigmode="0.0" oneshot="0.0" OUTPUT="7.0"
+                       Daw="1.0">
+              <ChildProcessors/>
+              <Tables>
+                <Table EmbeddedData=""/>
+              </Tables>
+              <SliderPacks>
+                <SliderPack EmbeddedData="64....f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+....9C...3O...f+."/>
+              </SliderPacks>
+            </Processor>
+            <Processor Type="ScriptTimeVariantModulator" ID="ResModRoute" Bypassed="0"
+                       Intensity="1.0" Bipolar="0">
+              <ChildProcessors/>
+              <Content/>
+              <Networks>
+                <Network ID="CableRouting" Version="0.0.0"/>
+              </Networks>
+              <UIData>
+                <ContentProperties DeviceType="Desktop"/>
+              </UIData>
+            </Processor>
+            <Processor Type="ScriptTimeVariantModulator" ID="Follow" Bypassed="0" Intensity="1.0"
+                       Bipolar="0">
+              <ChildProcessors/>
+              <Content/>
+              <Networks>
+                <Network ID="Follow1" Version="0.0.0"/>
+              </Networks>
+              <UIData>
+                <ContentProperties DeviceType="Desktop"/>
+              </UIData>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+    <Processor Type="AudioLooper" ID="Audio Loop Player1" Bypassed="1" Gain="1.0"
+               Balance="0.0" VoiceLimit="256.0" KillFadeTime="20.0" IconColour="0"
+               SyncMode="1.0" PitchTracking="0.0" LoopEnabled="1.0" RootNote="64.0"
+               SampleStartMod="0.0" Reversed="0.0" FileName="" min="0" max="0"
+               loopStart="0" loopEnd="0">
+      <ChildProcessors>
+        <Processor Type="MidiProcessorChain" ID="Midi Processor" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="GainModulation" Bypassed="0" Intensity="1.0">
+          <ChildProcessors>
+            <Processor Type="SimpleEnvelope" ID="DefaultEnvelope1" Bypassed="0" Monophonic="0.0"
+                       Retrigger="1.0" Intensity="0.6800000071525574" Attack="5.0" Release="10.0"
+                       LinearMode="1.0">
+              <ChildProcessors>
+                <Processor Type="ModulatorChain" ID="Attack Time Modulation" Bypassed="0"
+                           Intensity="1.0">
+                  <ChildProcessors/>
+                </Processor>
+              </ChildProcessors>
+            </Processor>
+          </ChildProcessors>
+        </Processor>
+        <Processor Type="ModulatorChain" ID="PitchModulation" Bypassed="0" Intensity="0.0">
+          <ChildProcessors/>
+        </Processor>
+        <Processor Type="EffectChain" ID="FX" Bypassed="0">
+          <ChildProcessors/>
+        </Processor>
+      </ChildProcessors>
+      <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+    </Processor>
+  </ChildProcessors>
+  <RoutingMatrix NumSourceChannels="2" Channel0="0" Send0="-1" Channel1="1" Send1="-1"/>
+  <macro_controls>
+    <macro name="Macro 1" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 2" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 3" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 4" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 5" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 6" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 7" value="0.0" midi_cc="-1"/>
+    <macro name="Macro 8" value="0.0" midi_cc="-1"/>
+  </macro_controls>
+  <MidiAutomation/>
+  <MPEData Enabled="0"/>
+</Processor>
