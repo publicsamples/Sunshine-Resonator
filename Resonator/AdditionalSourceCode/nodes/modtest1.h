@@ -663,29 +663,30 @@ using split_t = container::split<parameter::empty,
                                  routing::global_cable<global_cable38_t_index, parameter::empty>, 
                                  routing::global_cable<global_cable37_t_index, parameter::empty>>;
 template <int NV>
-using oversample_t_ = container::chain<parameter::empty, 
-                                       wrap::fix<1, chain12_t<NV>>, 
-                                       chain27_t<NV>, 
-                                       math::clear<NV>, 
-                                       math::clear<NV>, 
-                                       pma1_t<NV>, 
-                                       tempo_sync_t<NV>, 
-                                       split1_t<NV>, 
-                                       input_toggle_t<NV>, 
-                                       ramp_t<NV>, 
-                                       wrap::no_process<math::fmod<NV>>, 
-                                       wrap::no_process<math::clear<NV>>, 
-                                       branch_t<NV>, 
-                                       peak_t, 
-                                       pma_t<NV>, 
-                                       branch1_t<NV>, 
-                                       peak2_t, 
-                                       wrap::no_process<math::clear<NV>>, 
-                                       branch2_t, 
-                                       split_t>;
+using oversample_t = container::chain<parameter::empty, 
+                                      wrap::fix<1, chain12_t<NV>>, 
+                                      chain27_t<NV>, 
+                                      math::clear<NV>, 
+                                      math::clear<NV>, 
+                                      pma1_t<NV>, 
+                                      tempo_sync_t<NV>, 
+                                      split1_t<NV>, 
+                                      input_toggle_t<NV>, 
+                                      ramp_t<NV>, 
+                                      wrap::no_process<math::fmod<NV>>, 
+                                      wrap::no_process<math::clear<NV>>, 
+                                      branch_t<NV>, 
+                                      peak_t, 
+                                      pma_t<NV>, 
+                                      branch1_t<NV>, 
+                                      peak2_t, 
+                                      wrap::no_process<math::clear<NV>>, 
+                                      branch2_t, 
+                                      split_t>;
 
 template <int NV>
-using oversample_t = wrap::oversample<0, oversample_t_<NV>>;
+using fix8_block_t = container::chain<parameter::empty, 
+                                      wrap::fix<1, oversample_t<NV>>>;
 
 namespace modtest1_t_parameters
 {
@@ -815,7 +816,7 @@ using modtest1_t_plist = parameter::list<Tempo<NV>,
 
 template <int NV>
 using modtest1_t_ = container::chain<modtest1_t_parameters::modtest1_t_plist<NV>, 
-                                     wrap::fix<1, oversample_t<NV>>>;
+                                     wrap::fix<1, fix8_block_t<NV>>>;
 
 // =================================| Root node initialiser class |=================================
 
@@ -865,7 +866,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
             0x000D, 0x0000, 0x6144, 0x0077, 0x0000, 0x0000, 0x0000, 0x3F80, 
             0x0000, 0x0000, 0x0000, 0x3F80, 0x0000, 0x0000, 0x0E5B, 0x0000, 
             0x4F00, 0x6576, 0x5372, 0x6D61, 0x6C70, 0x7365, 0x0000, 0x0000, 
-            0x0000, 0x8000, 0x0040, 0x8000, 0x003F, 0x8000, 0x003F, 0x8000, 
+            0x0000, 0x8000, 0x0040, 0x0000, 0x0000, 0x8000, 0x003F, 0x8000, 
             0x003F, 0x0000
 		};
 	};
@@ -874,176 +875,177 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 	{
 		// Node References -------------------------------------------------------------------------
 		
-		auto& oversample = this->getT(0);                                      // modtest1_impl::oversample_t<NV>
-		auto& chain12 = this->getT(0).getT(0);                                 // modtest1_impl::chain12_t<NV>
-		auto& branch3 = this->getT(0).getT(0).getT(0);                         // modtest1_impl::branch3_t<NV>
-		auto& chain = this->getT(0).getT(0).getT(0).getT(0);                   // modtest1_impl::chain_t<NV>
-		auto& global_cable1 = this->getT(0).getT(0).getT(0).getT(0).getT(0);   // modtest1_impl::global_cable1_t<NV>
-		auto& add2 = this->getT(0).getT(0).getT(0).getT(0).getT(1);            // math::add<NV>
-		auto& chain2 = this->getT(0).getT(0).getT(0).getT(1);                  // modtest1_impl::chain2_t<NV>
-		auto& global_cable2 = this->getT(0).getT(0).getT(0).getT(1).getT(0);   // modtest1_impl::global_cable2_t<NV>
-		auto& add4 = this->getT(0).getT(0).getT(0).getT(1).getT(1);            // math::add<NV>
-		auto& chain3 = this->getT(0).getT(0).getT(0).getT(2);                  // modtest1_impl::chain3_t<NV>
-		auto& global_cable3 = this->getT(0).getT(0).getT(0).getT(2).getT(0);   // modtest1_impl::global_cable3_t<NV>
-		auto& add5 = this->getT(0).getT(0).getT(0).getT(2).getT(1);            // math::add<NV>
-		auto& chain4 = this->getT(0).getT(0).getT(0).getT(3);                  // modtest1_impl::chain4_t<NV>
-		auto& global_cable4 = this->getT(0).getT(0).getT(0).getT(3).getT(0);   // modtest1_impl::global_cable4_t<NV>
-		auto& add6 = this->getT(0).getT(0).getT(0).getT(3).getT(1);            // math::add<NV>
-		auto& chain6 = this->getT(0).getT(0).getT(0).getT(4);                  // modtest1_impl::chain6_t<NV>
-		auto& global_cable5 = this->getT(0).getT(0).getT(0).getT(4).getT(0);   // modtest1_impl::global_cable5_t<NV>
-		auto& add7 = this->getT(0).getT(0).getT(0).getT(4).getT(1);            // math::add<NV>
-		auto& chain7 = this->getT(0).getT(0).getT(0).getT(5);                  // modtest1_impl::chain7_t<NV>
-		auto& global_cable6 = this->getT(0).getT(0).getT(0).getT(5).getT(0);   // modtest1_impl::global_cable6_t<NV>
-		auto& add8 = this->getT(0).getT(0).getT(0).getT(5).getT(1);            // math::add<NV>
-		auto& chain9 = this->getT(0).getT(0).getT(0).getT(6);                  // modtest1_impl::chain9_t<NV>
-		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(6).getT(0);   // modtest1_impl::global_cable7_t<NV>
-		auto& add9 = this->getT(0).getT(0).getT(0).getT(6).getT(1);            // math::add<NV>
-		auto& chain10 = this->getT(0).getT(0).getT(0).getT(7);                 // modtest1_impl::chain10_t<NV>
-		auto& global_cable8 = this->getT(0).getT(0).getT(0).getT(7).getT(0);   // modtest1_impl::global_cable8_t<NV>
-		auto& add10 = this->getT(0).getT(0).getT(0).getT(7).getT(1);           // math::add<NV>
-		auto& chain14 = this->getT(0).getT(0).getT(0).getT(8);                 // modtest1_impl::chain14_t<NV>
-		auto& global_cable10 = this->getT(0).getT(0).getT(0).getT(8).getT(0);  // modtest1_impl::global_cable10_t<NV>
-		auto& add12 = this->getT(0).getT(0).getT(0).getT(8).getT(1);           // math::add<NV>
-		auto& chain15 = this->getT(0).getT(0).getT(0).getT(9);                 // modtest1_impl::chain15_t<NV>
-		auto& global_cable11 = this->getT(0).getT(0).getT(0).getT(9).getT(0);  // modtest1_impl::global_cable11_t<NV>
-		auto& add13 = this->getT(0).getT(0).getT(0).getT(9).getT(1);           // math::add<NV>
-		auto& chain25 = this->getT(0).getT(0).getT(0).getT(10);                // modtest1_impl::chain25_t<NV>
-		auto& global_cable12 = this->getT(0).getT(0).getT(0).getT(10).getT(0); // modtest1_impl::global_cable12_t<NV>
-		auto& add14 = this->getT(0).getT(0).getT(0).getT(10).getT(1);          // math::add<NV>
-		auto& chain17 = this->getT(0).getT(0).getT(0).getT(11);                // modtest1_impl::chain17_t<NV>
-		auto& global_cable13 = this->getT(0).getT(0).getT(0).getT(11).getT(0); // modtest1_impl::global_cable13_t<NV>
-		auto& add15 = this->getT(0).getT(0).getT(0).getT(11).getT(1);          // math::add<NV>
-		auto& chain18 = this->getT(0).getT(0).getT(0).getT(12);                // modtest1_impl::chain18_t<NV>
-		auto& global_cable14 = this->getT(0).getT(0).getT(0).getT(12).getT(0); // modtest1_impl::global_cable14_t<NV>
-		auto& add16 = this->getT(0).getT(0).getT(0).getT(12).getT(1);          // math::add<NV>
-		auto& chain19 = this->getT(0).getT(0).getT(0).getT(13);                // modtest1_impl::chain19_t<NV>
-		auto& global_cable15 = this->getT(0).getT(0).getT(0).getT(13).getT(0); // modtest1_impl::global_cable15_t<NV>
-		auto& add17 = this->getT(0).getT(0).getT(0).getT(13).getT(1);          // math::add<NV>
-		auto& chain21 = this->getT(0).getT(0).getT(0).getT(14);                // modtest1_impl::chain21_t<NV>
-		auto& global_cable16 = this->getT(0).getT(0).getT(0).getT(14).getT(0); // modtest1_impl::global_cable16_t<NV>
-		auto& add18 = this->getT(0).getT(0).getT(0).getT(14).getT(1);          // math::add<NV>
-		auto& chain22 = this->getT(0).getT(0).getT(0).getT(15);                // modtest1_impl::chain22_t<NV>
-		auto& global_cable17 = this->getT(0).getT(0).getT(0).getT(15).getT(0); // modtest1_impl::global_cable17_t<NV>
-		auto& add19 = this->getT(0).getT(0).getT(0).getT(15).getT(1);          // math::add<NV>
-		auto& peak1 = this->getT(0).getT(0).getT(1);                           // modtest1_impl::peak1_t<NV>
-		auto& clear = this->getT(0).getT(0).getT(2);                           // math::clear<NV>
-		auto& chain27 = this->getT(0).getT(1);                                 // modtest1_impl::chain27_t<NV>
-		auto& branch5 = this->getT(0).getT(1).getT(0);                         // modtest1_impl::branch5_t<NV>
-		auto& chain28 = this->getT(0).getT(1).getT(0).getT(0);                 // modtest1_impl::chain28_t<NV>
-		auto& global_cable19 = this->getT(0).getT(1).getT(0).getT(0).getT(0);  // modtest1_impl::global_cable19_t<NV>
-		auto& add21 = this->getT(0).getT(1).getT(0).getT(0).getT(1);           // math::add<NV>
-		auto& chain30 = this->getT(0).getT(1).getT(0).getT(1);                 // modtest1_impl::chain30_t<NV>
-		auto& global_cable20 = this->getT(0).getT(1).getT(0).getT(1).getT(0);  // modtest1_impl::global_cable20_t<NV>
-		auto& add22 = this->getT(0).getT(1).getT(0).getT(1).getT(1);           // math::add<NV>
-		auto& chain31 = this->getT(0).getT(1).getT(0).getT(2);                 // modtest1_impl::chain31_t<NV>
-		auto& global_cable21 = this->getT(0).getT(1).getT(0).getT(2).getT(0);  // modtest1_impl::global_cable21_t<NV>
-		auto& add23 = this->getT(0).getT(1).getT(0).getT(2).getT(1);           // math::add<NV>
-		auto& chain33 = this->getT(0).getT(1).getT(0).getT(3);                 // modtest1_impl::chain33_t<NV>
-		auto& global_cable22 = this->getT(0).getT(1).getT(0).getT(3).getT(0);  // modtest1_impl::global_cable22_t<NV>
-		auto& add24 = this->getT(0).getT(1).getT(0).getT(3).getT(1);           // math::add<NV>
-		auto& chain34 = this->getT(0).getT(1).getT(0).getT(4);                 // modtest1_impl::chain34_t<NV>
-		auto& global_cable23 = this->getT(0).getT(1).getT(0).getT(4).getT(0);  // modtest1_impl::global_cable23_t<NV>
-		auto& add25 = this->getT(0).getT(1).getT(0).getT(4).getT(1);           // math::add<NV>
-		auto& chain36 = this->getT(0).getT(1).getT(0).getT(5);                 // modtest1_impl::chain36_t<NV>
-		auto& global_cable24 = this->getT(0).getT(1).getT(0).getT(5).getT(0);  // modtest1_impl::global_cable24_t<NV>
-		auto& add26 = this->getT(0).getT(1).getT(0).getT(5).getT(1);           // math::add<NV>
-		auto& chain37 = this->getT(0).getT(1).getT(0).getT(6);                 // modtest1_impl::chain37_t<NV>
-		auto& global_cable25 = this->getT(0).getT(1).getT(0).getT(6).getT(0);  // modtest1_impl::global_cable25_t<NV>
-		auto& add27 = this->getT(0).getT(1).getT(0).getT(6).getT(1);           // math::add<NV>
-		auto& chain38 = this->getT(0).getT(1).getT(0).getT(7);                 // modtest1_impl::chain38_t<NV>
-		auto& global_cable26 = this->getT(0).getT(1).getT(0).getT(7).getT(0);  // modtest1_impl::global_cable26_t<NV>
-		auto& add28 = this->getT(0).getT(1).getT(0).getT(7).getT(1);           // math::add<NV>
-		auto& chain39 = this->getT(0).getT(1).getT(0).getT(8);                 // modtest1_impl::chain39_t<NV>
-		auto& global_cable27 = this->getT(0).getT(1).getT(0).getT(8).getT(0);  // modtest1_impl::global_cable27_t<NV>
-		auto& add29 = this->getT(0).getT(1).getT(0).getT(8).getT(1);           // math::add<NV>
-		auto& chain40 = this->getT(0).getT(1).getT(0).getT(9);                 // modtest1_impl::chain40_t<NV>
-		auto& global_cable28 = this->getT(0).getT(1).getT(0).getT(9).getT(0);  // modtest1_impl::global_cable28_t<NV>
-		auto& add30 = this->getT(0).getT(1).getT(0).getT(9).getT(1);           // math::add<NV>
-		auto& chain42 = this->getT(0).getT(1).getT(0).getT(10);                // modtest1_impl::chain42_t<NV>
-		auto& global_cable29 = this->getT(0).getT(1).getT(0).getT(10).getT(0); // modtest1_impl::global_cable29_t<NV>
-		auto& add31 = this->getT(0).getT(1).getT(0).getT(10).getT(1);          // math::add<NV>
-		auto& chain43 = this->getT(0).getT(1).getT(0).getT(11);                // modtest1_impl::chain43_t<NV>
-		auto& global_cable30 = this->getT(0).getT(1).getT(0).getT(11).getT(0); // modtest1_impl::global_cable30_t<NV>
-		auto& add32 = this->getT(0).getT(1).getT(0).getT(11).getT(1);          // math::add<NV>
-		auto& chain52 = this->getT(0).getT(1).getT(0).getT(12);                // modtest1_impl::chain52_t<NV>
-		auto& global_cable31 = this->getT(0).getT(1).getT(0).getT(12).getT(0); // modtest1_impl::global_cable31_t<NV>
-		auto& add33 = this->getT(0).getT(1).getT(0).getT(12).getT(1);          // math::add<NV>
-		auto& chain53 = this->getT(0).getT(1).getT(0).getT(13);                // modtest1_impl::chain53_t<NV>
-		auto& global_cable32 = this->getT(0).getT(1).getT(0).getT(13).getT(0); // modtest1_impl::global_cable32_t<NV>
-		auto& add34 = this->getT(0).getT(1).getT(0).getT(13).getT(1);          // math::add<NV>
-		auto& chain54 = this->getT(0).getT(1).getT(0).getT(14);                // modtest1_impl::chain54_t<NV>
-		auto& global_cable33 = this->getT(0).getT(1).getT(0).getT(14).getT(0); // modtest1_impl::global_cable33_t<NV>
-		auto& add35 = this->getT(0).getT(1).getT(0).getT(14).getT(1);          // math::add<NV>
-		auto& chain55 = this->getT(0).getT(1).getT(0).getT(15);                // modtest1_impl::chain55_t<NV>
-		auto& global_cable34 = this->getT(0).getT(1).getT(0).getT(15).getT(0); // modtest1_impl::global_cable34_t<NV>
-		auto& add36 = this->getT(0).getT(1).getT(0).getT(15).getT(1);          // math::add<NV>
-		auto& peak4 = this->getT(0).getT(1).getT(1);                           // modtest1_impl::peak4_t<NV>
-		auto& clear6 = this->getT(0).getT(2);                                  // math::clear<NV>
-		auto& clear2 = this->getT(0).getT(3);                                  // math::clear<NV>
-		auto& pma1 = this->getT(0).getT(4);                                    // modtest1_impl::pma1_t<NV>
-		auto& tempo_sync = this->getT(0).getT(5);                              // modtest1_impl::tempo_sync_t<NV>
-		auto& split1 = this->getT(0).getT(6);                                  // modtest1_impl::split1_t<NV>
-		auto& transport = this->getT(0).getT(6).getT(0);                       // modtest1_impl::transport_t<NV>
-		auto& input_toggle = this->getT(0).getT(7);                            // modtest1_impl::input_toggle_t<NV>
-		auto& ramp = this->getT(0).getT(8);                                    // modtest1_impl::ramp_t<NV>
-		auto& fmod1 = this->getT(0).getT(9);                                   // wrap::no_process<math::fmod<NV>>
-		auto& clear1 = this->getT(0).getT(10);                                 // wrap::no_process<math::clear<NV>>
-		auto& branch = this->getT(0).getT(11);                                 // modtest1_impl::branch_t<NV>
-		auto& chain23 = this->getT(0).getT(11).getT(0);                        // modtest1_impl::chain23_t<NV>
-		auto& clear4 = this->getT(0).getT(11).getT(0).getT(0);                 // math::clear<NV>
-		auto& converter = this->getT(0).getT(11).getT(0).getT(1);              // modtest1_impl::converter_t<NV>
-		auto& oscillator1 = this->getT(0).getT(11).getT(0).getT(2);            // modtest1_impl::oscillator1_t<NV>
-		auto& sig2mod = this->getT(0).getT(11).getT(0).getT(3);                // math::sig2mod<NV>
-		auto& chain8 = this->getT(0).getT(11).getT(1);                         // modtest1_impl::chain8_t<NV>
-		auto& pi1 = this->getT(0).getT(11).getT(1).getT(0);                    // wrap::no_process<math::pi<NV>>
-		auto& rect1 = this->getT(0).getT(11).getT(1).getT(1);                  // math::rect<NV>
-		auto& chain5 = this->getT(0).getT(11).getT(2);                         // modtest1_impl::chain5_t
-		auto& chain41 = this->getT(0).getT(11).getT(3);                        // modtest1_impl::chain41_t<NV>
-		auto& clear13 = this->getT(0).getT(11).getT(3).getT(0);                // math::clear<NV>
-		auto& expr7 = this->getT(0).getT(11).getT(3).getT(1);                  // math::expr<NV, custom::expr7>
-		auto& sig2mod9 = this->getT(0).getT(11).getT(3).getT(2);               // math::sig2mod<NV>
-		auto& peak5 = this->getT(0).getT(11).getT(3).getT(3);                  // modtest1_impl::peak5_t
-		auto& chain32 = this->getT(0).getT(11).getT(4);                        // modtest1_impl::chain32_t<NV>
-		auto& oscillator = this->getT(0).getT(11).getT(4).getT(0);             // modtest1_impl::oscillator_t<NV>
-		auto& pi = this->getT(0).getT(11).getT(4).getT(1);                     // wrap::no_process<math::pi<NV>>
-		auto& sampleandhold1 = this->getT(0).getT(11).getT(4).getT(2);         // fx::sampleandhold<NV>
-		auto& sig2mod7 = this->getT(0).getT(11).getT(4).getT(3);               // math::sig2mod<NV>
-		auto& chain20 = this->getT(0).getT(11).getT(5);                        // modtest1_impl::chain20_t<NV>
-		auto& clear15 = this->getT(0).getT(11).getT(5).getT(0);                // math::clear<NV>
-		auto& cable_table = this->getT(0).getT(11).getT(5).getT(1);            // modtest1_impl::cable_table_t<NV>
-		auto& add = this->getT(0).getT(11).getT(5).getT(2);                    // math::add<NV>
-		auto& chain26 = this->getT(0).getT(11).getT(6);                        // modtest1_impl::chain26_t<NV>
-		auto& clear5 = this->getT(0).getT(11).getT(6).getT(0);                 // math::clear<NV>
-		auto& cable_pack = this->getT(0).getT(11).getT(6).getT(1);             // modtest1_impl::cable_pack_t<NV>
-		auto& add1 = this->getT(0).getT(11).getT(6).getT(2);                   // math::add<NV>
-		auto& peak = this->getT(0).getT(12);                                   // modtest1_impl::peak_t
-		auto& pma = this->getT(0).getT(13);                                    // modtest1_impl::pma_t<NV>
-		auto& branch1 = this->getT(0).getT(14);                                // modtest1_impl::branch1_t<NV>
-		auto& chain1 = this->getT(0).getT(14).getT(0);                         // modtest1_impl::chain1_t
-		auto& chain29 = this->getT(0).getT(14).getT(1);                        // modtest1_impl::chain29_t<NV>
-		auto& expr3 = this->getT(0).getT(14).getT(1).getT(0);                  // math::expr<NV, custom::expr3>
-		auto& chain35 = this->getT(0).getT(14).getT(2);                        // modtest1_impl::chain35_t<NV>
-		auto& expr5 = this->getT(0).getT(14).getT(2).getT(0);                  // math::expr<NV, custom::expr5>
-		auto& chain44 = this->getT(0).getT(14).getT(3);                        // modtest1_impl::chain44_t<NV>
-		auto& expr8 = this->getT(0).getT(14).getT(3).getT(0);                  // math::expr<NV, custom::expr8>
-		auto& chain45 = this->getT(0).getT(14).getT(4);                        // modtest1_impl::chain45_t<NV>
-		auto& expr9 = this->getT(0).getT(14).getT(4).getT(0);                  // math::expr<NV, custom::expr9>
-		auto& peak2 = this->getT(0).getT(15);                                  // modtest1_impl::peak2_t
-		auto& clear3 = this->getT(0).getT(16);                                 // wrap::no_process<math::clear<NV>>
-		auto& branch2 = this->getT(0).getT(17);                                // modtest1_impl::branch2_t
-		auto& chain13 = this->getT(0).getT(17).getT(0);                        // modtest1_impl::chain13_t
-		auto& peak3 = this->getT(0).getT(17).getT(0).getT(0);                  // modtest1_impl::peak3_t
-		auto& chain16 = this->getT(0).getT(17).getT(1);                        // modtest1_impl::chain16_t
-		auto& peak9 = this->getT(0).getT(17).getT(1).getT(0);                  // modtest1_impl::peak9_t
-		auto& chain24 = this->getT(0).getT(17).getT(2);                        // modtest1_impl::chain24_t
-		auto& peak8 = this->getT(0).getT(17).getT(2).getT(0);                  // modtest1_impl::peak8_t
-		auto& chain50 = this->getT(0).getT(17).getT(3);                        // modtest1_impl::chain50_t
-		auto& peak7 = this->getT(0).getT(17).getT(3).getT(0);                  // modtest1_impl::peak7_t
-		auto& split = this->getT(0).getT(18);                                  // modtest1_impl::split_t
-		auto& global_cable = this->getT(0).getT(18).getT(0);                   // routing::global_cable<global_cable_t_index, parameter::empty>
-		auto& global_cable39 = this->getT(0).getT(18).getT(1);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
-		auto& global_cable38 = this->getT(0).getT(18).getT(2);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
-		auto& global_cable37 = this->getT(0).getT(18).getT(3);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
+		auto& fix8_block = this->getT(0);                                              // modtest1_impl::fix8_block_t<NV>
+		auto& oversample = this->getT(0).getT(0);                                      // modtest1_impl::oversample_t<NV>
+		auto& chain12 = this->getT(0).getT(0).getT(0);                                 // modtest1_impl::chain12_t<NV>
+		auto& branch3 = this->getT(0).getT(0).getT(0).getT(0);                         // modtest1_impl::branch3_t<NV>
+		auto& chain = this->getT(0).getT(0).getT(0).getT(0).getT(0);                   // modtest1_impl::chain_t<NV>
+		auto& global_cable1 = this->getT(0).getT(0).getT(0).getT(0).getT(0).getT(0);   // modtest1_impl::global_cable1_t<NV>
+		auto& add2 = this->getT(0).getT(0).getT(0).getT(0).getT(0).getT(1);            // math::add<NV>
+		auto& chain2 = this->getT(0).getT(0).getT(0).getT(0).getT(1);                  // modtest1_impl::chain2_t<NV>
+		auto& global_cable2 = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0);   // modtest1_impl::global_cable2_t<NV>
+		auto& add4 = this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(1);            // math::add<NV>
+		auto& chain3 = this->getT(0).getT(0).getT(0).getT(0).getT(2);                  // modtest1_impl::chain3_t<NV>
+		auto& global_cable3 = this->getT(0).getT(0).getT(0).getT(0).getT(2).getT(0);   // modtest1_impl::global_cable3_t<NV>
+		auto& add5 = this->getT(0).getT(0).getT(0).getT(0).getT(2).getT(1);            // math::add<NV>
+		auto& chain4 = this->getT(0).getT(0).getT(0).getT(0).getT(3);                  // modtest1_impl::chain4_t<NV>
+		auto& global_cable4 = this->getT(0).getT(0).getT(0).getT(0).getT(3).getT(0);   // modtest1_impl::global_cable4_t<NV>
+		auto& add6 = this->getT(0).getT(0).getT(0).getT(0).getT(3).getT(1);            // math::add<NV>
+		auto& chain6 = this->getT(0).getT(0).getT(0).getT(0).getT(4);                  // modtest1_impl::chain6_t<NV>
+		auto& global_cable5 = this->getT(0).getT(0).getT(0).getT(0).getT(4).getT(0);   // modtest1_impl::global_cable5_t<NV>
+		auto& add7 = this->getT(0).getT(0).getT(0).getT(0).getT(4).getT(1);            // math::add<NV>
+		auto& chain7 = this->getT(0).getT(0).getT(0).getT(0).getT(5);                  // modtest1_impl::chain7_t<NV>
+		auto& global_cable6 = this->getT(0).getT(0).getT(0).getT(0).getT(5).getT(0);   // modtest1_impl::global_cable6_t<NV>
+		auto& add8 = this->getT(0).getT(0).getT(0).getT(0).getT(5).getT(1);            // math::add<NV>
+		auto& chain9 = this->getT(0).getT(0).getT(0).getT(0).getT(6);                  // modtest1_impl::chain9_t<NV>
+		auto& global_cable7 = this->getT(0).getT(0).getT(0).getT(0).getT(6).getT(0);   // modtest1_impl::global_cable7_t<NV>
+		auto& add9 = this->getT(0).getT(0).getT(0).getT(0).getT(6).getT(1);            // math::add<NV>
+		auto& chain10 = this->getT(0).getT(0).getT(0).getT(0).getT(7);                 // modtest1_impl::chain10_t<NV>
+		auto& global_cable8 = this->getT(0).getT(0).getT(0).getT(0).getT(7).getT(0);   // modtest1_impl::global_cable8_t<NV>
+		auto& add10 = this->getT(0).getT(0).getT(0).getT(0).getT(7).getT(1);           // math::add<NV>
+		auto& chain14 = this->getT(0).getT(0).getT(0).getT(0).getT(8);                 // modtest1_impl::chain14_t<NV>
+		auto& global_cable10 = this->getT(0).getT(0).getT(0).getT(0).getT(8).getT(0);  // modtest1_impl::global_cable10_t<NV>
+		auto& add12 = this->getT(0).getT(0).getT(0).getT(0).getT(8).getT(1);           // math::add<NV>
+		auto& chain15 = this->getT(0).getT(0).getT(0).getT(0).getT(9);                 // modtest1_impl::chain15_t<NV>
+		auto& global_cable11 = this->getT(0).getT(0).getT(0).getT(0).getT(9).getT(0);  // modtest1_impl::global_cable11_t<NV>
+		auto& add13 = this->getT(0).getT(0).getT(0).getT(0).getT(9).getT(1);           // math::add<NV>
+		auto& chain25 = this->getT(0).getT(0).getT(0).getT(0).getT(10);                // modtest1_impl::chain25_t<NV>
+		auto& global_cable12 = this->getT(0).getT(0).getT(0).getT(0).getT(10).getT(0); // modtest1_impl::global_cable12_t<NV>
+		auto& add14 = this->getT(0).getT(0).getT(0).getT(0).getT(10).getT(1);          // math::add<NV>
+		auto& chain17 = this->getT(0).getT(0).getT(0).getT(0).getT(11);                // modtest1_impl::chain17_t<NV>
+		auto& global_cable13 = this->getT(0).getT(0).getT(0).getT(0).getT(11).getT(0); // modtest1_impl::global_cable13_t<NV>
+		auto& add15 = this->getT(0).getT(0).getT(0).getT(0).getT(11).getT(1);          // math::add<NV>
+		auto& chain18 = this->getT(0).getT(0).getT(0).getT(0).getT(12);                // modtest1_impl::chain18_t<NV>
+		auto& global_cable14 = this->getT(0).getT(0).getT(0).getT(0).getT(12).getT(0); // modtest1_impl::global_cable14_t<NV>
+		auto& add16 = this->getT(0).getT(0).getT(0).getT(0).getT(12).getT(1);          // math::add<NV>
+		auto& chain19 = this->getT(0).getT(0).getT(0).getT(0).getT(13);                // modtest1_impl::chain19_t<NV>
+		auto& global_cable15 = this->getT(0).getT(0).getT(0).getT(0).getT(13).getT(0); // modtest1_impl::global_cable15_t<NV>
+		auto& add17 = this->getT(0).getT(0).getT(0).getT(0).getT(13).getT(1);          // math::add<NV>
+		auto& chain21 = this->getT(0).getT(0).getT(0).getT(0).getT(14);                // modtest1_impl::chain21_t<NV>
+		auto& global_cable16 = this->getT(0).getT(0).getT(0).getT(0).getT(14).getT(0); // modtest1_impl::global_cable16_t<NV>
+		auto& add18 = this->getT(0).getT(0).getT(0).getT(0).getT(14).getT(1);          // math::add<NV>
+		auto& chain22 = this->getT(0).getT(0).getT(0).getT(0).getT(15);                // modtest1_impl::chain22_t<NV>
+		auto& global_cable17 = this->getT(0).getT(0).getT(0).getT(0).getT(15).getT(0); // modtest1_impl::global_cable17_t<NV>
+		auto& add19 = this->getT(0).getT(0).getT(0).getT(0).getT(15).getT(1);          // math::add<NV>
+		auto& peak1 = this->getT(0).getT(0).getT(0).getT(1);                           // modtest1_impl::peak1_t<NV>
+		auto& clear = this->getT(0).getT(0).getT(0).getT(2);                           // math::clear<NV>
+		auto& chain27 = this->getT(0).getT(0).getT(1);                                 // modtest1_impl::chain27_t<NV>
+		auto& branch5 = this->getT(0).getT(0).getT(1).getT(0);                         // modtest1_impl::branch5_t<NV>
+		auto& chain28 = this->getT(0).getT(0).getT(1).getT(0).getT(0);                 // modtest1_impl::chain28_t<NV>
+		auto& global_cable19 = this->getT(0).getT(0).getT(1).getT(0).getT(0).getT(0);  // modtest1_impl::global_cable19_t<NV>
+		auto& add21 = this->getT(0).getT(0).getT(1).getT(0).getT(0).getT(1);           // math::add<NV>
+		auto& chain30 = this->getT(0).getT(0).getT(1).getT(0).getT(1);                 // modtest1_impl::chain30_t<NV>
+		auto& global_cable20 = this->getT(0).getT(0).getT(1).getT(0).getT(1).getT(0);  // modtest1_impl::global_cable20_t<NV>
+		auto& add22 = this->getT(0).getT(0).getT(1).getT(0).getT(1).getT(1);           // math::add<NV>
+		auto& chain31 = this->getT(0).getT(0).getT(1).getT(0).getT(2);                 // modtest1_impl::chain31_t<NV>
+		auto& global_cable21 = this->getT(0).getT(0).getT(1).getT(0).getT(2).getT(0);  // modtest1_impl::global_cable21_t<NV>
+		auto& add23 = this->getT(0).getT(0).getT(1).getT(0).getT(2).getT(1);           // math::add<NV>
+		auto& chain33 = this->getT(0).getT(0).getT(1).getT(0).getT(3);                 // modtest1_impl::chain33_t<NV>
+		auto& global_cable22 = this->getT(0).getT(0).getT(1).getT(0).getT(3).getT(0);  // modtest1_impl::global_cable22_t<NV>
+		auto& add24 = this->getT(0).getT(0).getT(1).getT(0).getT(3).getT(1);           // math::add<NV>
+		auto& chain34 = this->getT(0).getT(0).getT(1).getT(0).getT(4);                 // modtest1_impl::chain34_t<NV>
+		auto& global_cable23 = this->getT(0).getT(0).getT(1).getT(0).getT(4).getT(0);  // modtest1_impl::global_cable23_t<NV>
+		auto& add25 = this->getT(0).getT(0).getT(1).getT(0).getT(4).getT(1);           // math::add<NV>
+		auto& chain36 = this->getT(0).getT(0).getT(1).getT(0).getT(5);                 // modtest1_impl::chain36_t<NV>
+		auto& global_cable24 = this->getT(0).getT(0).getT(1).getT(0).getT(5).getT(0);  // modtest1_impl::global_cable24_t<NV>
+		auto& add26 = this->getT(0).getT(0).getT(1).getT(0).getT(5).getT(1);           // math::add<NV>
+		auto& chain37 = this->getT(0).getT(0).getT(1).getT(0).getT(6);                 // modtest1_impl::chain37_t<NV>
+		auto& global_cable25 = this->getT(0).getT(0).getT(1).getT(0).getT(6).getT(0);  // modtest1_impl::global_cable25_t<NV>
+		auto& add27 = this->getT(0).getT(0).getT(1).getT(0).getT(6).getT(1);           // math::add<NV>
+		auto& chain38 = this->getT(0).getT(0).getT(1).getT(0).getT(7);                 // modtest1_impl::chain38_t<NV>
+		auto& global_cable26 = this->getT(0).getT(0).getT(1).getT(0).getT(7).getT(0);  // modtest1_impl::global_cable26_t<NV>
+		auto& add28 = this->getT(0).getT(0).getT(1).getT(0).getT(7).getT(1);           // math::add<NV>
+		auto& chain39 = this->getT(0).getT(0).getT(1).getT(0).getT(8);                 // modtest1_impl::chain39_t<NV>
+		auto& global_cable27 = this->getT(0).getT(0).getT(1).getT(0).getT(8).getT(0);  // modtest1_impl::global_cable27_t<NV>
+		auto& add29 = this->getT(0).getT(0).getT(1).getT(0).getT(8).getT(1);           // math::add<NV>
+		auto& chain40 = this->getT(0).getT(0).getT(1).getT(0).getT(9);                 // modtest1_impl::chain40_t<NV>
+		auto& global_cable28 = this->getT(0).getT(0).getT(1).getT(0).getT(9).getT(0);  // modtest1_impl::global_cable28_t<NV>
+		auto& add30 = this->getT(0).getT(0).getT(1).getT(0).getT(9).getT(1);           // math::add<NV>
+		auto& chain42 = this->getT(0).getT(0).getT(1).getT(0).getT(10);                // modtest1_impl::chain42_t<NV>
+		auto& global_cable29 = this->getT(0).getT(0).getT(1).getT(0).getT(10).getT(0); // modtest1_impl::global_cable29_t<NV>
+		auto& add31 = this->getT(0).getT(0).getT(1).getT(0).getT(10).getT(1);          // math::add<NV>
+		auto& chain43 = this->getT(0).getT(0).getT(1).getT(0).getT(11);                // modtest1_impl::chain43_t<NV>
+		auto& global_cable30 = this->getT(0).getT(0).getT(1).getT(0).getT(11).getT(0); // modtest1_impl::global_cable30_t<NV>
+		auto& add32 = this->getT(0).getT(0).getT(1).getT(0).getT(11).getT(1);          // math::add<NV>
+		auto& chain52 = this->getT(0).getT(0).getT(1).getT(0).getT(12);                // modtest1_impl::chain52_t<NV>
+		auto& global_cable31 = this->getT(0).getT(0).getT(1).getT(0).getT(12).getT(0); // modtest1_impl::global_cable31_t<NV>
+		auto& add33 = this->getT(0).getT(0).getT(1).getT(0).getT(12).getT(1);          // math::add<NV>
+		auto& chain53 = this->getT(0).getT(0).getT(1).getT(0).getT(13);                // modtest1_impl::chain53_t<NV>
+		auto& global_cable32 = this->getT(0).getT(0).getT(1).getT(0).getT(13).getT(0); // modtest1_impl::global_cable32_t<NV>
+		auto& add34 = this->getT(0).getT(0).getT(1).getT(0).getT(13).getT(1);          // math::add<NV>
+		auto& chain54 = this->getT(0).getT(0).getT(1).getT(0).getT(14);                // modtest1_impl::chain54_t<NV>
+		auto& global_cable33 = this->getT(0).getT(0).getT(1).getT(0).getT(14).getT(0); // modtest1_impl::global_cable33_t<NV>
+		auto& add35 = this->getT(0).getT(0).getT(1).getT(0).getT(14).getT(1);          // math::add<NV>
+		auto& chain55 = this->getT(0).getT(0).getT(1).getT(0).getT(15);                // modtest1_impl::chain55_t<NV>
+		auto& global_cable34 = this->getT(0).getT(0).getT(1).getT(0).getT(15).getT(0); // modtest1_impl::global_cable34_t<NV>
+		auto& add36 = this->getT(0).getT(0).getT(1).getT(0).getT(15).getT(1);          // math::add<NV>
+		auto& peak4 = this->getT(0).getT(0).getT(1).getT(1);                           // modtest1_impl::peak4_t<NV>
+		auto& clear6 = this->getT(0).getT(0).getT(2);                                  // math::clear<NV>
+		auto& clear2 = this->getT(0).getT(0).getT(3);                                  // math::clear<NV>
+		auto& pma1 = this->getT(0).getT(0).getT(4);                                    // modtest1_impl::pma1_t<NV>
+		auto& tempo_sync = this->getT(0).getT(0).getT(5);                              // modtest1_impl::tempo_sync_t<NV>
+		auto& split1 = this->getT(0).getT(0).getT(6);                                  // modtest1_impl::split1_t<NV>
+		auto& transport = this->getT(0).getT(0).getT(6).getT(0);                       // modtest1_impl::transport_t<NV>
+		auto& input_toggle = this->getT(0).getT(0).getT(7);                            // modtest1_impl::input_toggle_t<NV>
+		auto& ramp = this->getT(0).getT(0).getT(8);                                    // modtest1_impl::ramp_t<NV>
+		auto& fmod1 = this->getT(0).getT(0).getT(9);                                   // wrap::no_process<math::fmod<NV>>
+		auto& clear1 = this->getT(0).getT(0).getT(10);                                 // wrap::no_process<math::clear<NV>>
+		auto& branch = this->getT(0).getT(0).getT(11);                                 // modtest1_impl::branch_t<NV>
+		auto& chain23 = this->getT(0).getT(0).getT(11).getT(0);                        // modtest1_impl::chain23_t<NV>
+		auto& clear4 = this->getT(0).getT(0).getT(11).getT(0).getT(0);                 // math::clear<NV>
+		auto& converter = this->getT(0).getT(0).getT(11).getT(0).getT(1);              // modtest1_impl::converter_t<NV>
+		auto& oscillator1 = this->getT(0).getT(0).getT(11).getT(0).getT(2);            // modtest1_impl::oscillator1_t<NV>
+		auto& sig2mod = this->getT(0).getT(0).getT(11).getT(0).getT(3);                // math::sig2mod<NV>
+		auto& chain8 = this->getT(0).getT(0).getT(11).getT(1);                         // modtest1_impl::chain8_t<NV>
+		auto& pi1 = this->getT(0).getT(0).getT(11).getT(1).getT(0);                    // wrap::no_process<math::pi<NV>>
+		auto& rect1 = this->getT(0).getT(0).getT(11).getT(1).getT(1);                  // math::rect<NV>
+		auto& chain5 = this->getT(0).getT(0).getT(11).getT(2);                         // modtest1_impl::chain5_t
+		auto& chain41 = this->getT(0).getT(0).getT(11).getT(3);                        // modtest1_impl::chain41_t<NV>
+		auto& clear13 = this->getT(0).getT(0).getT(11).getT(3).getT(0);                // math::clear<NV>
+		auto& expr7 = this->getT(0).getT(0).getT(11).getT(3).getT(1);                  // math::expr<NV, custom::expr7>
+		auto& sig2mod9 = this->getT(0).getT(0).getT(11).getT(3).getT(2);               // math::sig2mod<NV>
+		auto& peak5 = this->getT(0).getT(0).getT(11).getT(3).getT(3);                  // modtest1_impl::peak5_t
+		auto& chain32 = this->getT(0).getT(0).getT(11).getT(4);                        // modtest1_impl::chain32_t<NV>
+		auto& oscillator = this->getT(0).getT(0).getT(11).getT(4).getT(0);             // modtest1_impl::oscillator_t<NV>
+		auto& pi = this->getT(0).getT(0).getT(11).getT(4).getT(1);                     // wrap::no_process<math::pi<NV>>
+		auto& sampleandhold1 = this->getT(0).getT(0).getT(11).getT(4).getT(2);         // fx::sampleandhold<NV>
+		auto& sig2mod7 = this->getT(0).getT(0).getT(11).getT(4).getT(3);               // math::sig2mod<NV>
+		auto& chain20 = this->getT(0).getT(0).getT(11).getT(5);                        // modtest1_impl::chain20_t<NV>
+		auto& clear15 = this->getT(0).getT(0).getT(11).getT(5).getT(0);                // math::clear<NV>
+		auto& cable_table = this->getT(0).getT(0).getT(11).getT(5).getT(1);            // modtest1_impl::cable_table_t<NV>
+		auto& add = this->getT(0).getT(0).getT(11).getT(5).getT(2);                    // math::add<NV>
+		auto& chain26 = this->getT(0).getT(0).getT(11).getT(6);                        // modtest1_impl::chain26_t<NV>
+		auto& clear5 = this->getT(0).getT(0).getT(11).getT(6).getT(0);                 // math::clear<NV>
+		auto& cable_pack = this->getT(0).getT(0).getT(11).getT(6).getT(1);             // modtest1_impl::cable_pack_t<NV>
+		auto& add1 = this->getT(0).getT(0).getT(11).getT(6).getT(2);                   // math::add<NV>
+		auto& peak = this->getT(0).getT(0).getT(12);                                   // modtest1_impl::peak_t
+		auto& pma = this->getT(0).getT(0).getT(13);                                    // modtest1_impl::pma_t<NV>
+		auto& branch1 = this->getT(0).getT(0).getT(14);                                // modtest1_impl::branch1_t<NV>
+		auto& chain1 = this->getT(0).getT(0).getT(14).getT(0);                         // modtest1_impl::chain1_t
+		auto& chain29 = this->getT(0).getT(0).getT(14).getT(1);                        // modtest1_impl::chain29_t<NV>
+		auto& expr3 = this->getT(0).getT(0).getT(14).getT(1).getT(0);                  // math::expr<NV, custom::expr3>
+		auto& chain35 = this->getT(0).getT(0).getT(14).getT(2);                        // modtest1_impl::chain35_t<NV>
+		auto& expr5 = this->getT(0).getT(0).getT(14).getT(2).getT(0);                  // math::expr<NV, custom::expr5>
+		auto& chain44 = this->getT(0).getT(0).getT(14).getT(3);                        // modtest1_impl::chain44_t<NV>
+		auto& expr8 = this->getT(0).getT(0).getT(14).getT(3).getT(0);                  // math::expr<NV, custom::expr8>
+		auto& chain45 = this->getT(0).getT(0).getT(14).getT(4);                        // modtest1_impl::chain45_t<NV>
+		auto& expr9 = this->getT(0).getT(0).getT(14).getT(4).getT(0);                  // math::expr<NV, custom::expr9>
+		auto& peak2 = this->getT(0).getT(0).getT(15);                                  // modtest1_impl::peak2_t
+		auto& clear3 = this->getT(0).getT(0).getT(16);                                 // wrap::no_process<math::clear<NV>>
+		auto& branch2 = this->getT(0).getT(0).getT(17);                                // modtest1_impl::branch2_t
+		auto& chain13 = this->getT(0).getT(0).getT(17).getT(0);                        // modtest1_impl::chain13_t
+		auto& peak3 = this->getT(0).getT(0).getT(17).getT(0).getT(0);                  // modtest1_impl::peak3_t
+		auto& chain16 = this->getT(0).getT(0).getT(17).getT(1);                        // modtest1_impl::chain16_t
+		auto& peak9 = this->getT(0).getT(0).getT(17).getT(1).getT(0);                  // modtest1_impl::peak9_t
+		auto& chain24 = this->getT(0).getT(0).getT(17).getT(2);                        // modtest1_impl::chain24_t
+		auto& peak8 = this->getT(0).getT(0).getT(17).getT(2).getT(0);                  // modtest1_impl::peak8_t
+		auto& chain50 = this->getT(0).getT(0).getT(17).getT(3);                        // modtest1_impl::chain50_t
+		auto& peak7 = this->getT(0).getT(0).getT(17).getT(3).getT(0);                  // modtest1_impl::peak7_t
+		auto& split = this->getT(0).getT(0).getT(18);                                  // modtest1_impl::split_t
+		auto& global_cable = this->getT(0).getT(0).getT(18).getT(0);                   // routing::global_cable<global_cable_t_index, parameter::empty>
+		auto& global_cable39 = this->getT(0).getT(0).getT(18).getT(1);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
+		auto& global_cable38 = this->getT(0).getT(0).getT(18).getT(2);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
+		auto& global_cable37 = this->getT(0).getT(0).getT(18).getT(3);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
 		
 		// Parameter Connections -------------------------------------------------------------------
 		
@@ -1384,7 +1386,7 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 		this->setParameterT(11, 0.);
 		this->setParameterT(12, 0.);
 		this->setParameterT(13, 0.);
-		this->setParameterT(14, 1.);
+		this->setParameterT(14, 0.);
 		this->setExternalData({}, -1);
 	}
 	~instance() override
@@ -1406,62 +1408,62 @@ template <int NV> struct instance: public modtest1_impl::modtest1_t_<NV>
 	{
 		// Runtime target Connections --------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable1_t<NV>
-		this->getT(0).getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable2_t<NV>
-		this->getT(0).getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable3_t<NV>
-		this->getT(0).getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable4_t<NV>
-		this->getT(0).getT(0).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable5_t<NV>
-		this->getT(0).getT(0).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable6_t<NV>
-		this->getT(0).getT(0).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable7_t<NV>
-		this->getT(0).getT(0).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable8_t<NV>
-		this->getT(0).getT(0).getT(0).getT(8).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable10_t<NV>
-		this->getT(0).getT(0).getT(0).getT(9).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable11_t<NV>
-		this->getT(0).getT(0).getT(0).getT(10).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable12_t<NV>
-		this->getT(0).getT(0).getT(0).getT(11).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable13_t<NV>
-		this->getT(0).getT(0).getT(0).getT(12).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable14_t<NV>
-		this->getT(0).getT(0).getT(0).getT(13).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable15_t<NV>
-		this->getT(0).getT(0).getT(0).getT(14).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable16_t<NV>
-		this->getT(0).getT(0).getT(0).getT(15).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable17_t<NV>
-		this->getT(0).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable19_t<NV>
-		this->getT(0).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable20_t<NV>
-		this->getT(0).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable21_t<NV>
-		this->getT(0).getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable22_t<NV>
-		this->getT(0).getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable23_t<NV>
-		this->getT(0).getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable24_t<NV>
-		this->getT(0).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable25_t<NV>
-		this->getT(0).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable26_t<NV>
-		this->getT(0).getT(1).getT(0).getT(8).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable27_t<NV>
-		this->getT(0).getT(1).getT(0).getT(9).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable28_t<NV>
-		this->getT(0).getT(1).getT(0).getT(10).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable29_t<NV>
-		this->getT(0).getT(1).getT(0).getT(11).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable30_t<NV>
-		this->getT(0).getT(1).getT(0).getT(12).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable31_t<NV>
-		this->getT(0).getT(1).getT(0).getT(13).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable32_t<NV>
-		this->getT(0).getT(1).getT(0).getT(14).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable33_t<NV>
-		this->getT(0).getT(1).getT(0).getT(15).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable34_t<NV>
-		this->getT(0).getT(18).getT(0).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable_t_index, parameter::empty>
-		this->getT(0).getT(18).getT(1).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
-		this->getT(0).getT(18).getT(2).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
-		this->getT(0).getT(18).getT(3).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
+		this->getT(0).getT(0).getT(0).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable1_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable2_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable3_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable4_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable5_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable6_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable7_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable8_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(8).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable10_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(9).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable11_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(10).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable12_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(11).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable13_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(12).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable14_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(13).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable15_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(14).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable16_t<NV>
+		this->getT(0).getT(0).getT(0).getT(0).getT(15).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable17_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(0).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable19_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(1).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable20_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(2).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable21_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(3).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable22_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(4).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable23_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(5).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable24_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(6).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable25_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(7).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable26_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(8).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable27_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(9).getT(0).connectToRuntimeTarget(addConnection, c);  // modtest1_impl::global_cable28_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(10).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable29_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(11).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable30_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(12).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable31_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(13).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable32_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(14).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable33_t<NV>
+		this->getT(0).getT(0).getT(1).getT(0).getT(15).getT(0).connectToRuntimeTarget(addConnection, c); // modtest1_impl::global_cable34_t<NV>
+		this->getT(0).getT(0).getT(18).getT(0).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable_t_index, parameter::empty>
+		this->getT(0).getT(0).getT(18).getT(1).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable39_t_index, parameter::empty>
+		this->getT(0).getT(0).getT(18).getT(2).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable38_t_index, parameter::empty>
+		this->getT(0).getT(0).getT(18).getT(3).connectToRuntimeTarget(addConnection, c);                 // routing::global_cable<global_cable37_t_index, parameter::empty>
 	}
 	
 	void setExternalData(const ExternalData& b, int index)
 	{
 		// External Data Connections ---------------------------------------------------------------
 		
-		this->getT(0).getT(0).getT(1).setExternalData(b, index);          // modtest1_impl::peak1_t<NV>
-		this->getT(0).getT(1).getT(1).setExternalData(b, index);          // modtest1_impl::peak4_t<NV>
-		this->getT(0).getT(8).setExternalData(b, index);                  // modtest1_impl::ramp_t<NV>
-		this->getT(0).getT(11).getT(0).getT(2).setExternalData(b, index); // modtest1_impl::oscillator1_t<NV>
-		this->getT(0).getT(11).getT(3).getT(3).setExternalData(b, index); // modtest1_impl::peak5_t
-		this->getT(0).getT(11).getT(4).getT(0).setExternalData(b, index); // modtest1_impl::oscillator_t<NV>
-		this->getT(0).getT(11).getT(5).getT(1).setExternalData(b, index); // modtest1_impl::cable_table_t<NV>
-		this->getT(0).getT(11).getT(6).getT(1).setExternalData(b, index); // modtest1_impl::cable_pack_t<NV>
-		this->getT(0).getT(12).setExternalData(b, index);                 // modtest1_impl::peak_t
-		this->getT(0).getT(15).setExternalData(b, index);                 // modtest1_impl::peak2_t
-		this->getT(0).getT(17).getT(0).getT(0).setExternalData(b, index); // modtest1_impl::peak3_t
-		this->getT(0).getT(17).getT(1).getT(0).setExternalData(b, index); // modtest1_impl::peak9_t
-		this->getT(0).getT(17).getT(2).getT(0).setExternalData(b, index); // modtest1_impl::peak8_t
-		this->getT(0).getT(17).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::peak7_t
+		this->getT(0).getT(0).getT(0).getT(1).setExternalData(b, index);          // modtest1_impl::peak1_t<NV>
+		this->getT(0).getT(0).getT(1).getT(1).setExternalData(b, index);          // modtest1_impl::peak4_t<NV>
+		this->getT(0).getT(0).getT(8).setExternalData(b, index);                  // modtest1_impl::ramp_t<NV>
+		this->getT(0).getT(0).getT(11).getT(0).getT(2).setExternalData(b, index); // modtest1_impl::oscillator1_t<NV>
+		this->getT(0).getT(0).getT(11).getT(3).getT(3).setExternalData(b, index); // modtest1_impl::peak5_t
+		this->getT(0).getT(0).getT(11).getT(4).getT(0).setExternalData(b, index); // modtest1_impl::oscillator_t<NV>
+		this->getT(0).getT(0).getT(11).getT(5).getT(1).setExternalData(b, index); // modtest1_impl::cable_table_t<NV>
+		this->getT(0).getT(0).getT(11).getT(6).getT(1).setExternalData(b, index); // modtest1_impl::cable_pack_t<NV>
+		this->getT(0).getT(0).getT(12).setExternalData(b, index);                 // modtest1_impl::peak_t
+		this->getT(0).getT(0).getT(15).setExternalData(b, index);                 // modtest1_impl::peak2_t
+		this->getT(0).getT(0).getT(17).getT(0).getT(0).setExternalData(b, index); // modtest1_impl::peak3_t
+		this->getT(0).getT(0).getT(17).getT(1).getT(0).setExternalData(b, index); // modtest1_impl::peak9_t
+		this->getT(0).getT(0).getT(17).getT(2).getT(0).setExternalData(b, index); // modtest1_impl::peak8_t
+		this->getT(0).getT(0).getT(17).getT(3).getT(0).setExternalData(b, index); // modtest1_impl::peak7_t
 	}
 };
 }

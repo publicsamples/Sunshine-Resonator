@@ -14,12 +14,12 @@
   <Component type="ScriptPanel" id="Reverb" x="5.0" y="5.0" width="260.0"
              height="60.0">
     <Component type="ScriptSlider" id="ResOffset2" x="111.0" y="7.0" width="30.0"
-               height="30.0" processorId="ResModRoute" parameterId="ReverbSize"
+               height="30.0" processorId="Simple Reverb1" parameterId="RoomSize"
                text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" showTextBox="0" scaleFactor="0.119999997317791"
                parentComponent="Reverb" showValuePopup="Below"/>
     <Component type="ScriptSlider" id="ResOffset3" x="143.0" y="8.0" width="30.0"
-               height="30.0" processorId="ResModRoute" parameterId="ReverbCut"
+               height="30.0" processorId="Simple Reverb1" parameterId="Damping"
                text="TIME" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" showTextBox="0" scaleFactor="0.119999997317791"
                parentComponent="Reverb" showValuePopup="Below"/>
@@ -31,33 +31,18 @@
                height="20.0" editable="0" text="REVERB" parentComponent="Reverb"
                fontSize="16.0"/>
     <Component type="ScriptLabel" id="FREQ16" x="141.0" y="38.0" width="40.0"
-               height="20.0" editable="0" text="CUT" parentComponent="Reverb"/>
+               height="20.0" editable="0" text="DAMP" parentComponent="Reverb"/>
     <Component type="ScriptSlider" id="ResOffset6" x="77.0" y="7.0" width="30.0"
-               height="30.0" processorId="ResModRoute" parameterId="ReverbMix"
+               height="30.0" processorId="Simple Reverb1" parameterId="WetLevel"
                text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" showTextBox="0" scaleFactor="0.119999997317791"
                parentComponent="Reverb" isMetaParameter="1" showValuePopup="Below"/>
-    <Component type="ScriptSlider" id="ResOffset7" x="215.0" y="7.0" width="30.0"
-               height="30.0" processorId="ResModRoute" parameterId="Reverbres"
-               text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-               numStrips="206.0" showTextBox="0" scaleFactor="0.119999997317791"
-               parentComponent="Reverb" showValuePopup="Below"/>
-    <Component type="ScriptSlider" id="ResOffset8" x="180.0" y="6.0" width="30.0"
-               height="30.0" processorId="Reverb" parameterId="fmode" text="Re"
-               max="2.0" middlePosition="1.0" stepSize="1.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-               numStrips="206.0" showTextBox="0" scaleFactor="0.119999997317791"
-               parentComponent="Reverb" showValuePopup="Below"/>
-    <Component type="ScriptLabel" id="FREQ21" x="211.0" y="38.0" width="40.0"
-               height="20.0" editable="0" text="Q" processorId="Script FX1"
-               parameterId="fmode" parentComponent="Reverb"/>
-    <Component type="ScriptLabel" id="FREQ19" x="176.0" y="38.0" width="40.0"
-               height="20.0" editable="0" text="TYPE" parentComponent="Reverb"/>
   </Component>
-  <Component type="ScriptSlider" id="Knob6" x="324.0" y="15.0" width="40.0"
+  <Component type="ScriptSlider" id="Knob6" x="331.0" y="9.0" width="40.0"
              height="40.0" processorId="ResModRoute" parameterId="PreFilter"
              filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
              showTextBox="0" scaleFactor="0.1599999964237213" showValuePopup="Below"/>
-  <Component type="ScriptButton" id="Button1" x="364.0" y="15.0" width="20.0"
+  <Component type="ScriptButton" id="Button1" x="371.0" y="15.0" width="20.0"
              height="20.0" processorId="Resonator" parameterId="PreFilterMode"/>
   <Component type="ScriptLabel" id="FREQ4" x="276.0" y="17.0" width="50.0"
              height="30.0" editable="0" text="PRE RES FILTER" textColour="16777215"/>
@@ -93,10 +78,10 @@
                max="0.5" middlePosition="0.3499999940395355" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
                parentComponent="Delay" bgColour="0" showValuePopup="Below"/>
-    <Component type="ScriptButton" id="Button2" x="299.0" y="140.0" width="40.0"
+    <Component type="ScriptButton" id="Button2" x="283.0" y="140.0" width="40.0"
                height="40.0" processorId="Resonator" parameterId="DelaySync"
                parentComponent="Delay" bgColour="0"/>
-    <Component type="ScriptSlider" id="Knob8" x="243.0" y="140.0" width="40.0"
+    <Component type="ScriptSlider" id="Knob8" x="237.0" y="140.0" width="40.0"
                height="40.0" processorId="Resonator" parameterId="DelayDiv"
                max="16.0" min="1.0" middlePosition="8.5" stepSize="1.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
@@ -109,13 +94,20 @@
                height="30.0" editable="0" text="TIME OFFSET" parentComponent="Delay"/>
     <Component type="ScriptLabel" id="FREQ8" x="166.0" y="181.0" width="60.0"
                height="15.0" editable="0" text="FEEDBK" parentComponent="Delay"/>
-    <Component type="ScriptLabel" id="FREQ9" x="241.0" y="181.0" width="50.0"
+    <Component type="ScriptLabel" id="FREQ9" x="231.0" y="181.0" width="50.0"
                height="15.0" editable="0" text="DIVIDE" parentComponent="Delay"/>
     <Component type="ScriptLabel" id="FREQ15" x="173.0" y="7.0" width="60.0"
                height="10.0" editable="0" text="DELAY" parentComponent="Delay"
                fontSize="16.0"/>
-    <Component type="ScriptLabel" id="FREQ24" x="300.0" y="181.0" width="40.0"
+    <Component type="ScriptLabel" id="FREQ24" x="284.0" y="181.0" width="40.0"
                height="15.0" editable="0" text="SYNC" parentComponent="Delay"/>
+    <Component type="ScriptSlider" id="Knob15" x="331.0" y="139.0" width="40.0"
+               height="40.0" processorId="Resonator" parameterId="DelaySmooth"
+               middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+               parentComponent="Delay" bgColour="0" showValuePopup="Below"/>
+    <Component type="ScriptLabel" id="FREQ19" x="321.0" y="180.0" width="60.0"
+               height="15.0" editable="0" text="SMOOTH" parentComponent="Delay"/>
   </Component>
   <Component type="ScriptPanel" id="Resonator" x="5.0" y="283.0" width="380.0"
              height="260.0" itemColour="4284623109" itemColour2="4284623109">
@@ -213,352 +205,302 @@
   <Component type="ScriptButton" id="Button3" x="510.0" y="439.0" width="20.0"
              height="20.0" processorId="Resonator" parameterId="PostFilterMode"/>
   <Component type="ScriptLabel" id="FREQ10" x="405.0" y="440.0" width="60.0"
-             height="40.0" editable="0" text="POST RES FILTER" textColour="4278190080"/>
+             height="40.0" editable="0" text="POST FILTER" textColour="4278190080"/>
   <Component type="ScriptLabel" id="FREQ25" x="504.0" y="459.0" width="40.0"
              height="20.0" editable="0" text="lp/hp" fontSize="11.0" textColour="4278190080"/>
   <Component type="ScriptButton" id="Button5" x="328.0" y="425.0" width="20.0"
              height="20.0" processorId="Resonator" parameterId="XfadeOnOf"/>
   <Component type="ScriptButton" id="ModPage" x="526.0" y="3.0" width="100.0"
              height="20.0" text="MOD PAGE"/>
-  <Component type="ScriptPanel" id="MODS" x="9.0" y="283.0" width="380.0"
-             height="290.0" itemColour="4294916395" itemColour2="4290995764"
-             bgColour="4294967295" locked="1" textColour="4282400784" visible="0">
-    <Component type="ScriptPanel" id="ScriptPanel2" x="189.0" y="8.0" width="170.0"
-               height="210.0" parentComponent="MODS" itemColour2="0" textColour="16777215"
+  <Component type="ScriptLabel" id="Label1" x="520.0" y="493.0" textColour="4278190080"
+             text="SUNSHINE RESONATOR" width="120.0" height="50.0" fontSize="20.0"
+             editable="0"/>
+  <Component type="ScriptButton" id="Button6" x="419.0" y="487.0" width="30.0"
+             height="30.0"/>
+  <Component type="ScriptButton" id="EXTRAMOD" x="402.0" y="3.0" width="100.0"
+             height="20.0" text="EXTRA MOD"/>
+  <Component type="ScriptLabel" id="FREQ26" x="401.0" y="518.0" width="70.0"
+             height="30.0" editable="0" text="PRESETS" textColour="4278190080"/>
+  <Component type="ScriptSlider" id="Knob10" x="450.0" y="366.0" width="40.0"
+             height="40.0" processorId="Track" parameterId="atk" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+             numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+             max="250.0" middlePosition="50.0" showValuePopup="Below" stepSize="0.1000000014901161"/>
+  <Component type="ScriptLabel" id="Label2" x="435.0" y="344.0" textColour="4278190080"
+             text="ENVELOPE FOLLOWER" width="180.0" height="20.0" fontSize="14.0"/>
+  <Component type="ScriptSlider" id="Knob11" x="504.0" y="366.0" width="40.0"
+             height="40.0" processorId="Track" parameterId="rel" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+             numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+             max="250.0" middlePosition="50.0" showValuePopup="Below" stepSize="0.1000000014901161"/>
+  <Component type="ScriptSlider" id="Knob12" x="559.0" y="366.0" width="40.0"
+             height="40.0" processorId="Follow" parameterId="attack" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+             numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+             max="1000.0" middlePosition="100.0" min="0.1000000014901161"
+             showValuePopup="Below"/>
+  <Component type="ScriptLabel" id="FREQ27" x="439.0" y="397.0" width="60.0"
+             height="40.0" editable="0" text="ATTACK" textColour="4278190080"/>
+  <Component type="ScriptLabel" id="FREQ28" x="496.0" y="397.0" width="60.0"
+             height="40.0" editable="0" text="RELEASE" textColour="4278190080"/>
+  <Component type="ScriptLabel" id="FREQ29" x="553.0" y="397.0" width="60.0"
+             height="40.0" editable="0" text="SMOOTH" textColour="4278190080"/>
+  <Component type="ScriptSlider" id="ResOffset10" x="609.0" y="521.0" width="20.0"
+             height="20.0" processorId="Resonator" parameterId="gain" text="Re"
+             filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
+             showTextBox="0" scaleFactor="0.05999999865889549" showValuePopup="Left"
+             max="0.25"/>
+  <Component type="ScriptPanel" id="Presets" x="1.0" y="1.0" width="400.0"
+             height="579.0" bgColour="1426063360" itemColour="3489660928"
+             itemColour2="3690987520" visible="0">
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="22.0" y="18.0"
+               width="350.0" height="530.0" parentComponent="Presets" ContentType="PresetBrowser"
+               bgColour="0" itemColour="4294967295" itemColour2="4294967295"
+               Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 1,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
+               itemColour3="16777215"/>
+  </Component>
+  <Component type="ScriptPanel" id="MODS" x="398.0" y="345.0" width="240.0"
+             height="200.0" itemColour="4280884741" itemColour2="4282326025"
+             bgColour="4294967295" textColour="4282400784" visible="0">
+    <Component type="ScriptLabel" id="Label150" x="54.0" y="1.0" width="40.0"
+               height="20.0" fontSize="12.0" text="AMNT" editable="0" textColour="3120562176"
+               itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="MODS"/>
+    <Component type="ScriptLabel" id="Label151" x="5.0" y="3.0" width="50.0"
+               height="20.0" fontSize="12.0" text="MOD" editable="0" textColour="3137339391"
+               itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="MODS"/>
+    <Component type="ScriptLabel" id="Label152" x="78.0" y="0.0" width="50.0"
+               height="20.0" fontSize="12.0" text="SRC" editable="0" textColour="3120562176"
+               itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="MODS"/>
+    <Component type="ScriptPanel" id="ScriptPanel2" x="10.0" y="-6.0" width="240.0"
+               height="208.0" parentComponent="MODS" itemColour2="0" textColour="16777215"
                bgColour="16777215" itemColour="0">
-      <Component type="ScriptLabel" id="Label150" x="70.0" y="6.0" width="40.0"
-                 height="20.0" fontSize="12.0" text="AMNT" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel2"/>
-      <Component type="ScriptLabel" id="Label151" x="4.0" y="6.0" width="70.0"
-                 height="20.0" fontSize="12.0" text="MODULATORS" editable="0"
-                 textColour="3137339391" itemColour2="0" bgColour="16114871" processorId="Mod1"
-                 parentComponent="ScriptPanel2"/>
-      <Component type="ScriptLabel" id="Label152" x="103.0" y="6.0" width="50.0"
-                 height="20.0" fontSize="12.0" text="SOURCE" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel2"/>
-      <Component type="ScriptPanel" id="SlotsMod1" x="5.0" y="29.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod9" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod1" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
-                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
-                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod1"/>
-        <Component type="ScriptComboBox" id="TrigMode20" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod1" parameterId="TempoSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod1"/>
-        <Component type="ScriptLabel" id="Label149" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="tempo 1" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod1"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod2" x="5.0" y="51.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod10" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod2" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
-                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
-                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod2"/>
-        <Component type="ScriptComboBox" id="TrigMode21" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod2" parameterId="TempoSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod2"/>
-        <Component type="ScriptLabel" id="Label153" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="tempo 2" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod2"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod3" x="5.0" y="73.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod11" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod3" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
-                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
-                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod3"/>
-        <Component type="ScriptComboBox" id="TrigMode22" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod3" parameterId="TempoSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod3"/>
-        <Component type="ScriptLabel" id="Label154" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="tempo 3" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod3"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod4" x="5.0" y="96.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod12" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod4" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
-                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
-                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod4"/>
-        <Component type="ScriptComboBox" id="TrigMode23" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod4" parameterId="TempoSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod4"/>
-        <Component type="ScriptLabel" id="Label155" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="tempo 4" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod4"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod5" x="5.0" y="186.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod13" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod4" parameterId="ModifierShapeMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod5"/>
-        <Component type="ScriptComboBox" id="TrigMode24" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod4" parameterId="ModifierShapeModSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod5"/>
-        <Component type="ScriptLabel" id="Label156" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="modifier 4" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
-                   parentComponent="SlotsMod5"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod6" x="5.0" y="118.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod14" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod1" parameterId="ModifierShapeMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod6"/>
-        <Component type="ScriptComboBox" id="TrigMode25" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod1" parameterId="ModifierShapeModSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod6"/>
-        <Component type="ScriptLabel" id="Label157" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="modifier 1" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
-                   parentComponent="SlotsMod6"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod7" x="5.0" y="141.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod15" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod2" parameterId="ModifierShapeMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod7"/>
-        <Component type="ScriptComboBox" id="TrigMode26" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod2" parameterId="ModifierShapeModSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod7"/>
-        <Component type="ScriptLabel" id="Label158" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="modifier 2" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
-                   parentComponent="SlotsMod7"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod8" x="5.0" y="163.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod16" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="Mod3" parameterId="ModifierShapeMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod8"/>
-        <Component type="ScriptComboBox" id="TrigMode27" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="Mod3" parameterId="ModifierShapeModSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod8"/>
-        <Component type="ScriptLabel" id="Label159" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="modifier 3" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
-                   parentComponent="SlotsMod8"/>
-      </Component>
-    </Component>
-    <Component type="ScriptPanel" id="ScriptPanel3" x="11.0" y="8.0" width="160.0"
-               height="50.0" parentComponent="MODS" itemColour2="0" textColour="16777215"
-               bgColour="16777215" itemColour="0">
-      <Component type="ScriptLabel" id="Label160" x="70.0" y="3.0" width="40.0"
-                 height="20.0" fontSize="12.0" text="AMNT" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel3"/>
-      <Component type="ScriptLabel" id="Label161" x="-4.0" y="3.0" width="70.0"
+      <Component type="ScriptLabel" id="Label161" x="98.0" y="117.0" width="70.0"
                  height="20.0" fontSize="12.0" text="DELAY" editable="0" textColour="3137339391"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel3"/>
-      <Component type="ScriptLabel" id="Label162" x="103.0" y="3.0" width="50.0"
-                 height="20.0" fontSize="12.0" text="SOURCE" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel3"/>
-      <Component type="ScriptPanel" id="SlotsMod10" x="5.0" y="25.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel3" bgColour="16777215"
+                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel2"/>
+      <Component type="ScriptPanel" id="SlotsMod10" x="120.0" y="142.0" width="118.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
                  textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod18" x="72.0" y="1.0" width="20.0"
+        <Component type="ScriptSlider" id="Tmod18" x="59.0" y="-1.0" width="20.0"
                    height="20.0" processorId="ResModRoute" parameterId="MixMod"
                    filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
                    showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
                    min="-1.0" showTextBox="0" parentComponent="SlotsMod10"/>
-        <Component type="ScriptComboBox" id="TrigMode29" x="110.0" y="1.0" max="5"
+        <Component type="ScriptComboBox" id="TrigMode29" x="88.0" y="1.0" max="5"
                    width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
                    processorId="ResModRoute" parameterId="MixSrd" bgColour="3045342776"
                    itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
                    parentComponent="SlotsMod10"/>
         <Component type="ScriptLabel" id="Label164" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="mix" editable="0" textColour="3120562176"
+                   height="20.0" fontSize="14.0" text="mix" editable="0" textColour="4293043203"
                    itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod10"/>
       </Component>
-    </Component>
-    <Component type="ScriptPanel" id="ScriptPanel4" x="11.0" y="164.0" width="160.0"
-               height="120.0" parentComponent="MODS" itemColour2="0" textColour="16777215"
-               bgColour="16777215" itemColour="0">
-      <Component type="ScriptLabel" id="Label165" x="70.0" y="6.0" width="40.0"
-                 height="20.0" fontSize="12.0" text="AMNT" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel4"/>
-      <Component type="ScriptLabel" id="Label166" x="-3.0" y="6.0" width="70.0"
-                 height="20.0" fontSize="12.0" text="REVERB" editable="0" itemColour2="0"
-                 bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel4"/>
-      <Component type="ScriptLabel" id="Label167" x="103.0" y="6.0" width="50.0"
-                 height="20.0" fontSize="12.0" text="SOURCE" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel4"/>
-      <Component type="ScriptPanel" id="SlotsMod11" x="5.0" y="29.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel4" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod19" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="ResModRoute" parameterId="ReverbMixMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod11"/>
-        <Component type="ScriptComboBox" id="TrigMode30" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="ResModRoute" parameterId="ReverbMixSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod11"/>
-        <Component type="ScriptLabel" id="Label168" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="mix" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod11"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod12" x="5.0" y="50.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel4" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod20" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="ResModRoute" parameterId="ReverbSizeMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod12"/>
-        <Component type="ScriptComboBox" id="TrigMode31" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="ResModRoute" parameterId="ReverbSizeModSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod12"/>
-        <Component type="ScriptLabel" id="Label169" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="size" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod12"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod13" x="5.0" y="71.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel4" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod21" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="ResModRoute" parameterId="ReverbCutMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod13"/>
-        <Component type="ScriptComboBox" id="TrigMode32" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="ResModRoute" parameterId="ReverbCutSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod13"/>
-        <Component type="ScriptLabel" id="Label170" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="cut" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod13"/>
-      </Component>
-      <Component type="ScriptPanel" id="SlotsMod14" x="5.0" y="93.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel4" bgColour="16777215"
-                 textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod22" x="72.0" y="1.0" width="20.0"
-                   height="20.0" processorId="ResModRoute" parameterId="ReverbresMod"
-                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
-                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
-                   min="-1.0" showTextBox="0" parentComponent="SlotsMod14"/>
-        <Component type="ScriptComboBox" id="TrigMode33" x="110.0" y="1.0" max="5"
-                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
-                   processorId="ResModRoute" parameterId="ReverbCutResSrc" bgColour="3045342776"
-                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
-                   parentComponent="SlotsMod14"/>
-        <Component type="ScriptLabel" id="Label171" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="q" editable="0" textColour="3120562176"
-                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod14"/>
-      </Component>
-    </Component>
-    <Component type="ScriptPanel" id="ScriptPanel5" x="11.0" y="61.0" width="160.0"
-               height="110.0" parentComponent="MODS" itemColour2="0" textColour="16777215"
-               bgColour="16777215" itemColour="0">
-      <Component type="ScriptLabel" id="Label172" x="70.0" y="6.0" width="40.0"
-                 height="20.0" fontSize="12.0" text="AMNT" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel5"/>
-      <Component type="ScriptLabel" id="Label173" x="4.0" y="6.0" width="70.0"
+      <Component type="ScriptLabel" id="Label173" x="0.0" y="115.0" width="70.0"
                  height="20.0" fontSize="12.0" text="RESONATOR" editable="0" textColour="3137339391"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel5"/>
-      <Component type="ScriptLabel" id="Label174" x="103.0" y="6.0" width="50.0"
-                 height="20.0" fontSize="12.0" text="SOURCE" editable="0" textColour="3120562176"
-                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel5"/>
-      <Component type="ScriptPanel" id="SlotsMod15" x="8.0" y="29.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel5" bgColour="16777215"
+                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel2"/>
+      <Component type="ScriptPanel" id="SlotsMod15" x="-4.0" y="133.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
                  textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod23" x="72.0" y="1.0" width="20.0"
+        <Component type="ScriptSlider" id="Tmod23" x="60.0" y="1.0" width="20.0"
                    height="20.0" processorId="ResModRoute" parameterId="PReFilterMod"
                    filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
                    showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
                    min="-1.0" showTextBox="0" parentComponent="SlotsMod15"/>
-        <Component type="ScriptComboBox" id="TrigMode34" x="110.0" y="1.0" max="5"
+        <Component type="ScriptComboBox" id="TrigMode34" x="87.0" y="1.0" max="5"
                    width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
                    processorId="ResModRoute" parameterId="PreFilterSrc" bgColour="3045342776"
                    itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
                    parentComponent="SlotsMod15"/>
         <Component type="ScriptLabel" id="Label175" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="Pre-Filter" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   height="20.0" fontSize="14.0" text="Pre-Filter" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
                    parentComponent="SlotsMod15"/>
       </Component>
-      <Component type="ScriptPanel" id="SlotsMod16" x="8.0" y="52.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel5" bgColour="16777215"
+      <Component type="ScriptPanel" id="SlotsMod16" x="-4.0" y="156.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
                  textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod24" x="72.0" y="1.0" width="20.0"
+        <Component type="ScriptSlider" id="Tmod24" x="60.0" y="1.0" width="20.0"
                    height="20.0" processorId="ResModRoute" parameterId="PostFilterMod"
                    filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
                    showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
                    min="-1.0" showTextBox="0" parentComponent="SlotsMod16"/>
-        <Component type="ScriptComboBox" id="TrigMode35" x="110.0" y="1.0" max="5"
+        <Component type="ScriptComboBox" id="TrigMode35" x="87.0" y="1.0" max="5"
                    width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
                    processorId="ResModRoute" parameterId="PostFilterModSrc" bgColour="3045342776"
                    itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
                    parentComponent="SlotsMod16"/>
         <Component type="ScriptLabel" id="Label176" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="Post Filter" editable="0"
-                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   height="20.0" fontSize="14.0" text="Post Filter" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
                    parentComponent="SlotsMod16"/>
       </Component>
-      <Component type="ScriptPanel" id="SlotsMod20" x="8.0" y="75.0" width="140.0"
-                 height="20.0" parentComponent="ScriptPanel5" bgColour="16777215"
+      <Component type="ScriptPanel" id="SlotsMod20" x="-4.0" y="180.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
                  textColour="16777215" itemColour2="0" itemColour="0">
-        <Component type="ScriptSlider" id="Tmod28" x="72.0" y="1.0" width="20.0"
+        <Component type="ScriptSlider" id="Tmod28" x="60.0" y="1.0" width="20.0"
                    height="20.0" processorId="ResModRoute" parameterId="Qmod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
                    numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
                    middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod20"/>
-        <Component type="ScriptComboBox" id="TrigMode43" x="110.0" y="1.0" max="5"
+        <Component type="ScriptComboBox" id="TrigMode43" x="87.0" y="1.0" max="5"
                    width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
                    processorId="ResModRoute" parameterId="Qsrc" bgColour="3045342776"
                    itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
                    parentComponent="SlotsMod20"/>
-        <Component type="ScriptLabel" id="Label180" x="0.0" y="0.0" width="50.0"
-                   height="20.0" fontSize="12.0" text="q" editable="0" textColour="3120562176"
+        <Component type="ScriptLabel" id="Label180" x="0.0" y="-1.0" width="50.0"
+                   height="20.0" fontSize="14.0" text="q" editable="0" textColour="4293043203"
                    itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod20"/>
       </Component>
+      <Component type="ScriptPanel" id="SlotsMod1" x="-5.0" y="30.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod9" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod1" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
+                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
+                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod1"/>
+        <Component type="ScriptComboBox" id="TrigMode20" x="87.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod1" parameterId="TempoSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod1"/>
+        <Component type="ScriptLabel" id="Label149" x="0.0" y="0.0" width="50.0"
+                   height="20.0" fontSize="14.0" text="tempo 1" editable="0" textColour="4293043203"
+                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod1"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod2" x="-5.0" y="52.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod10" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod2" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
+                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
+                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod2"/>
+        <Component type="ScriptComboBox" id="TrigMode21" x="87.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod2" parameterId="TempoSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod2"/>
+        <Component type="ScriptLabel" id="Label153" x="0.0" y="0.0" width="50.0"
+                   height="20.0" fontSize="14.0" text="tempo 2" editable="0" textColour="4293043203"
+                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod2"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod3" x="-5.0" y="74.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod11" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod3" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
+                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
+                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod3"/>
+        <Component type="ScriptComboBox" id="TrigMode22" x="87.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod3" parameterId="TempoSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod3"/>
+        <Component type="ScriptLabel" id="Label154" x="0.0" y="0.0" width="50.0"
+                   height="20.0" fontSize="14.0" text="tempo 3" editable="0" textColour="4293043203"
+                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod3"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod4" x="-5.0" y="97.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod12" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod4" parameterId="TempoMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png"
+                   numStrips="206.0" showValuePopup="Below" scaleFactor="0.09000000357627869"
+                   middlePosition="0.0" min="-1.0" showTextBox="0" parentComponent="SlotsMod4"/>
+        <Component type="ScriptComboBox" id="TrigMode23" x="87.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod4" parameterId="TempoSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod4"/>
+        <Component type="ScriptLabel" id="Label155" x="0.0" y="0.0" width="50.0"
+                   height="20.0" fontSize="14.0" text="tempo 4" editable="0" textColour="4293043203"
+                   itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="SlotsMod4"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod5" x="119.0" y="97.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod13" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod4" parameterId="ModifierShapeMod"
+                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
+                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
+                   min="-1.0" showTextBox="0" parentComponent="SlotsMod5"/>
+        <Component type="ScriptComboBox" id="TrigMode24" x="88.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod4" parameterId="ModifierShapeModSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod5"/>
+        <Component type="ScriptLabel" id="Label156" x="-5.0" y="-3.0" width="60.0"
+                   height="20.0" fontSize="14.0" text="modifier 4" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   parentComponent="SlotsMod5"/>
+        <Component type="ScriptLabel" id="Label160" x="-9.0" y="-25.0" width="60.0"
+                   height="20.0" fontSize="14.0" text="modifier 4" editable="0"
+                   textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   parentComponent="SlotsMod5"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod6" x="119.0" y="29.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod14" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod1" parameterId="ModifierShapeMod"
+                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
+                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
+                   min="-1.0" showTextBox="0" parentComponent="SlotsMod6"/>
+        <Component type="ScriptComboBox" id="TrigMode25" x="88.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod1" parameterId="ModifierShapeModSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod6"/>
+        <Component type="ScriptLabel" id="Label157" x="-5.0" y="0.0" width="60.0"
+                   height="20.0" fontSize="14.0" text="modifier 1" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   parentComponent="SlotsMod6"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod7" x="119.0" y="52.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod15" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod2" parameterId="ModifierShapeMod"
+                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
+                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
+                   min="-1.0" showTextBox="0" parentComponent="SlotsMod7"/>
+        <Component type="ScriptComboBox" id="TrigMode26" x="88.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod2" parameterId="ModifierShapeModSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod7"/>
+        <Component type="ScriptLabel" id="Label158" x="-5.0" y="0.0" width="60.0"
+                   height="20.0" fontSize="14.0" text="modifier 2" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   parentComponent="SlotsMod7"/>
+      </Component>
+      <Component type="ScriptPanel" id="SlotsMod8" x="119.0" y="74.0" width="140.0"
+                 height="20.0" parentComponent="ScriptPanel2" bgColour="16777215"
+                 textColour="16777215" itemColour2="0" itemColour="0">
+        <Component type="ScriptSlider" id="Tmod16" x="59.0" y="1.0" width="20.0"
+                   height="20.0" processorId="Mod3" parameterId="ModifierShapeMod"
+                   filmstripImage="{PROJECT_FOLDER}bigyellowwithfire1.png" numStrips="206.0"
+                   showValuePopup="Below" scaleFactor="0.09000000357627869" middlePosition="0.0"
+                   min="-1.0" showTextBox="0" parentComponent="SlotsMod8"/>
+        <Component type="ScriptComboBox" id="TrigMode27" x="88.0" y="1.0" max="5"
+                   width="20.0" height="20.0" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+                   processorId="Mod3" parameterId="ModifierShapeModSrc" bgColour="3045342776"
+                   itemColour="4278190080" itemColour2="4282066178" textColour="3220621962"
+                   parentComponent="SlotsMod8"/>
+        <Component type="ScriptLabel" id="Label159" x="-5.0" y="0.0" width="60.0"
+                   height="20.0" fontSize="14.0" text="modifier 3" editable="0"
+                   textColour="4293043203" itemColour2="0" bgColour="16114871" processorId="Mod1"
+                   parentComponent="SlotsMod8"/>
+      </Component>
+      <Component type="ScriptLabel" id="Label162" x="109.0" y="8.0" width="70.0"
+                 height="20.0" fontSize="12.0" text="MOD" editable="0" textColour="3137339391"
+                 itemColour2="0" bgColour="16114871" processorId="Mod1" parentComponent="ScriptPanel2"/>
     </Component>
   </Component>
   <Component type="ScriptPanel" id="GlobalMod9" x="400.0" y="31.0" width="240.0"
              height="150.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
-             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215">
+             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215"
+             visible="0">
     <Component type="ScriptSlider" id="ScriptSlider20" x="85.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod9" processorId="Mod1"
                parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" max="32.0" stepSize="1.0" showValuePopup="Below"
                scaleFactor="0.119999997317791" middlePosition="16.5" min="1.0"
-               showTextBox="0"/>
+               showTextBox="0" defaultValue="2.0"/>
     <Component type="ScriptSlider" id="TempoS4" x="4.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod9" processorId="Mod1"
                parameterId="Tempo" mode="TempoSync" max="18.0" stepSize="1.0"
@@ -573,21 +515,21 @@
                height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                parentComponent="GlobalMod9" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="m1table1" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod9" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1table1" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod9" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" bgColour="337677166"
                borderRadius="4.0" processorId="Mod1" visible="0">
-      <Component type="ScriptTable" id="ScriptTable22" x="0.0" y="0.0" width="120.0"
-                 height="50.0" parentComponent="m1table1" itemColour="4286856760"
+      <Component type="ScriptTable" id="ScriptTable22" x="0.0" y="0.0" width="110.0"
+                 height="60.0" parentComponent="m1table1" itemColour="4286856760"
                  bgColour="4280057755" itemColour2="4278322180" processorId="Mod1"
                  customColours="1"/>
     </Component>
-    <Component type="ScriptPanel" id="m1step1" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod9" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1step1" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod9" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" borderRadius="4.0"
                bgColour="16777215" processorId="Mod1" visible="0">
       <Component type="ScriptSliderPack" id="ScriptSliderPack10" x="0.0" y="0.0"
-                 width="120.0" height="50.0" parentComponent="m1step1" processorId="Mod1"
+                 width="110.0" height="60.0" parentComponent="m1step1" processorId="Mod1"
                  itemColour="4290551408" itemColour2="262915" textColour="3431218744"
                  bgColour="3162783288"/>
     </Component>
@@ -599,7 +541,7 @@
                height="20.0" fontSize="14.0" alignment="left" text="DAW SYNC"
                editable="0" parentComponent="GlobalMod9" fontName="Montserrat"
                textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="Waveform1" x="3.0" y="54.0" width="110.0"
+    <Component type="ScriptPanel" id="Waveform1" x="0.0" y="54.0" width="110.0"
                height="60.0" parentComponent="GlobalMod9" itemColour="4278190080"
                bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"
                processorId="Mod1"/>
@@ -638,15 +580,16 @@
                parentComponent="GlobalMod9" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
   </Component>
-  <Component type="ScriptPanel" id="GlobalMod10" x="400.0" y="186.0" width="240.0"
+  <Component type="ScriptPanel" id="GlobalMod10" x="400.0" y="188.0" width="240.0"
              height="150.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
-             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215">
+             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215"
+             visible="0">
     <Component type="ScriptSlider" id="ScriptSlider21" x="85.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod10" processorId="Mod2"
                parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" max="32.0" stepSize="1.0" showValuePopup="Below"
                scaleFactor="0.119999997317791" middlePosition="16.5" min="1.0"
-               showTextBox="0"/>
+               showTextBox="0" defaultValue="2.0"/>
     <Component type="ScriptSlider" id="TempoS5" x="4.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod10" processorId="Mod2"
                parameterId="Tempo" mode="TempoSync" max="18.0" stepSize="1.0"
@@ -661,21 +604,21 @@
                height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                parentComponent="GlobalMod10" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="m1table2" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod10" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1table2" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod10" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" bgColour="337677166"
                borderRadius="4.0" processorId="Mod1" visible="0">
-      <Component type="ScriptTable" id="ScriptTable23" x="0.0" y="0.0" width="120.0"
-                 height="50.0" parentComponent="m1table2" itemColour="4286856760"
-                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod1"
+      <Component type="ScriptTable" id="ScriptTable23" x="0.0" y="0.0" width="110.0"
+                 height="60.0" parentComponent="m1table2" itemColour="4286856760"
+                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod2"
                  customColours="1"/>
     </Component>
-    <Component type="ScriptPanel" id="m1step2" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod10" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1step2" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod10" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" borderRadius="4.0"
                bgColour="16777215" processorId="Mod1" visible="0">
       <Component type="ScriptSliderPack" id="ScriptSliderPack11" x="0.0" y="0.0"
-                 width="120.0" height="50.0" parentComponent="m1step2" processorId="Mod1"
+                 width="110.0" height="60.0" parentComponent="m1step2" processorId="Mod2"
                  itemColour="4290551408" itemColour2="262915" textColour="3431218744"
                  bgColour="3162783288"/>
     </Component>
@@ -687,7 +630,7 @@
                height="20.0" fontSize="14.0" alignment="left" text="DAW SYNC"
                editable="0" parentComponent="GlobalMod10" fontName="Montserrat"
                textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="Waveform3" x="3.0" y="54.0" width="110.0"
+    <Component type="ScriptPanel" id="Waveform3" x="0.0" y="54.0" width="110.0"
                height="60.0" parentComponent="GlobalMod10" itemColour="4278190080"
                bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"
                processorId="Mod1"/>
@@ -698,7 +641,7 @@
     <Component type="ScriptComboBox" id="GmodMode10" x="67.0" y="30.0" max="7"
                width="40.0" height="20.0" items="Sine&#10;Square&#10;Saw&#10;SeeSaw&#10;S&amp;H&#10;Table&#10;Step"
                bgColour="4288706900" itemColour="4278190080" itemColour2="4279846483"
-               parentComponent="GlobalMod10" textColour="4293450698"/>
+               parentComponent="GlobalMod10" textColour="4293450698" processorId="Mod1"/>
     <Component type="ScriptComboBox" id="TrigMode37" x="185.0" y="29.0" max="5"
                width="40.0" height="20.0" items="off&#10;sin&#10;asin&#10;cson&#10;log"
                processorId="Mod2" parameterId="Modifiers" bgColour="4288706900"
@@ -728,14 +671,13 @@
   </Component>
   <Component type="ScriptPanel" id="GlobalMod11" x="400.0" y="31.0" width="240.0"
              height="150.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
-             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215"
-             visible="0">
+             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215">
     <Component type="ScriptSlider" id="ScriptSlider22" x="85.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod11" processorId="Mod3"
                parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" max="32.0" stepSize="1.0" showValuePopup="Below"
                scaleFactor="0.119999997317791" middlePosition="16.5" min="1.0"
-               showTextBox="0"/>
+               showTextBox="0" defaultValue="2.0"/>
     <Component type="ScriptSlider" id="TempoS6" x="4.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod11" processorId="Mod3"
                parameterId="Tempo" mode="TempoSync" max="18.0" stepSize="1.0"
@@ -750,21 +692,21 @@
                height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                parentComponent="GlobalMod11" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="m1table3" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod11" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1table3" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod11" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" bgColour="337677166"
                borderRadius="4.0" processorId="Mod1" visible="0">
-      <Component type="ScriptTable" id="ScriptTable24" x="0.0" y="0.0" width="120.0"
-                 height="50.0" parentComponent="m1table3" itemColour="4286856760"
-                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod1"
+      <Component type="ScriptTable" id="ScriptTable24" x="0.0" y="0.0" width="110.0"
+                 height="60.0" parentComponent="m1table3" itemColour="4286856760"
+                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod3"
                  customColours="1"/>
     </Component>
-    <Component type="ScriptPanel" id="m1step3" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod11" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1step3" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod11" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" borderRadius="4.0"
                bgColour="16777215" processorId="Mod1" visible="0">
       <Component type="ScriptSliderPack" id="ScriptSliderPack12" x="0.0" y="0.0"
-                 width="120.0" height="50.0" parentComponent="m1step3" processorId="Mod1"
+                 width="110.0" height="60.0" parentComponent="m1step3" processorId="Mod3"
                  itemColour="4290551408" itemColour2="262915" textColour="3431218744"
                  bgColour="3162783288"/>
     </Component>
@@ -776,7 +718,7 @@
                height="20.0" fontSize="14.0" alignment="left" text="DAW SYNC"
                editable="0" parentComponent="GlobalMod11" fontName="Montserrat"
                textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="Waveform5" x="3.0" y="54.0" width="110.0"
+    <Component type="ScriptPanel" id="Waveform5" x="0.0" y="54.0" width="110.0"
                height="60.0" parentComponent="GlobalMod11" itemColour="4278190080"
                bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"
                processorId="Mod1"/>
@@ -815,16 +757,15 @@
                parentComponent="GlobalMod11" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
   </Component>
-  <Component type="ScriptPanel" id="GlobalMod12" x="400.0" y="195.0" width="240.0"
+  <Component type="ScriptPanel" id="GlobalMod12" x="400.0" y="188.0" width="240.0"
              height="150.0" itemColour="13461576" itemColour2="13461576" textColour="706154769"
-             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215"
-             visible="0">
+             borderSize="1.0" borderRadius="5.0" text="*" bgColour="16777215">
     <Component type="ScriptSlider" id="ScriptSlider23" x="85.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod12" processorId="Mod4"
                parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
                numStrips="206.0" max="32.0" stepSize="1.0" showValuePopup="Below"
                scaleFactor="0.119999997317791" middlePosition="16.5" min="1.0"
-               showTextBox="0"/>
+               showTextBox="0" defaultValue="2.0"/>
     <Component type="ScriptSlider" id="TempoS7" x="4.0" y="117.0" width="30.0"
                height="30.0" parentComponent="GlobalMod12" processorId="Mod4"
                parameterId="Tempo" mode="TempoSync" max="18.0" stepSize="1.0"
@@ -839,21 +780,21 @@
                height="20.0" fontSize="12.0" alignment="left" text="TEMPO" editable="0"
                parentComponent="GlobalMod12" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="m1table4" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod12" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1table4" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod12" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" bgColour="337677166"
                borderRadius="4.0" processorId="Mod1" visible="0">
-      <Component type="ScriptTable" id="ScriptTable25" x="0.0" y="0.0" width="120.0"
-                 height="50.0" parentComponent="m1table4" itemColour="4286856760"
-                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod1"
+      <Component type="ScriptTable" id="ScriptTable25" x="0.0" y="0.0" width="110.0"
+                 height="60.0" parentComponent="m1table4" itemColour="4286856760"
+                 bgColour="4280057755" itemColour2="4278322180" processorId="Mod4"
                  customColours="1"/>
     </Component>
-    <Component type="ScriptPanel" id="m1step4" x="9.0" y="93.0" width="120.0"
-               height="50.0" parentComponent="GlobalMod12" itemColour="15730439"
+    <Component type="ScriptPanel" id="m1step4" x="0.0" y="54.0" width="110.0"
+               height="60.0" parentComponent="GlobalMod12" itemColour="15730439"
                itemColour2="13083505" textColour="221191173" borderRadius="4.0"
                bgColour="16777215" processorId="Mod1" visible="0">
       <Component type="ScriptSliderPack" id="ScriptSliderPack13" x="0.0" y="0.0"
-                 width="120.0" height="50.0" parentComponent="m1step4" processorId="Mod1"
+                 width="110.0" height="60.0" parentComponent="m1step4" processorId="Mod4"
                  itemColour="4290551408" itemColour2="262915" textColour="3431218744"
                  bgColour="3162783288"/>
     </Component>
@@ -865,7 +806,7 @@
                height="20.0" fontSize="14.0" alignment="left" text="DAW SYNC"
                editable="0" parentComponent="GlobalMod12" fontName="Montserrat"
                textColour="3120562176" itemColour2="0" bgColour="16114871" processorId="Mod1"/>
-    <Component type="ScriptPanel" id="Waveform7" x="3.0" y="54.0" width="110.0"
+    <Component type="ScriptPanel" id="Waveform7" x="0.0" y="54.0" width="110.0"
                height="60.0" parentComponent="GlobalMod12" itemColour="4278190080"
                bgColour="4293075233" textColour="4291840000" itemColour2="4294901760"
                processorId="Mod1"/>
@@ -876,7 +817,7 @@
     <Component type="ScriptComboBox" id="GmodMode12" x="67.0" y="30.0" max="7"
                width="40.0" height="20.0" items="Sine&#10;Square&#10;Saw&#10;SeeSaw&#10;S&amp;H&#10;Table&#10;Step"
                bgColour="4288706900" itemColour="4278190080" itemColour2="4279846483"
-               parentComponent="GlobalMod12" textColour="4293450698"/>
+               parentComponent="GlobalMod12" textColour="4293450698" processorId="Mod4"/>
     <Component type="ScriptComboBox" id="TrigMode39" x="185.0" y="29.0" max="5"
                width="40.0" height="20.0" items="off&#10;sin&#10;asin&#10;cson&#10;log"
                processorId="Mod4" parameterId="Modifiers" bgColour="4288706900"
@@ -904,48 +845,13 @@
                parentComponent="GlobalMod12" fontName="Montserrat" textColour="3120562176"
                itemColour2="0" bgColour="16114871" processorId="Mod1"/>
   </Component>
-  <Component type="ScriptLabel" id="Label1" x="524.0" y="488.0" textColour="4278190080"
-             text="SUNSHINE RESONATOR" width="120.0" height="60.0" fontSize="20.0"/>
-  <Component type="ScriptButton" id="Button6" x="419.0" y="485.0" width="30.0"
-             height="30.0"/>
-  <Component type="ScriptButton" id="EXTRAMOD" x="402.0" y="3.0" width="100.0"
-             height="20.0" text="EXTRA MOD"/>
-  <Component type="ScriptLabel" id="FREQ26" x="401.0" y="517.0" width="70.0"
-             height="30.0" editable="0" text="PRESETS" textColour="4278190080"/>
-  <Component type="ScriptSlider" id="Knob10" x="450.0" y="366.0" width="40.0"
-             height="40.0" processorId="Follow" parameterId="attack" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+  <Component type="ScriptSlider" id="Knob16" x="275.0" y="8.0" width="40.0"
+             height="40.0" processorId="Simple Gain1" parameterId="Gain" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
              numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
-             max="1000.0" middlePosition="100.0" showValuePopup="Below"/>
-  <Component type="ScriptLabel" id="Label2" x="435.0" y="344.0" textColour="4278190080"
-             text="ENVELOPE FOLLOWER" width="180.0" height="20.0" fontSize="14.0"/>
-  <Component type="ScriptSlider" id="Knob11" x="504.0" y="366.0" width="40.0"
-             height="40.0" processorId="Follow" parameterId="attack" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-             numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
-             max="1000.0" middlePosition="100.0" showValuePopup="Below"/>
-  <Component type="ScriptSlider" id="Knob12" x="559.0" y="366.0" width="40.0"
-             height="40.0" processorId="Follow" parameterId="attack" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
-             numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
-             max="1000.0" middlePosition="100.0" min="0.1000000014901161"
-             showValuePopup="Below"/>
-  <Component type="ScriptLabel" id="FREQ27" x="439.0" y="397.0" width="60.0"
-             height="40.0" editable="0" text="ATTACK" textColour="4278190080"/>
-  <Component type="ScriptLabel" id="FREQ28" x="496.0" y="397.0" width="60.0"
-             height="40.0" editable="0" text="RELEASE" textColour="4278190080"/>
-  <Component type="ScriptLabel" id="FREQ29" x="553.0" y="397.0" width="60.0"
-             height="40.0" editable="0" text="SMOOTH" textColour="4278190080"/>
-  <Component type="ScriptLabel" id="FREQ30" x="463.0" y="500.0" width="40.0"
-             height="30.0" editable="0" text="FX GAIN" textColour="4278190080"/>
-  <Component type="ScriptSlider" id="ResOffset10" x="495.0" y="499.0" width="30.0"
-             height="30.0" processorId="Resonator" parameterId="gain" text="Re"
-             filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
-             showTextBox="0" scaleFactor="0.119999997317791" showValuePopup="Below"/>
-  <Component type="ScriptPanel" id="Presets" x="1.0" y="1.0" width="400.0"
-             height="579.0" bgColour="1426063360" itemColour="3489660928"
-             itemColour2="3690987520" visible="0">
-    <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="22.0" y="18.0"
-               width="350.0" height="530.0" parentComponent="Presets" ContentType="PresetBrowser"
-               bgColour="0" itemColour="4294967295" itemColour2="4294967295"
-               Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 1,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
-               itemColour3="16777215"/>
-  </Component>
+             showValuePopup="Below" mode="Decibel" min="-100.0" max="0.0"
+             stepSize="0.1000000014901161" suffix=" dB" middlePosition="-18.0"/>
+  <Component type="ScriptLabel" id="FREQ21" x="319.0" y="47.0" width="80.0"
+             height="20.0" editable="0" text="PRE FILTER" textColour="4278190080"/>
+  <Component type="ScriptLabel" id="FREQ31" x="263.0" y="47.0" width="60.0"
+             height="20.0" editable="0" text="INPUT" textColour="4278190080"/>
 </ContentProperties>

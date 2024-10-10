@@ -561,20 +561,19 @@
         <Nodes>
           <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
             <Nodes>
-              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain1">
-                <Nodes>
-                  <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
-                    <Parameters>
-                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                 SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                 SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                      <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                 SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
-                    </Parameters>
-                  </Node>
-                </Nodes>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="1" Name="chain1">
+                <Nodes/>
                 <Parameters/>
+              </Node>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"/>
+                </Parameters>
               </Node>
               <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain1">
                 <Nodes>
@@ -668,9 +667,939 @@
                                         </Nodes>
                                         <Parameters/>
                                       </Node>
+                                      <Node ID="clone1_child1" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter1" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic1" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic1" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child2" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter2" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic2" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic2" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child3" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter3" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic3" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic3" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child4" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter4" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic4" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic4" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child5" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter5" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic5" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic5" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child6" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter6" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic6" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic6" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child7" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter7" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic7" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic7" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child8" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter8" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic8" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic8" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child9" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter9" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic9" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic9" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child10" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter10" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic10" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic10" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child11" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter11" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic11" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic11" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child12" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter12" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic12" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic12" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child13" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter13" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic13" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic13" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child14" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter14" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic14" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic14" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child15" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter15" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic15" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic15" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child16" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter16" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic16" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic16" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child17" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter17" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic17" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic17" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child18" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter18" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic18" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic18" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child19" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter19" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic19" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic19" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child20" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter20" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic20" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic20" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child21" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter21" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic21" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic21" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child22" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter22" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic22" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic22" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child23" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter23" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic23" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic23" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child24" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter24" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic24" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic24" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child25" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter25" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic25" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic25" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child26" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter26" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic26" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic26" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child27" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter27" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic27" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic27" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child28" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter28" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic28" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic28" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child29" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter29" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic29" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic29" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child30" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter30" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic30" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic30" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
+                                      <Node ID="clone1_child31" FactoryPath="container.chain" Bypassed="0"
+                                            Name="clone1_child" NodeColour="4287927444">
+                                        <Nodes>
+                                          <Node ID="smoothed_parameter31" FactoryPath="control.smoothed_parameter"
+                                                Bypassed="0" Name="smoothed_parameter">
+                                            <Properties>
+                                              <Property ID="Mode" Value="Linear Ramp"/>
+                                            </Properties>
+                                            <ModulationTargets>
+                                              <Connection NodeId="jdelay_cubic31" ParameterId="DelayTime"/>
+                                            </ModulationTargets>
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value"/>
+                                              <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                                         ID="SmoothingTime"/>
+                                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                                            </Parameters>
+                                          </Node>
+                                          <Node ID="jdelay_cubic31" FactoryPath="jdsp.jdelay_cubic" Bypassed="0"
+                                                Name="jdelay_cubic">
+                                            <Parameters>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="Limit"/>
+                                              <Parameter MinValue="0.0" MaxValue="1000.0" SkewFactor="0.3010300099849701"
+                                                         ID="DelayTime" Automated="1"/>
+                                            </Parameters>
+                                          </Node>
+                                        </Nodes>
+                                        <Parameters/>
+                                      </Node>
                                     </Nodes>
                                     <Parameters>
-                                      <Parameter MinValue="1.0" MaxValue="1" StepSize="1.0" ID="NumClones" Value="1.0"/>
+                                      <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Value="32.0"/>
                                       <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
                                                  Value="0.0"/>
                                     </Parameters>
@@ -750,7 +1679,7 @@
                       <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
                         <Nodes>
                           <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3"
-                                ShowParameters="1" Folded="1">
+                                ShowParameters="1">
                             <Nodes>
                               <Node ID="OneAP" FactoryPath="project.OneAP" Bypassed="0" Name="OneAP">
                                 <Parameters>
@@ -843,36 +1772,42 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
-                                Name="input_toggle">
-                            <ModulationTargets>
-                              <Connection NodeId="pma" ParameterId="Add"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
-                            <ModulationTargets>
-                              <Connection NodeId="gain5" ParameterId="Gain"/>
-                            </ModulationTargets>
-                            <Parameters>
-                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-                              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
-                              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
-                            </Parameters>
-                          </Node>
-                          <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain5">
-                            <Parameters>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
-                              <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                                         SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
-                              <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                         SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
-                            </Parameters>
+                          <Node ID="modchain2" FactoryPath="container.modchain" Bypassed="0"
+                                Name="modchain2">
+                            <Nodes>
+                              <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+                                    Name="input_toggle">
+                                <ModulationTargets>
+                                  <Connection NodeId="pma" ParameterId="Add"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Value="1.0"/>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="pma">
+                                <ModulationTargets>
+                                  <Connection NodeId="gain5" ParameterId="Gain"/>
+                                </ModulationTargets>
+                                <Parameters>
+                                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
+                                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                                </Parameters>
+                              </Node>
+                              <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain5">
+                                <Parameters>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                </Parameters>
+                              </Node>
+                            </Nodes>
+                            <Parameters/>
                           </Node>
                         </Nodes>
                         <Parameters/>
@@ -1283,6 +2218,858 @@
                                  ID="Smoothing" Value="0.009999999776482582"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Automated="1"/>
                       <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                        Name="pack_resizer">
+                    <ComplexData>
+                      <SliderPacks>
+                        <SliderPack Index="7" EmbeddedData="4....f+."/>
+                      </SliderPacks>
+                    </ComplexData>
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="128.0" StepSize="1.0" ID="NumSliders"
+                                 Value="32.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
+                        Name="modchain1">
+                    <Nodes>
+                      <Node ID="split10" FactoryPath="container.split" Bypassed="0" Name="split10">
+                        <Nodes>
+                          <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                                Name="clone_pack">
+                            <ModulationTargets>
+                              <Connection NodeId="svf_eq" ParameterId="Frequency"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <SliderPacks>
+                                <SliderPack Index="5" EmbeddedData="64.HEtN+XlYl7SJb8vO35QA+v0iB7CWOJvOb8n.+v0iB7CRgquOeT359zLyL6CEtdrOb8nv9vdT35SyLyrOZlYF9."/>
+                              </SliderPacks>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         Value="16.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.7045615234375001"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_pack3" FactoryPath="control.clone_pack" Bypassed="0"
+                                Name="clone_pack">
+                            <ModulationTargets>
+                              <Connection NodeId="svf_eq" ParameterId="Q"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <SliderPacks>
+                                <SliderPack Index="6" EmbeddedData="64.HEtN+XlYl7SJb8vO35QA+v0iB7CWOJvOb8n.+v0iB7CRgquOeT359zLyL6CEtdrOb8nv9vdT35SyLyrOZlYF9."/>
+                              </SliderPacks>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                          <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0"
+                                Name="clone_pack">
+                            <ModulationTargets>
+                              <Connection NodeId="svf_eq" ParameterId="Mode"/>
+                            </ModulationTargets>
+                            <ComplexData>
+                              <SliderPacks>
+                                <SliderPack Index="7" EmbeddedData="64......nv0i1ilYlgO...f9v0iB6CRgquOZlYF+vdT37S35Q0OWOJb+....9C...3O...f+....9C...3O...f+."/>
+                              </SliderPacks>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                         Value="1.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone2" FactoryPath="container.clone" Bypassed="0" Name="clone2"
+                        ShowClones="0" ShowParameters="1">
+                    <Properties>
+                      <Property ID="IsVertical" Value="0"/>
+                    </Properties>
+                    <Nodes>
+                      <Node ID="clone2_child" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child1" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq1" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child2" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq2" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child3" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq3" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child4" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq4" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child5" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq5" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child6" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq6" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child7" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq7" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child8" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq8" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child9" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq9" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child10" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq10" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child11" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq11" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child12" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq12" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child13" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq13" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child14" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq14" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child15" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq15" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child16" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq16" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child17" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq17" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child18" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq18" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child19" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq19" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child20" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq20" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child21" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq21" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child22" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq22" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child23" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq23" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child24" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq24" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child25" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq25" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child26" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq26" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child27" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq27" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child28" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq28" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child29" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq29" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child30" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq30" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                      <Node ID="clone2_child31" FactoryPath="container.chain" Bypassed="0"
+                            Name="clone2_child" NodeColour="4287927444">
+                        <Nodes>
+                          <Node ID="svf_eq31" FactoryPath="filters.svf_eq" Bypassed="0" Name="svf_eq">
+                            <ComplexData>
+                              <Filters>
+                                <Filter Index="-1"/>
+                              </Filters>
+                            </ComplexData>
+                            <Parameters>
+                              <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                         ID="Frequency" Automated="1"/>
+                              <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                                         ID="Q" Automated="1"/>
+                              <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                                         ID="Smoothing" Value="0.009999999776482582"/>
+                              <Parameter MinValue="0.0" MaxValue="4.0" StepSize="1.0" ID="Mode" Automated="1"/>
+                              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                            </Parameters>
+                          </Node>
+                        </Nodes>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32" StepSize="1.0" ID="NumClones" Value="32.0"/>
+                      <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                                 Value="2.0"/>
                     </Parameters>
                   </Node>
                   <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"

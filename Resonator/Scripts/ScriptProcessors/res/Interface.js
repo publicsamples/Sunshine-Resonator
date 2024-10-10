@@ -3,6 +3,7 @@ Content.makeFrontInterface(650, 550);
 //mod
 
 
+
 const var m1step1 = Content.getComponent("m1step1");
 const var m1step2 = Content.getComponent("m1step2");
 const var m1step3 = Content.getComponent("m1step3");
@@ -539,6 +540,7 @@ Waveform8.setPaintRoutine(function(g)
 	g.setColour(0xFF686449);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
+
 
 function onNoteOn()
 {
