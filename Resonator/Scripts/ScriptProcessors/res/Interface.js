@@ -1,26 +1,10 @@
-Content.makeFrontInterface(650, 550);
+Content.makeFrontInterface(600, 600);
+Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
 
 //mod
 
-
-
-const var m1step1 = Content.getComponent("m1step1");
-const var m1step2 = Content.getComponent("m1step2");
-const var m1step3 = Content.getComponent("m1step3");
-const var m1step4 = Content.getComponent("m1step4");
-
-
-
-const var m1table1 = Content.getComponent("m1table1");
-const var m1table2 = Content.getComponent("m1table2");
-const var m1table3 = Content.getComponent("m1table3");
-const var m1table4 = Content.getComponent("m1table4");
-
-
 const var Gmod9 = Synth.getModulator("Mod1");
-const var Gmod10 = Synth.getModulator("Mod2");
-const var Gmod11 = Synth.getModulator("Mod3");
-const var Gmod12 = Synth.getModulator("Mod4");
+
 
 const var Gm1 = [Content.getComponent("GlobalMod9"),
                  Content.getComponent("GlobalMod10")];
@@ -30,330 +14,267 @@ const var Gm2 = [Content.getComponent("GlobalMod11"),
         
         const var MODS = Content.getComponent("MODS");
         
-                 
-
-inline function onEXTRAMODControl(component, value)
-{
-if(value == 0)
-	  	{
-MODS.showControl(0);
-}
-if(value == 1)
-	  	{
-MODS.showControl(1);
-}
-};
-
-Content.getComponent("EXTRAMOD").setControlCallback(onEXTRAMODControl);
 
 const var Presets = Content.getComponent("Presets");
 
+const var Wgresos = Content.getComponent("Wgresos");
+const var WgFile = Content.getComponent("WgFile");
+const var Resonator = Synth.getAudioSampleProcessor("Resonator");
 
-inline function onButton6Control(component, value)
+const var Fb = Content.getComponent("Fb");
+
+
+const var MinMax = Content.getComponent("MinMax");
+const var SyncDiv = Content.getComponent("SyncDiv");
+const var ResSync = Content.getComponent("ResSync");
+const var SyncCont = [Content.getComponent("ResSync"),
+                      Content.getComponent("ScriptLabel27")];
+
+
+inline function onResSyncControl(component, value)
 {
-	if(value == 0)
-	  	{
-Presets.showControl(0);
-}
-if(value == 1)
-	  	{
-Presets.showControl(1);
-}
+	Resonator.setAttribute(Resonator.SampleSync, value);
+
+	MinMax.showControl(value-1);
+	SyncDiv.showControl(value);
 };
 
-Content.getComponent("Button6").setControlCallback(onButton6Control);
+Content.getComponent("ResSync").setControlCallback(onResSyncControl);
 
 
-inline function onModPageControl(component, value)
+
+inline function onResModeControl(component, value)
 {
-if(value == 0)
+
+
+	if(value == 1)
 	  	{
-	
-for(s in Gm1)
-       s.showControl(1);
- for(s in Gm2)
-        s.showControl(0);      
-        }
-        
-if(value == 1)
+	Resonator.setAttribute(Resonator.delaymode, 1);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(0);
+		ResSync.setValue(0);
+		ResSync.changed();
+	}
+	if(value == 2)
 	  	{
-	
-for(s in Gm1)
-       s.showControl(0);
- for(s in Gm2)
-        s.showControl(1);      
-        }        
-       
+	Resonator.setAttribute(Resonator.delaymode, 2);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(1);
+	}
+	if(value == 3)
+	  	{
+	Resonator.setAttribute(Resonator.delaymode, 3);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(1);
+	}
+	if(value == 4)
+	  	{
+	Resonator.setAttribute(Resonator.delaymode, 4);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(1);
+	}
+	if(value == 5)
+	  	{
+	Resonator.setAttribute(Resonator.delaymode, 5);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(0);
+		ResSync.setValue(0);
+			ResSync.changed();
+	}
+	if(value == 6)
+	  	{
+	Resonator.setAttribute(Resonator.delaymode, 6);
+	Wgresos.showControl(1);
+	WgFile.showControl(0);
+	for(s in SyncCont)
+		s.showControl(0);
+		ResSync.setValue(0);
+			ResSync.changed();
+	}
+	if(value == 7)
+		  	{
+		Resonator.setAttribute(Resonator.delaymode, 7);
+		Wgresos.showControl(0);
+		WgFile.showControl(1);
+		for(s in SyncCont)
+			s.showControl(1);
+		}
+
 };
 
-Content.getComponent("ModPage").setControlCallback(onModPageControl);
+Content.getComponent("ResMode").setControlCallback(onResModeControl);
 
+const var COMP = Content.getComponent("COMP");
+const var Filter = Content.getComponent("Filter");
+const var PitchShift = Content.getComponent("PitchShift");
+
+
+inline function onProcModeControl(component, value)
+{
+		if(value == 1)
+	  	{
+	COMP.showControl(1);
+	Filter.showControl(0);
+	PitchShift.showControl(0);
+	}
+	if(value == 2)
+	  	{
+	COMP.showControl(0);
+	Filter.showControl(2);
+	PitchShift.showControl(0);
+	}
+	if(value == 3)
+	  	{
+	COMP.showControl(0);
+	Filter.showControl(0);
+	PitchShift.showControl(1);
+	}
+};
+
+Content.getComponent("ProcMode").setControlCallback(onProcModeControl);
+
+
+
+
+const var Table1 = Content.getComponent("Table1");
+const var Waveform1 = Content.getComponent("Waveform1");
+const var Step1 = Content.getComponent("Step1");
 
 
 inline function onGmodMode9Control(component, value)
 {
 	if(value == 1)
 	  	{
-	Waveform1.showControl(1);
-	m1step1.showControl(0);
-	    m1table1.showControl(0);
-	    Gmod9.setAttribute(Gmod9.Shape, 0);
+
+	Table1.showControl(0);
+	Step1.showControl(0);
+	Waveform1.setPosition(10, 65, 170, 80);
+
+	    Gmod9.setAttribute(Gmod9.Shape, 1);
 	    }
 	    
 	    if(value == 2)
 	      	{
-	    Waveform1.showControl(1);
-	    m1step1.showControl(0);
-	        m1table1.showControl(0);
-	        Gmod9.setAttribute(Gmod9.Shape, 1.2);
+	
+	    Table1.showControl(0);
+	    Step1.showControl(0);
+Waveform1.setPosition(10, 90, 170, 80);
+
+	        Gmod9.setAttribute(Gmod9.Shape, 2);
 	        }
 	        
 	        if(value == 3)
 	        	      	{
-	        	    Waveform1.showControl(1);
-	        	    m1step1.showControl(0);
-	        	        m1table1.showControl(0);
-	        	        Gmod9.setAttribute(Gmod9.Shape, 2.4);
+
+	        	    Table1.showControl(0);
+	        	    Step1.showControl(0);
+	        	    Waveform1.setPosition(10, 90, 170, 80);
+
+	        	        Gmod9.setAttribute(Gmod9.Shape, 3);
 	        	        }
 	if(value == 4)
 		        	      	{
-		        	    Waveform1.showControl(1);
-		        	    m1step1.showControl(0);
-		        	        m1table1.showControl(0);
-		        	        Gmod9.setAttribute(Gmod9.Shape, 3.6);
+
+		        	    Table1.showControl(0);
+		        	    Step1.showControl(0);
+		        	    Waveform1.setPosition(10, 90, 170, 80);
+
+		        	        Gmod9.setAttribute(Gmod9.Shape, 4);
 		        	        }
 		        	        
 	if(value == 5)
 		        	      	{
-		        	    Waveform1.showControl(1);
-		        	    m1step1.showControl(0);
-		        	        m1table1.showControl(0);
-		        	        Gmod9.setAttribute(Gmod9.Shape, 4.8);
+
+		        	    Table1.showControl(0);
+		        	    Step1.showControl(0);
+		        	    Waveform1.setPosition(10, 90, 170, 80);
+
+		        	        Gmod9.setAttribute(Gmod9.Shape, 5);
 		        	        }	        
 		        	        
 	if(value == 6)
 			        	      	{
-			        	    Waveform1.showControl(0);
-			        	    m1step1.showControl(0);
-			        	        m1table1.showControl(1);
+
+			        	    Table1.showControl(1);
+			        	    Step1.showControl(0);
+			        	    Waveform1.setPosition(10, 165, 170, 15);
+
 			        	        Gmod9.setAttribute(Gmod9.Shape, 6);
 			        	        }	
 			        	        
 	if(value == 7)
 			        	      	{
-			        	    Waveform1.showControl(0);
-			        	    m1step1.showControl(1);
-			        	        m1table1.showControl(0);
-			        	        Gmod9.setAttribute(Gmod9.Shape, 7.1);
+
+			        	    Table1.showControl(0);
+			        	    Step1.showControl(1);
+			        	    Waveform1.setPosition(10, 165, 170, 15);
+
+			        	        Gmod9.setAttribute(Gmod9.Shape, 7);
 			        	        }			        	                	        	        	        
 };
 
 Content.getComponent("GmodMode9").setControlCallback(onGmodMode9Control);
 
-inline function onGmodMode10Control(component, value)
-{
-	if(value == 1)
-	  	{
-	Waveform3.showControl(1);
-	m1step2.showControl(0);
-	    m1table2.showControl(0);
-	    Gmod10.setAttribute(Gmod10.Shape, 0);
-	    }
-	    
-	    if(value == 2)
-	      	{
-	    Waveform3.showControl(1);
-	    m1step2.showControl(0);
-	        m1table2.showControl(0);
-	        Gmod10.setAttribute(Gmod10.Shape, 1.2);
-	        }
-	        
-	        if(value == 3)
-	        	      	{
-	        	    Waveform3.showControl(1);
-	        	    m1step2.showControl(0);
-	        	        m1table2.showControl(0);
-	        	        Gmod10.setAttribute(Gmod10.Shape, 2.4);
-	        	        }
-	if(value == 4)
-		        	      	{
-		        	    Waveform3.showControl(1);
-		        	    m1step2.showControl(0);
-		        	        m1table2.showControl(0);
-		        	        Gmod10.setAttribute(Gmod10.Shape, 3.6);
-		        	        }
-		        	        
-	if(value == 5)
-		        	      	{
-		        	    Waveform3.showControl(1);
-		        	    m1step2.showControl(0);
-		        	        m1table2.showControl(0);
-		        	        Gmod10.setAttribute(Gmod10.Shape, 4.8);
-		        	        }	        
-		        	        
-	if(value == 6)
-			        	      	{
-			        	    Waveform3.showControl(0);
-			        	    m1step2.showControl(0);
-			        	        m1table2.showControl(1);
-			        	        Gmod10.setAttribute(Gmod10.Shape, 6);
-			        	        }	
-			        	        
-	if(value == 7)
-			        	      	{
-			        	    Waveform3.showControl(0);
-			        	    m1step2.showControl(1);
-			        	        m1table2.showControl(0);
-			        	        Gmod10.setAttribute(Gmod10.Shape, 7.1);
-			        	        }			        	                	        	        	        
-};
-
-Content.getComponent("GmodMode10").setControlCallback(onGmodMode10Control);
-
-inline function onGmodMode11Control(component, value)
-{
-	if(value == 1)
-	  	{
-	Waveform5.showControl(1);
-	m1step3.showControl(0);
-	    m1table3.showControl(0);
-	    Gmod11.setAttribute(Gmod11.Shape, 0);
-	    }
-	    
-	    if(value == 2)
-	      	{
-	    Waveform5.showControl(1);
-	    m1step3.showControl(0);
-	        m1table3.showControl(0);
-	        Gmod11.setAttribute(Gmod11.Shape, 1.2);
-	        }
-	        
-	        if(value == 3)
-	        	      	{
-	        	    Waveform5.showControl(1);
-	        	    m1step3.showControl(0);
-	        	        m1table3.showControl(0);
-	        	        Gmod11.setAttribute(Gmod11.Shape, 2.4);
-	        	        }
-	if(value == 4)
-		        	      	{
-		        	    Waveform5.showControl(1);
-		        	    m1step3.showControl(0);
-		        	        m1table3.showControl(0);
-		        	        Gmod11.setAttribute(Gmod11.Shape, 3.6);
-		        	        }
-		        	        
-	if(value == 5)
-		        	      	{
-		        	    Waveform5.showControl(1);
-		        	    m1step3.showControl(0);
-		        	        m1table3.showControl(0);
-		        	        Gmod11.setAttribute(Gmod11.Shape, 4.8);
-		        	        }	        
-		        	        
-	if(value == 6)
-			        	      	{
-			        	    Waveform5.showControl(0);
-			        	    m1step3.showControl(0);
-			        	        m1table3.showControl(1);
-			        	        Gmod11.setAttribute(Gmod11.Shape, 6);
-			        	        }	
-			        	        
-	if(value == 7)
-			        	      	{
-			        	    Waveform5.showControl(0);
-			        	    m1step3.showControl(1);
-			        	        m1table3.showControl(0);
-			        	        Gmod11.setAttribute(Gmod11.Shape, 7.1);
-			        	        }			        	                	        	        	        
-};
-
-Content.getComponent("GmodMode11").setControlCallback(onGmodMode11Control);
-
-
-inline function onGmodMode12Control(component, value)
-{
-	if(value == 1)
-	  	{
-	Waveform7.showControl(1);
-	m1step4.showControl(0);
-	    m1table4.showControl(0);
-	    Gmod12.setAttribute(Gmod12.Shape, 0);
-	    }
-	    
-	    if(value == 2)
-	      	{
-	    Waveform7.showControl(1);
-	    m1step4.showControl(0);
-	        m1table4.showControl(0);
-	        Gmod12.setAttribute(Gmod12.Shape, 1.2);
-	        }
-	        
-	        if(value == 3)
-	        	      	{
-	        	    Waveform7.showControl(1);
-	        	    m1step4.showControl(0);
-	        	        m1table4.showControl(0);
-	        	        Gmod12.setAttribute(Gmod12.Shape, 2.4);
-	        	        }
-	if(value == 4)
-		        	      	{
-		        	    Waveform7.showControl(1);
-		        	    m1step4.showControl(0);
-		        	        m1table4.showControl(0);
-		        	        Gmod12.setAttribute(Gmod12.Shape, 3.6);
-		        	        }
-		        	        
-	if(value == 5)
-		        	      	{
-		        	    Waveform7.showControl(1);
-		        	    m1step4.showControl(0);
-		        	        m1table4.showControl(0);
-		        	        Gmod12.setAttribute(Gmod12.Shape, 4.8);
-		        	        }	        
-		        	        
-	if(value == 6)
-			        	      	{
-			        	    Waveform7.showControl(0);
-			        	    m1step4.showControl(0);
-			        	        m1table4.showControl(1);
-			        	        Gmod12.setAttribute(Gmod12.Shape, 6);
-			        	        }	
-			        	        
-	if(value == 7)
-			        	      	{
-			        	    Waveform7.showControl(0);
-			        	    m1step4.showControl(1);
-			        	        m1table4.showControl(0);
-			        	        Gmod12.setAttribute(Gmod12.Shape, 7.1);
-			        	        }			        	                	        	        	        
-};
-
-Content.getComponent("GmodMode12").setControlCallback(onGmodMode12Control);
-
-const var dp1 = Synth.getDisplayBufferSource("Mod1");
-
-const var rb1 = dp1.getDisplayBuffer(0);
-const var rb2 = dp1.getDisplayBuffer(1);
+//const var Waveform1 = Content.getComponent("Waveform1");
 
 const var BUFFER_LENGTH = 16384;
 
 const var properties = {
   "BufferLength": BUFFER_LENGTH,
-  "NumChannels": 2
+  "NumChannels": 1
 };
 
+const var CompWave = Content.getComponent("CompWave");
 
-rb1.setRingBufferProperties(properties);
-rb2.setRingBufferProperties(properties);
+const var CompDisplay = Synth.getDisplayBufferSource("Resonator");
+const var cRb = CompDisplay.getDisplayBuffer(0);
 
-const var Waveform1 = Content.getComponent("Waveform1");
-const var Waveform2 = Content.getComponent("Waveform2");
+
+cRb.setRingBufferProperties(properties);
+
+CompWave.setTimerCallback(function()
+{
+
+	this.data.buffer = cRb.createPath(this.getLocalBounds(0), // area
+									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
+									 0.0 // start value (the initial value at position 0)
+									 );
+	this.repaint();
+});
+
+CompWave.startTimer(30);
+
+CompWave.setPaintRoutine(function(g)
+{
+	g.fillAll(0x22FFFFFF);
+	g.setColour(0xFF3C1212);
+	g.fillPath(this.data.buffer, this.getLocalBounds(0));
+});
+
+
+//mod display
+
+
+const var dp = Synth.getDisplayBufferSource("Mod1");
+
+const var rb = dp.getDisplayBuffer(0);
+
+rb.setRingBufferProperties(properties);
 
 Waveform1.setTimerCallback(function()
 {
 
-	this.data.buffer = rb1.createPath(this.getLocalBounds(0), // area
+	this.data.buffer = rb.createPath(this.getLocalBounds(0), // area
 									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
 									 0.0 // start value (the initial value at position 0)
 									 );
@@ -364,184 +285,19 @@ Waveform1.startTimer(30);
 
 Waveform1.setPaintRoutine(function(g)
 {
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xCC843E38);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-Waveform2.setTimerCallback(function()
-{
-
-	this.data.buffer = rb2.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform2.startTimer(30);
-
-Waveform2.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF686449);
+	g.fillAll(0x22FFFFFF);
+	g.setColour(0xFF3C1212);
 	g.fillPath(this.data.buffer, this.getLocalBounds(0));
 });
 
 
-
-const var dp2 = Synth.getDisplayBufferSource("Mod2");
-
-const var rb3 = dp2.getDisplayBuffer(0);
-const var rb4 = dp2.getDisplayBuffer(1);
-
-
-rb3.setRingBufferProperties(properties);
-rb4.setRingBufferProperties(properties);
-
-const var Waveform3 = Content.getComponent("Waveform3");
-const var Waveform4 = Content.getComponent("Waveform4");
-
-Waveform3.setTimerCallback(function()
+inline function onStagesControl(component, value)
 {
+	Resonator.setAttribute(Resonator.NumClones, value);
+	Resonator.setAttribute(Resonator.Clones2, value);
+};
 
-	this.data.buffer = rb3.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform3.startTimer(30);
-
-Waveform3.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xCC843E38);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-Waveform4.setTimerCallback(function()
-{
-
-	this.data.buffer = rb4.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform4.startTimer(30);
-
-Waveform4.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF686449);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-
-const var dp3 = Synth.getDisplayBufferSource("Mod3");
-
-const var rb5 = dp3.getDisplayBuffer(0);
-const var rb6 = dp3.getDisplayBuffer(1);
-
-
-rb5.setRingBufferProperties(properties);
-rb6.setRingBufferProperties(properties);
-
-const var Waveform5 = Content.getComponent("Waveform5");
-const var Waveform6 = Content.getComponent("Waveform6");
-
-Waveform5.setTimerCallback(function()
-{
-
-	this.data.buffer = rb5.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform5.startTimer(30);
-
-Waveform5.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xCC843E38);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-Waveform6.setTimerCallback(function()
-{
-
-	this.data.buffer = rb6.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform6.startTimer(30);
-
-Waveform6.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF686449);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-const var dp4 = Synth.getDisplayBufferSource("Mod4");
-
-const var rb7 = dp4.getDisplayBuffer(0);
-const var rb8 = dp4.getDisplayBuffer(1);
-
-
-rb7.setRingBufferProperties(properties);
-rb8.setRingBufferProperties(properties);
-
-const var Waveform7 = Content.getComponent("Waveform7");
-const var Waveform8 = Content.getComponent("Waveform8");
-
-Waveform7.setTimerCallback(function()
-{
-
-	this.data.buffer = rb7.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform7.startTimer(30);
-
-Waveform7.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xCC843E38);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-Waveform8.setTimerCallback(function()
-{
-
-	this.data.buffer = rb8.createPath(this.getLocalBounds(0), // area
-									 [0, BUFFER_LENGTH, 0, 1.0], // [x_start, x_end, y_min, y_max]
-									 0.0 // start value (the initial value at position 0)
-									 );
-	this.repaint();
-});
-
-Waveform8.startTimer(30);
-
-Waveform8.setPaintRoutine(function(g)
-{
-	g.fillAll(0x00FFFFFF);
-	g.setColour(0xFF686449);
-	g.fillPath(this.data.buffer, this.getLocalBounds(0));
-});
-
-
+Content.getComponent("Stages").setControlCallback(onStagesControl);
 function onNoteOn()
 {
 	

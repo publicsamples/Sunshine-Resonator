@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="tilt" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="tilt" Bypassed="0" Name="tilt">
+    <Nodes>
+      <Node ID="faust1" FactoryPath="core.faust" Bypassed="0" Name="faust1">
+        <Properties>
+          <Property ID="ClassId" Value="tilt"/>
+          <Property ID="NumParameters" Value="0"/>
+        </Properties>
+        <Parameters/>
+        <SwitchTargets/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

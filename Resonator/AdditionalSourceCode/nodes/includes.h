@@ -7,21 +7,50 @@
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+// Include third party header files ----------------
+
+#include "comb.h"
+#include "DiodeLPF.h"
+#include "granul.h"
+#include "khp2.h"
+#include "klp2.h"
+#include "MoogLadder.h"
+#include "ObBpf.h"
+#include "ObHfp.h"
+#include "ObLfp.h"
+#include "PitchShifter.h"
+#include "Salen2ndBPF.h"
+#include "Salen2ndHPF.h"
+#include "Salen2ndLPF.h"
+#include "vocoder.h"
+#include "wg1.h"
+
 // Include compiled network files ------------------
 
 #include "ApTest_networkdata.h"
 #include "AP_networkdata.h"
+#include "BpBank_networkdata.h"
 #include "BUF_networkdata.h"
 #include "CableRouting_networkdata.h"
 #include "delay_networkdata.h"
+#include "FilterForRes.h"
 #include "Follow1_networkdata.h"
+#include "harmonic_filter_networkdata.h"
+#include "modifier_networkdata.h"
 #include "modtest1.h"
-#include "OneAP.h"
+#include "OneAP_networkdata.h"
 #include "PitchNu1_networkdata.h"
+#include "PitchOut_networkdata.h"
 #include "POSTRESONATOR_networkdata.h"
 #include "PreTrack_networkdata.h"
+#include "res1.h"
 #include "Resonantor_networkdata.h"
+#include "resonate_networkdata.h"
+#include "ResStage.h"
+#include "ResStage2.h"
+#include "ResStage3_networkdata.h"
 #include "reverb_networkdata.h"
+#include "tilt_networkdata.h"
 #include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))

@@ -49,7 +49,7 @@
     </Nodes>
     <Parameters>
       <Parameter ID="attack" MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                 SkewFactor="0.2313782125711441" Value="1.0">
+                 SkewFactor="0.2313782125711441" Value="0.1000000014901161" DefaultValue="1.0">
         <Connections/>
       </Parameter>
       <Parameter ID="rekease" MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"

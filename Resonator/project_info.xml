@@ -22,7 +22,7 @@
   <AAXCategoryFX value="AAX_ePlugInCategory_Modulation"/>
   <VST3Category value=""/>
   <SupportMonoFX value="No"/>
-  <EnableMidiInputFX value="0"/>
+  <EnableMidiInputFX value="1"/>
   <EnableMidiOut value="No"/>
   <EnableSoundGeneratorsFX value="1"/>
   <VST3Support value="1"/>
