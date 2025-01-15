@@ -42,6 +42,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::granul<1>, wrap::illegal_poly<project::granul<1>>>();
 		registerPolyNode<project::DiodeLPF<1>, wrap::illegal_poly<project::DiodeLPF<1>>>();
 		registerPolyNode<project::comb<1>, wrap::illegal_poly<project::comb<1>>>();
+		registerPolyNode<project::Filetrig<1>, wrap::illegal_poly<project::Filetrig<1>>>();
 		registerPolyNode<project::FilterForRes<1>, wrap::illegal_poly<project::FilterForRes<1>>>();
 		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
 		registerPolyNode<project::res1<1>, wrap::illegal_poly<project::res1<1>>>();
@@ -59,8 +60,6 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::harmonic_filter_networkdata>();
 		registerDataNode<project::modifier_networkdata>();
 		registerDataNode<project::OneAP_networkdata>();
-		registerDataNode<project::PitchNu1_networkdata>();
-		registerDataNode<project::PitchOut_networkdata>();
 		registerDataNode<project::POSTRESONATOR_networkdata>();
 		registerDataNode<project::PreTrack_networkdata>();
 		registerDataNode<project::Resonantor_networkdata>();

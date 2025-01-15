@@ -42,8 +42,8 @@ struct _Salen2ndBPF final : public ::faust::dsp {
 	float fConst3;
 	float fRec3[2];
 	FAUSTFLOAT fHslider1;
-	float fRec0[2];
 	float fRec1[2];
+	float fRec2[2];
 	
 	_Salen2ndBPF() {
 	}
@@ -103,10 +103,10 @@ struct _Salen2ndBPF final : public ::faust::dsp {
 			fRec3[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec0[l1] = 0.0f;
+			fRec1[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec1[l2] = 0.0f;
+			fRec2[l2] = 0.0f;
 		}
 	}
 	
@@ -146,19 +146,19 @@ struct _Salen2ndBPF final : public ::faust::dsp {
 			fRec3[0] = fSlow0 + fConst3 * fRec3[1];
 			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec3[0] + 1.0f));
 			float fTemp1 = fSlow1 + fTemp0;
-			float fTemp2 = float(input0[i0]) - (fRec0[1] + fRec1[1] * fTemp1);
+			float fTemp2 = float(input0[i0]) - (fRec1[1] + fRec2[1] * fTemp1);
 			float fTemp3 = fTemp0 * fTemp1 + 1.0f;
 			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
-			float fTemp5 = fRec1[1] + fTemp4;
-			fRec0[0] = fRec0[1] + 2.0f * fTemp0 * fTemp5;
-			float fTemp6 = fRec1[1] + 2.0f * fTemp4;
-			fRec1[0] = fTemp6;
-			float fRec2 = fTemp5;
-			output0[i0] = FAUSTFLOAT(fRec2);
-			output1[i0] = FAUSTFLOAT(fRec2);
+			float fTemp5 = fTemp4 + fRec2[1];
+			float fRec0 = fTemp5;
+			fRec1[0] = 2.0f * fTemp5 * fTemp0 + fRec1[1];
+			float fTemp6 = 2.0f * fTemp4 + fRec2[1];
+			fRec2[0] = fTemp6;
+			output0[i0] = FAUSTFLOAT(fRec0);
+			output1[i0] = FAUSTFLOAT(fRec0);
 			fRec3[1] = fRec3[0];
-			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
+			fRec2[1] = fRec2[0];
 		}
 	}
 

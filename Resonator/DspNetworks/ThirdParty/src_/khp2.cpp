@@ -42,13 +42,13 @@ struct _khp2 final : public ::faust::dsp {
 	FAUSTFLOAT fHslider0;
 	float fConst3;
 	float fRec4[2];
+	float fRec0[2];
 	FAUSTFLOAT fHslider1;
 	float fRec1[2];
 	float fRec2[2];
-	float fRec3[2];
+	float fRec5[2];
 	float fRec6[2];
 	float fRec7[2];
-	float fRec8[2];
 	
 	_khp2() {
 	}
@@ -108,22 +108,22 @@ struct _khp2 final : public ::faust::dsp {
 			fRec4[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec1[l1] = 0.0f;
+			fRec0[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec2[l2] = 0.0f;
+			fRec1[l2] = 0.0f;
 		}
 		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
-			fRec3[l3] = 0.0f;
+			fRec2[l3] = 0.0f;
 		}
 		for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
-			fRec6[l4] = 0.0f;
+			fRec5[l4] = 0.0f;
 		}
 		for (int l5 = 0; l5 < 2; l5 = l5 + 1) {
-			fRec7[l5] = 0.0f;
+			fRec6[l5] = 0.0f;
 		}
 		for (int l6 = 0; l6 < 2; l6 = l6 + 1) {
-			fRec8[l6] = 0.0f;
+			fRec7[l6] = 0.0f;
 		}
 	}
 	
@@ -164,34 +164,34 @@ struct _khp2 final : public ::faust::dsp {
 			float fTemp0 = float(input0[i0]);
 			fRec4[0] = fSlow0 + fConst3 * fRec4[1];
 			float fTemp1 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec4[0] + 1.0f));
-			float fTemp2 = (fTemp0 - fRec3[1]) * fTemp1;
+			float fTemp2 = (fTemp0 - fRec0[1]) * fTemp1;
 			float fTemp3 = fTemp1 + 1.0f;
+			fRec0[0] = fRec0[1] + 2.0f * (fTemp2 / fTemp3);
 			float fTemp4 = 1.0f - fSlow1 * (fTemp1 * (1.0f - fTemp1 / fTemp3) / fTemp3);
-			float fTemp5 = (fTemp0 - (fRec3[1] + (fTemp2 - fRec1[1] + fTemp1 * fRec2[1] / fTemp3) / fTemp3)) / fTemp4;
-			float fRec0 = fTemp5;
+			float fTemp5 = (fTemp0 - (fRec0[1] + (fTemp2 - fRec2[1] + fTemp1 * fRec1[1] / fTemp3) / fTemp3)) / fTemp4;
 			float fTemp6 = fSlow1 * fTemp5;
-			float fTemp7 = fTemp1 * (fTemp6 - fRec2[1]) / fTemp3;
-			fRec1[0] = fRec1[1] + 2.0f * (fTemp1 * (fTemp6 - (fTemp7 + fRec1[1] + fRec2[1])) / fTemp3);
-			fRec2[0] = fRec2[1] + 2.0f * fTemp7;
-			fRec3[0] = fRec3[1] + 2.0f * (fTemp2 / fTemp3);
-			output0[i0] = FAUSTFLOAT(fRec0);
+			float fTemp7 = fTemp1 * (fTemp6 - fRec1[1]) / fTemp3;
+			fRec1[0] = fRec1[1] + 2.0f * fTemp7;
+			fRec2[0] = fRec2[1] + 2.0f * (fTemp1 * (fTemp6 - (fTemp7 + fRec2[1] + fRec1[1])) / fTemp3);
+			float fRec3 = fTemp5;
+			output0[i0] = FAUSTFLOAT(fRec3);
 			float fTemp8 = float(input1[i0]);
-			float fTemp9 = fTemp1 * (fTemp8 - fRec8[1]);
-			float fTemp10 = (fTemp8 - (fRec8[1] + (fTemp9 - fRec6[1] + fTemp1 * fRec7[1] / fTemp3) / fTemp3)) / fTemp4;
-			float fRec5 = fTemp10;
+			float fTemp9 = fTemp1 * (fTemp8 - fRec5[1]);
+			fRec5[0] = fRec5[1] + 2.0f * (fTemp9 / fTemp3);
+			float fTemp10 = (fTemp8 - (fRec5[1] + (fTemp9 - fRec7[1] + fTemp1 * fRec6[1] / fTemp3) / fTemp3)) / fTemp4;
 			float fTemp11 = fSlow1 * fTemp10;
-			float fTemp12 = fTemp1 * (fTemp11 - fRec7[1]) / fTemp3;
-			fRec6[0] = fRec6[1] + 2.0f * (fTemp1 * (fTemp11 - (fTemp12 + fRec6[1] + fRec7[1])) / fTemp3);
-			fRec7[0] = fRec7[1] + 2.0f * fTemp12;
-			fRec8[0] = 2.0f * (fTemp9 / fTemp3) + fRec8[1];
-			output1[i0] = FAUSTFLOAT(fRec5);
+			float fTemp12 = fTemp1 * (fTemp11 - fRec6[1]) / fTemp3;
+			fRec6[0] = fRec6[1] + 2.0f * fTemp12;
+			fRec7[0] = fRec7[1] + 2.0f * (fTemp1 * (fTemp11 - (fTemp12 + fRec7[1] + fRec6[1])) / fTemp3);
+			float fRec8 = fTemp10;
+			output1[i0] = FAUSTFLOAT(fRec8);
 			fRec4[1] = fRec4[0];
+			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
-			fRec3[1] = fRec3[0];
+			fRec5[1] = fRec5[0];
 			fRec6[1] = fRec6[0];
 			fRec7[1] = fRec7[0];
-			fRec8[1] = fRec8[0];
 		}
 	}
 

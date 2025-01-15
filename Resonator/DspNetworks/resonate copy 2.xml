@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="resonate" Version="0.0.0" ShowComments="1">
+  <Node FactoryPath="container.chain" ID="resonate" Bypassed="0" Name="resonate"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
+            <Nodes>
+              <Node ID="global_cable" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289886536">
+                <Properties>
+                  <Property ID="Connection" Value="ResonatorOffset"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_pack3" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable6" NodeColour="4286624327">
+                <Properties>
+                  <Property ID="Connection" Value="Window"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_forward2" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable10" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable10" NodeColour="4282866866">
+                <Properties>
+                  <Property ID="Connection" Value="InputModifier"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable8" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable9" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable10" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289900359">
+                <Properties>
+                  <Property ID="Connection" Value="CompThresh"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable6" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289899591">
+                <Properties>
+                  <Property ID="Connection" Value="FeedBackLP"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable7" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable3" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4289873782">
+                <Properties>
+                  <Property ID="Connection" Value="PostFilter"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable11" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable" NodeColour="4288366770">
+                <Properties>
+                  <Property ID="Connection" Value="SamplePhase"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable4" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable5" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable3" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable5" NodeColour="4287279688">
+                <Properties>
+                  <Property ID="Connection" Value="InputFilterCutoff"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable23" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable27" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable24" ParameterId="Value"/>
+                </ModulationTargets>
+              </Node>
+              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
+                    Name="global_cable7" NodeColour="4289873784">
+                <Properties>
+                  <Property ID="Connection" Value="ShiftOffset"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="clone_cable13" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable14" ParameterId="Value"/>
+                  <Connection NodeId="clone_cable15" ParameterId="Value"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="INPUTSTAGE"
+                NodeColour="4291826708" Folded="1">
+            <Nodes>
+              <Node ID="clone_forward13" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="10.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward1" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward1">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable3">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward26" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward11">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable9" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable10" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Nyquist"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable1">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="INPUTFILTER"
+                NodeColour="4292673280" Folded="1">
+            <Nodes>
+              <Node ID="clone_forward16" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="11.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward31" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward11">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable21" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable22" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Triangle"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward32" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward11">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1" ID="Value" Automated="1"
+                             DefaultValue="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable23" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable27" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable24" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Random"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward14" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="COMPRESSOR"
+                NodeColour="4278203903" Folded="1">
+            <Nodes>
+              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable6">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward10" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="250.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward8" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="2.1" MaxValue="32.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="split38" FactoryPath="container.split" Bypassed="0" Name="split34">
+                <Nodes>
+                  <Node ID="clone_forward9" FactoryPath="control.clone_forward" Bypassed="0"
+                        Name="clone_forward5">
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                 DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="250.0" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="clone_forward30" FactoryPath="control.clone_forward" Bypassed="0"
+                        Name="clone_forward11">
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                 DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1" ID="Value" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="clone_cable19" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable2">
+                    <Properties>
+                      <Property ID="Mode" Value="Spread"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                 DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                  <Node ID="clone_cable20" FactoryPath="control.clone_cable" Bypassed="0"
+                        Name="clone_cable2">
+                    <Properties>
+                      <Property ID="Mode" Value="Nyquist"/>
+                    </Properties>
+                    <Parameters>
+                      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                                 DefaultValue="1.0" Automated="1"/>
+                      <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split5" FactoryPath="container.split" Bypassed="0" Name="SHIFT"
+                NodeColour="4278255422" ShowParameters="0" Folded="1">
+            <Nodes>
+              <Node ID="clone_forward2" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward1">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="18.0" ID="Value" DefaultValue="0.0"
+                             Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable13" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable14" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Harmonics"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3149802503356974"
+                             ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable15" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Random"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" SkewFactor="0.3800250887870789"
+                             ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward27" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="24.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward21" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable16" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable17" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" SkewFactor="1" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable18" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable13">
+                <Properties>
+                  <Property ID="Mode" Value="Scale"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="1" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward3" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split6" FactoryPath="container.split" Bypassed="0" Name="RESONATOR"
+                NodeColour="4278190080" Folded="1">
+            <Nodes>
+              <Node ID="clone_pack3" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack1">
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="3" EmbeddedData="64.b8n.+T35Q7S35QwOyLyL+LyLy5yiBWmOrGEN9.........................3O...f+....9C...3O...f+."/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="1.0" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="pack_resizer" FactoryPath="control.pack_resizer" Bypassed="0"
+                    Name="pack_resizer">
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="3" EmbeddedData="4....f+."/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumSliders"
+                             Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable7">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward5" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward6" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward7" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1" SkewFactor="0.5072727035832091"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable3">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Triangle"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0028193359375"
+                             DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward11" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward11">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1" ID="Value" Automated="1"
+                             DefaultValue="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split8" FactoryPath="container.split" Bypassed="0" Name="RESCONT"
+                NodeColour="4278190080">
+            <Nodes>
+              <Node ID="clone_forward15" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward15">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="6.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward22" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward23" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward24" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward25" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable12" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable12">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable25" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable25">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" DefaultValue="0.0"
+                             Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward12" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward12">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="7.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split7" FactoryPath="container.split" Bypassed="0" Name="MISC"
+                NodeColour="4278255589" Folded="1">
+            <Nodes>
+              <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Spread"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable11" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable2">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward19" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward18" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward5">
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                             DefaultValue="1.0" Automated="1"/>
+                  <Parameter MinValue="1.0" MaxValue="13.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="peak" FactoryPath="core.peak" Bypassed="1" Name="peak" Folded="1">
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="-1"/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters/>
+      </Node>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader"
+            Folded="1">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="Overlap"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain1" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split9" FactoryPath="container.split" Bypassed="0" Name="split9">
+        <Nodes>
+          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes>
+              <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes>
+              <Node ID="clear" FactoryPath="math.clear" Bypassed="1" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="tanh" FactoryPath="math.tanh" Bypassed="0" Name="tanh">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.5192812499999999"
+                             DefaultValue="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="one_pole" FactoryPath="filters.one_pole" Bypassed="1" Name="one_pole">
+                <ComplexData>
+                  <Filters>
+                    <Filter Index="-1"/>
+                  </Filters>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                             ID="Frequency" Value="20.0" DefaultValue="1000.0"/>
+                  <Parameter MinValue="0.300000011920929" MaxValue="9.899999618530273" SkewFactor="0.2647178173065186"
+                             ID="Q" Value="1.0"/>
+                  <Parameter MinValue="-18.0" MaxValue="18.0" ID="Gain" Value="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.3010300099849701"
+                             ID="Smoothing" Value="0.009999999776482582"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Mode" Value="1.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputImpuse" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" ID="PitchInXfTempo" Value="18.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="20.0" MaxValue="20000.0" ID="InHP" Value="20.0" DefaultValue="0.0"
+                 SkewFactor="0.2299045584686382">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="5.0" ID="delaymode" Value="5.0" DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="min" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward5" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="20000.0" ID="max" Value="0.9800000190734863"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward6" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="step" Value="0.239999994635582"
+                 SkewFactor="0.5072727035832091" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward7" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="250.0" ID="CompAtk" Value="119.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward10" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="250.0" ID="CompRel" Value="217.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward9" ParameterId="Value"/>
+          <Connection NodeId="clone_cable19" ParameterId="Value"/>
+          <Connection NodeId="clone_cable20" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="2.1" MaxValue="32.0" ID="CompRatio" Value="3.200000047683716"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward8" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputShiftFB" Value="0.4900000095367432"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward21" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1" ID="Div" Value="32.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable16" ParameterId="Value"/>
+          <Connection NodeId="clone_cable17" ParameterId="Value"/>
+          <Connection NodeId="clone_cable18" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="10.0" ID="ModifierSelect" Value="2.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward13" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQ" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward14" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes" Value="0.7041440217391305"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward19" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="13.0" ID="PostMode" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward18" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="11.0" ID="InFilterModeA" Value="9.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable21" ParameterId="Value"/>
+          <Connection NodeId="clone_cable22" ParameterId="Value"/>
+          <Connection NodeId="clone_forward16" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="InFilterModeB" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward31" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Mix" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQb" Value="0.9247070312499999"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampAtk" Value="483.2699890136719"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward22" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampRel" Value="658.969970703125"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward23" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="SampDiv" Value="6.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward25" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSync" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward24" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pqn" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" Value="2.0" DefaultValue="0.0"
+                 StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone_forward11" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="ModifierModMode" Value="2.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward26" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="NumClones"
+                 Value="8.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable10" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable9" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward26" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable8" ParameterId="NumClones"/>
+          <Connection NodeId="clone_pack3" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable2" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable3" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward11" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable4" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable5" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable6" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward7" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward2" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward5" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward6" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward8" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward10" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward9" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward13" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward14" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1" ID="Clones2" Value="8.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward19" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward21" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward22" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward24" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward25" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward23" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward18" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable13" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable15" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable14" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward27" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward30" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable19" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable20" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable23" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward32" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable27" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable24" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward16" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward31" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable21" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable22" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable7" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable11" ParameterId="NumClones"/>
+          <Connection NodeId="pack_resizer" ParameterId="NumSliders"/>
+          <Connection NodeId="clone_cable12" ParameterId="NumClones"/>
+          <Connection NodeId="clone_cable1" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward3" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward15" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="PitchModShape" Value="2.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="24.0" ID="PitchStep" Value="13.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward27" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="3.0" StepSize="1.0" ID="ReMode" Value="2.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward30" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="CutOffShapeMode" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward32" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputHP" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSig" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable12" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="DivMode" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="Clone3" Value="8.0" DefaultValue="0.0"
+                 StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone_cable25" ParameterId="NumClones"/>
+          <Connection NodeId="clone_forward12" ParameterId="NumClones"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="7.0" ID="Scale" Value="2.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward12" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pitch" Value="-0.119999997317791"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable25" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>
