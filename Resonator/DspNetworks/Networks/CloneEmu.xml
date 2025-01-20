@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="CloneEmu" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="CloneEmu" Bypassed="0" Name="CloneEmu"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="chain8" FactoryPath="container.chain" Bypassed="0" Name="po">
+        <Nodes>
+          <Node ID="pma4" FactoryPath="control.pma" Bypassed="0" Name="hjlkerh">
+            <ModulationTargets>
+              <Connection NodeId="pma" ParameterId="Add"/>
+              <Connection NodeId="pma2" ParameterId="Add"/>
+              <Connection NodeId="pma1" ParameterId="Add"/>
+              <Connection NodeId="pma7" ParameterId="Add"/>
+              <Connection NodeId="pma5" ParameterId="Add"/>
+              <Connection NodeId="pma6" ParameterId="Add"/>
+              <Connection NodeId="pma3" ParameterId="Add"/>
+              <Connection NodeId="pma8" ParameterId="Add"/>
+            </ModulationTargets>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add"/>
+            </Parameters>
+          </Node>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="pdfgoidfpog">
+            <Nodes>
+              <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="a1">
+                <Nodes>
+                  <Node ID="pma" FactoryPath="control.pma" Bypassed="0" Name="a2">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="1.0" MaxValue="5.551115123125783e-17" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="jkj">
+                <Nodes>
+                  <Node ID="pma7" FactoryPath="control.pma" Bypassed="0" Name="lkj">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.002514648437500044"
+                                 DefaultValue="1.0"/>
+                      <Parameter MinValue="0.86" MaxValue="0.14" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="jlkj">
+                <Nodes>
+                  <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="hjlh">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="0.71" MaxValue="0.29" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="hjk">
+                <Nodes>
+                  <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="uio">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="0.5700000000000001" MaxValue="0.43" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="hjkl">
+                <Nodes>
+                  <Node ID="pma5" FactoryPath="control.pma" Bypassed="0" Name="nbvc">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="0.43" MaxValue="0.5700000000000001" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="ncvbk">
+                <Nodes>
+                  <Node ID="pma6" FactoryPath="control.pma" Bypassed="0" Name="nbvc">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="0.29" MaxValue="0.71" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="oiu">
+                <Nodes>
+                  <Node ID="pma3" FactoryPath="control.pma" Bypassed="0" Name="uiop">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.002514648437500044"
+                                 DefaultValue="1.0"/>
+                      <Parameter MinValue="0.14" MaxValue="0.86" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+              <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="uiodgb">
+                <Nodes>
+                  <Node ID="pma8" FactoryPath="control.pma" Bypassed="0" Name="dgiofdg">
+                    <Parameters>
+                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="0.0" DefaultValue="1.0"/>
+                      <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
+                    </Parameters>
+                  </Node>
+                </Nodes>
+                <Parameters/>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

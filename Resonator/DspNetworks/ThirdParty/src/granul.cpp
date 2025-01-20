@@ -71,7 +71,7 @@ struct _granul final : public ::faust::dsp {
 		m->declare("basics.lib/version", "1.19.1");
 		m->declare("compile_options", "-lang cpp -rui -nvi -ct 1 -cn _granul -scn ::faust::dsp -es 1 -mcd 16 -mdd 1024 -mdy 33 -uim -single -ftz 0");
 		m->declare("filename", "granul.dsp");
-		m->declare("filters.lib/lowpass0_highpass1", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
+		m->declare("filters.lib/lowpass0_highpass1", "MIT-style STK-4.3 license");
 		m->declare("filters.lib/lowpass0_highpass1:author", "Julius O. Smith III");
 		m->declare("filters.lib/lowpass:author", "Julius O. Smith III");
 		m->declare("filters.lib/lowpass:copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
@@ -236,10 +236,10 @@ struct _granul final : public ::faust::dsp {
 			int iTemp6 = std::fabs(fTemp5) < 1.1920929e-07f;
 			float fTemp7 = ((iTemp6) ? 0.0f : std::exp(-(fConst4 / ((iTemp6) ? 1.0f : fTemp5))));
 			float fTemp8 = 1.0f - fTemp7;
-			fRec1[0] = std::max<float>(fTemp4, fRec1[1] * fTemp7 + fTemp4 * fTemp8);
-			fRec0[0] = fRec1[0] * fTemp8 + fRec0[1] * fTemp7;
-			output0[i0] = FAUSTFLOAT(fRec0[0] * float(input0[i0]));
-			output1[i0] = FAUSTFLOAT(fRec0[0] * float(input1[i0]));
+			fRec1[0] = std::max<float>(fTemp4, fTemp7 * fRec1[1] + fTemp8 * fTemp4);
+			fRec0[0] = fRec1[0] * fTemp8 + fTemp7 * fRec0[1];
+			output0[i0] = FAUSTFLOAT(float(input0[i0]) * fRec0[0]);
+			output1[i0] = FAUSTFLOAT(float(input1[i0]) * fRec0[0]);
 			iRec2[1] = iRec2[0];
 			fVec0[1] = fVec0[0];
 			fRec4[1] = fRec4[0];

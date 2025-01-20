@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Restest" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="Restest" Bypassed="0" Name="Restest">
+    <Nodes>
+      <Node ID="reverb" FactoryPath="fx.reverb" Bypassed="0" Name="reverb">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Damping" Value="1.0" DefaultValue="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Width" Value="1.0" DefaultValue="0.5"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Size" Value="1.0" DefaultValue="0.5"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

@@ -53,6 +53,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::BpBank_networkdata>();
 		registerDataNode<project::BUF_networkdata>();
 		registerDataNode<project::CableRouting_networkdata>();
+		registerDataNode<project::CloneEmu_networkdata>();
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::delay_networkdata>();
 		registerDataNode<project::Follow1_networkdata>();
@@ -65,6 +66,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerDataNode<project::Resonantor_networkdata>();
 		registerDataNode<project::resonate_networkdata>();
 		registerDataNode<project::ResStage3_networkdata>();
+		registerDataNode<project::Restest_networkdata>();
 		registerDataNode<project::reverb_networkdata>();
 		registerDataNode<project::_networkdata>();
 		registerDataNode<project::tilt_networkdata>();
