@@ -23,7 +23,7 @@ for (i = 0; i < 8; i++)
 }       
 
 const Gs = Engine.createAndRegisterSliderPackData(1);     
-const var GainSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(7);
+const var GainSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(5);
 Gs.linkTo(GainSP);
         
 const var GsStages =[];
@@ -47,7 +47,7 @@ for (i = 0; i < 8; i++)
 }    
 
 const Fs = Engine.createAndRegisterSliderPackData(2);     
-const var FilterSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(3);
+const var FilterSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(1);
 Fs.linkTo(FilterSP);
         
 const var FsStages =[];
@@ -70,32 +70,10 @@ for (i = 0; i < 8; i++)
      
 }    
 
-const Ps = Engine.createAndRegisterSliderPackData(3);     
-const var ShiftSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(2);
-Ps.linkTo(ShiftSP);
-        
-const var PsStages =[];
 
-for (i = 0; i < 8; i++)
-{
-    PsStages[i] = Content.getComponent("Pshift"+(i+1));
-    PsStages[i].setControlCallback(PsStage);
-}
-     
-     inline function PsStage(component, value)
-     {    
-         local idx = PsStages.indexOf(component); 
-        
-         {  
-         
-         	Ps.setValueWithUndo(idx, value);
-       
-     }
-     
-}  
 
 const Lrs = Engine.createAndRegisterSliderPackData(4);     
-const var PanSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(5);
+const var PanSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(6);
 Lrs.linkTo(PanSP);
         
 const var LrsStages =[];
@@ -113,6 +91,104 @@ for (i = 0; i < 8; i++)
          {  
          
          	Lrs.setValueWithUndo(idx, value);
+       
+     }
+     
+}  
+
+
+
+const Tr = Engine.createAndRegisterSliderPackData(4);     
+const var ThreshSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(2);
+Tr.linkTo(ThreshSP);
+        
+const var TrStages =[];
+
+for (i = 0; i < 8; i++)
+{
+    TrStages[i] = Content.getComponent("Thresh"+(i+1));
+    TrStages[i].setControlCallback(TrStage);
+}
+     
+     inline function TrStage(component, value)
+     {    
+         local idx = TrStages.indexOf(component); 
+        
+         {  
+         
+         	Tr.setValueWithUndo(idx, value);
+       
+     }
+     
+}  
+
+const Rat = Engine.createAndRegisterSliderPackData(4);     
+const var RatioSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(4);
+Rat.linkTo(RatioSP);
+        
+const var RatStages =[];
+
+for (i = 0; i < 8; i++)
+{
+    RatStages[i] = Content.getComponent("Ratio"+(i+1));
+    RatStages[i].setControlCallback(RatStage);
+}
+     
+     inline function RatStage(component, value)
+     {    
+         local idx = RatStages.indexOf(component); 
+        
+         {  
+         
+         	Rat.setValueWithUndo(idx, value);
+       
+     }
+     
+}  
+
+const Rel = Engine.createAndRegisterSliderPackData(4);     
+const var RelSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(3);
+Rel.linkTo(RelSP);
+        
+const var RelStages =[];
+
+for (i = 0; i < 8; i++)
+{
+    RelStages[i] = Content.getComponent("Rel"+(i+1));
+    RelStages[i].setControlCallback(RelStage);
+}
+     
+     inline function RelStage(component, value)
+     {    
+         local idx = RelStages.indexOf(component); 
+        
+         {  
+         
+         	Rel.setValueWithUndo(idx, value);
+       
+     }
+     
+}  
+
+const Pshift = Engine.createAndRegisterSliderPackData(4);     
+const var PshiftSP = Synth.getSliderPackProcessor("Resonator").getSliderPack(7);
+Pshift.linkTo(PshiftSP);
+        
+const var PshiftStages =[];
+
+for (i = 0; i < 8; i++)
+{
+    PshiftStages[i] = Content.getComponent("Pshift"+(i+1));
+    PshiftStages[i].setControlCallback(PshiftStage);
+}
+     
+     inline function PshiftStage(component, value)
+     {    
+         local idx = PshiftStages.indexOf(component); 
+        
+         {  
+         
+         	Pshift.setValueWithUndo(idx, value);
        
      }
      

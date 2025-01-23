@@ -19,6 +19,7 @@
 #include "ObHfp.h"
 #include "ObLfp.h"
 #include "PitchShifter.h"
+#include "PitchShifter2.h"
 #include "Salen2ndBPF.h"
 #include "Salen2ndHPF.h"
 #include "Salen2ndLPF.h"
@@ -27,32 +28,11 @@
 
 // Include compiled network files ------------------
 
-#include "ApTest_networkdata.h"
-#include "AP_networkdata.h"
-#include "BpBank_networkdata.h"
-#include "BUF_networkdata.h"
-#include "CableRouting_networkdata.h"
-#include "CloneEmu_networkdata.h"
-#include "delay_networkdata.h"
-#include "Filetrig.h"
 #include "FilterForRes.h"
-#include "Follow1_networkdata.h"
-#include "harmonic_filter_networkdata.h"
-#include "modifier_networkdata.h"
-#include "modtest1.h"
-#include "OneAP_networkdata.h"
-#include "POSTRESONATOR_networkdata.h"
-#include "PreTrack_networkdata.h"
+#include "FinStack.h"
 #include "res1.h"
-#include "Resonantor_networkdata.h"
 #include "resonate_networkdata.h"
 #include "ResStage.h"
-#include "ResStage2.h"
-#include "ResStage3_networkdata.h"
-#include "Restest_networkdata.h"
-#include "reverb_networkdata.h"
-#include "tilt_networkdata.h"
-#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

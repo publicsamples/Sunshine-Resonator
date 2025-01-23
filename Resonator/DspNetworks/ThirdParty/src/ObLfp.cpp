@@ -160,7 +160,7 @@ struct _ObLfp final : public ::faust::dsp {
 			float fTemp6 = 1.0f - 0.33333334f * _ObLfp_faustpower2_f(fTemp5);
 			float fTemp7 = fTemp0 * fTemp5 * fTemp6;
 			float fRec0 = fRec1[1] + fTemp7;
-			fRec1[0] = 2.0f * fTemp7 + fRec1[1];
+			fRec1[0] = fRec1[1] + 2.0f * fTemp7;
 			float fTemp8 = fTemp5 * fTemp6;
 			fRec2[0] = fTemp4 + fTemp8;
 			output0[i0] = FAUSTFLOAT(fRec0);

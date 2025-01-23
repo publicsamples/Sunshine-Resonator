@@ -51,10 +51,10 @@ struct _DiodeLPF final : public ::faust::dsp {
 	float fConst3;
 	float fRec5[2];
 	FAUSTFLOAT fHslider1;
-	float fRec0[2];
 	float fRec1[2];
 	float fRec2[2];
 	float fRec3[2];
+	float fRec4[2];
 	
 	_DiodeLPF() {
 	}
@@ -116,16 +116,16 @@ struct _DiodeLPF final : public ::faust::dsp {
 			fRec5[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec0[l1] = 0.0f;
+			fRec1[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec1[l2] = 0.0f;
+			fRec2[l2] = 0.0f;
 		}
 		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
-			fRec2[l3] = 0.0f;
+			fRec3[l3] = 0.0f;
 		}
 		for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
-			fRec3[l4] = 0.0f;
+			fRec4[l4] = 0.0f;
 		}
 	}
 	
@@ -165,36 +165,37 @@ struct _DiodeLPF final : public ::faust::dsp {
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
 			fRec5[0] = fSlow0 + fConst3 * fRec5[1];
 			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec5[0] + 1.0f));
-			float fTemp1 = _DiodeLPF_faustpower2_f(fTemp0);
-			float fTemp2 = fTemp0 + 1.0f;
-			float fTemp3 = fTemp0 * (1.0f - 0.25f * (fTemp0 / fTemp2)) + 1.0f;
-			float fTemp4 = (1.0f - 0.25f * (fTemp0 / fTemp3)) * fTemp0 + 1.0f;
-			float fTemp5 = (1.0f - 0.5f * (fTemp0 / fTemp4)) * fTemp0 + 1.0f;
-			float fTemp6 = fTemp4 * fTemp5;
-			float fTemp7 = std::max<float>(-1.0f, std::min<float>(1.0f, 1e+02f * float(input0[i0])));
-			float fTemp8 = 0.5f * (fRec0[1] * fTemp0 / fTemp2) + fRec1[1];
-			float fTemp9 = fTemp0 * fTemp8 / fTemp3;
-			float fTemp10 = 0.5f * fTemp9;
-			float fTemp11 = fTemp10 + fRec2[1];
-			float fTemp12 = fTemp11 * fTemp0 / fTemp4;
-			float fTemp13 = fTemp12 + fRec3[1];
-			float fTemp14 = 17.0f - 9.7f * std::pow(fRec5[0], 1e+01f);
-			float fTemp15 = ((0.5f * (fTemp1 / fTemp6) + 1.0f) * (1.5f * fTemp7 * (1.0f - 0.33333334f * _DiodeLPF_faustpower2_f(fTemp7)) - fSlow1 * ((0.02058215f * fTemp9 + 0.0411643f * fRec0[1] + 0.02058215f * fTemp12 + 0.0051455377f * (fTemp13 * _DiodeLPF_faustpower3_f(fTemp0) / (fTemp6 * fTemp3))) * fTemp14 / fTemp2)) / (fSlow2 * (_DiodeLPF_faustpower4_f(fTemp0) * fTemp14 / (fTemp6 * fTemp2 * fTemp3)) + 1.0f) + (0.5f * (fTemp13 * fTemp0 / fTemp5) + fTemp11) / fTemp4 - fRec3[1]) * fTemp0 / fTemp2;
-			float fTemp16 = (0.5f * ((fTemp15 + fRec3[1]) * (0.25f * (fTemp1 / (fTemp4 * fTemp3)) + 1.0f) + (0.5f * fTemp12 + fTemp8) / fTemp3) - fRec2[1]) * fTemp0 / fTemp2;
-			float fTemp17 = (0.5f * ((fTemp16 + fRec2[1]) * (0.25f * (fTemp1 / (fTemp2 * fTemp3)) + 1.0f) + (fTemp10 + fRec0[1]) / fTemp2) - fRec1[1]) * fTemp0 / fTemp2;
-			float fTemp18 = (0.5f * (fTemp17 + fRec1[1]) - fRec0[1]) * fTemp0 / fTemp2;
-			fRec0[0] = 2.0f * fTemp18 + fRec0[1];
-			fRec1[0] = 2.0f * fTemp17 + fRec1[1];
-			fRec2[0] = 2.0f * fTemp16 + fRec2[1];
-			fRec3[0] = 2.0f * fTemp15 + fRec3[1];
-			float fRec4 = fTemp18 + fRec0[1];
-			output0[i0] = FAUSTFLOAT(fRec4);
-			output1[i0] = FAUSTFLOAT(fRec4);
+			float fTemp1 = fTemp0 + 1.0f;
+			float fTemp2 = 0.5f * (fTemp0 * fRec1[1] / fTemp1) + fRec2[1];
+			float fTemp3 = fTemp0 * (1.0f - 0.25f * (fTemp0 / fTemp1)) + 1.0f;
+			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
+			float fTemp5 = 0.5f * fTemp4;
+			float fTemp6 = fTemp5 + fRec3[1];
+			float fTemp7 = fTemp0 * (1.0f - 0.25f * (fTemp0 / fTemp3)) + 1.0f;
+			float fTemp8 = fTemp0 * fTemp6 / fTemp7;
+			float fTemp9 = std::max<float>(-1.0f, std::min<float>(1.0f, 1e+02f * float(input0[i0])));
+			float fTemp10 = 17.0f - 9.7f * std::pow(fRec5[0], 1e+01f);
+			float fTemp11 = fTemp8 + fRec4[1];
+			float fTemp12 = fTemp3 * fTemp7;
+			float fTemp13 = fTemp0 * (1.0f - 0.5f * (fTemp0 / fTemp7)) + 1.0f;
+			float fTemp14 = _DiodeLPF_faustpower2_f(fTemp0);
+			float fTemp15 = fTemp1 * fTemp3;
+			float fTemp16 = fTemp0 * ((1.5f * fTemp9 * (1.0f - 0.33333334f * _DiodeLPF_faustpower2_f(fTemp9)) - fSlow1 * (fTemp10 * (0.02058215f * fTemp4 + 0.0411643f * fRec1[1] + 0.02058215f * fTemp8 + 0.0051455377f * (_DiodeLPF_faustpower3_f(fTemp0) * fTemp11 / (fTemp12 * fTemp13))) / fTemp1)) * (0.5f * (fTemp14 / (fTemp7 * fTemp13)) + 1.0f) / (fSlow2 * (_DiodeLPF_faustpower4_f(fTemp0) * fTemp10 / (fTemp15 * fTemp7 * fTemp13)) + 1.0f) + (fTemp6 + 0.5f * (fTemp0 * fTemp11 / fTemp13)) / fTemp7 - fRec4[1]) / fTemp1;
+			float fTemp17 = (0.5f * ((0.5f * fTemp8 + fTemp2) / fTemp3 + (fRec4[1] + fTemp16) * (0.25f * (fTemp14 / fTemp12) + 1.0f)) - fRec3[1]) * fTemp0 / fTemp1;
+			float fTemp18 = (0.5f * ((fTemp17 + fRec3[1]) * (0.25f * (fTemp14 / fTemp15) + 1.0f) + (fTemp5 + fRec1[1]) / fTemp1) - fRec2[1]) * fTemp0 / fTemp1;
+			float fTemp19 = (0.5f * (fTemp18 + fRec2[1]) - fRec1[1]) * fTemp0 / fTemp1;
+			float fRec0 = fTemp19 + fRec1[1];
+			fRec1[0] = 2.0f * fTemp19 + fRec1[1];
+			fRec2[0] = 2.0f * fTemp18 + fRec2[1];
+			fRec3[0] = 2.0f * fTemp17 + fRec3[1];
+			fRec4[0] = 2.0f * fTemp16 + fRec4[1];
+			output0[i0] = FAUSTFLOAT(fRec0);
+			output1[i0] = FAUSTFLOAT(fRec0);
 			fRec5[1] = fRec5[0];
-			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
 			fRec3[1] = fRec3[0];
+			fRec4[1] = fRec4[0];
 		}
 	}
 

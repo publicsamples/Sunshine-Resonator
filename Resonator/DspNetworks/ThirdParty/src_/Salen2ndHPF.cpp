@@ -34,16 +34,16 @@ Compilation options: -lang cpp -rui -nvi -ct 1 -cn _Salen2ndHPF -scn ::faust::ds
 
 struct _Salen2ndHPF final : public ::faust::dsp {
 	
+	FAUSTFLOAT fHslider0;
 	int fSampleRate;
 	float fConst0;
 	float fConst1;
 	float fConst2;
-	FAUSTFLOAT fHslider0;
+	FAUSTFLOAT fHslider1;
 	float fConst3;
 	float fRec3[2];
-	FAUSTFLOAT fHslider1;
-	float fRec0[2];
 	float fRec1[2];
+	float fRec2[2];
 	
 	_Salen2ndHPF() {
 	}
@@ -94,8 +94,8 @@ struct _Salen2ndHPF final : public ::faust::dsp {
 	}
 	
 	void instanceResetUserInterface() {
-		fHslider0 = FAUSTFLOAT(0.5f);
-		fHslider1 = FAUSTFLOAT(1.0f);
+		fHslider0 = FAUSTFLOAT(1.0f);
+		fHslider1 = FAUSTFLOAT(0.5f);
 	}
 	
 	void instanceClear() {
@@ -103,10 +103,10 @@ struct _Salen2ndHPF final : public ::faust::dsp {
 			fRec3[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec0[l1] = 0.0f;
+			fRec1[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec1[l2] = 0.0f;
+			fRec2[l2] = 0.0f;
 		}
 	}
 	
@@ -131,8 +131,8 @@ struct _Salen2ndHPF final : public ::faust::dsp {
 	
 	void buildUserInterface(UI* ui_interface) {
 		ui_interface->openVerticalBox("Salen2ndHPF");
-		ui_interface->addHorizontalSlider("Q", &fHslider1, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.5f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.01f));
-		ui_interface->addHorizontalSlider("freq", &fHslider0, FAUSTFLOAT(0.5f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->addHorizontalSlider("Q", &fHslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.5f), FAUSTFLOAT(1e+01f), FAUSTFLOAT(0.01f));
+		ui_interface->addHorizontalSlider("freq", &fHslider1, FAUSTFLOAT(0.5f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 	}
 	
@@ -140,25 +140,25 @@ struct _Salen2ndHPF final : public ::faust::dsp {
 		FAUSTFLOAT* input0 = inputs[0];
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
-		float fSlow0 = fConst2 * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider0)));
-		float fSlow1 = 1.0f / std::max<float>(0.5f, std::min<float>(1e+01f, float(fHslider1)));
+		float fSlow0 = 1.0f / std::max<float>(0.5f, std::min<float>(1e+01f, float(fHslider0)));
+		float fSlow1 = fConst2 * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider1)));
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
-			fRec3[0] = fSlow0 + fConst3 * fRec3[1];
+			fRec3[0] = fSlow1 + fConst3 * fRec3[1];
 			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec3[0] + 1.0f));
-			float fTemp1 = fSlow1 + fTemp0;
-			float fTemp2 = float(input0[i0]) - (fRec0[1] + fRec1[1] * fTemp1);
+			float fTemp1 = fSlow0 + fTemp0;
+			float fTemp2 = float(input0[i0]) - (fRec1[1] + fRec2[1] * fTemp1);
 			float fTemp3 = fTemp0 * fTemp1 + 1.0f;
+			float fRec0 = fTemp2 / fTemp3;
 			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
-			float fTemp5 = fRec1[1] + fTemp4;
-			fRec0[0] = fRec0[1] + 2.0f * fTemp0 * fTemp5;
-			float fTemp6 = fRec1[1] + 2.0f * fTemp4;
-			fRec1[0] = fTemp6;
-			float fRec2 = fTemp2 / fTemp3;
-			output0[i0] = FAUSTFLOAT(fRec2);
-			output1[i0] = FAUSTFLOAT(fRec2);
+			float fTemp5 = fRec2[1] + fTemp4;
+			fRec1[0] = fRec1[1] + 2.0f * fTemp0 * fTemp5;
+			float fTemp6 = fRec2[1] + 2.0f * fTemp4;
+			fRec2[0] = fTemp6;
+			output0[i0] = FAUSTFLOAT(fRec0);
+			output1[i0] = FAUSTFLOAT(fRec0);
 			fRec3[1] = fRec3[0];
-			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
+			fRec2[1] = fRec2[0];
 		}
 	}
 
@@ -174,12 +174,12 @@ struct _Salen2ndHPF final : public ::faust::dsp {
 	#define FAUST_ACTIVES 2
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDHORIZONTALSLIDER("Q", fHslider1, 1.0f, 0.5f, 1e+01f, 0.01f);
-	FAUST_ADDHORIZONTALSLIDER("freq", fHslider0, 0.5f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDHORIZONTALSLIDER("Q", fHslider0, 1.0f, 0.5f, 1e+01f, 0.01f);
+	FAUST_ADDHORIZONTALSLIDER("freq", fHslider1, 0.5f, 0.0f, 1.0f, 0.001f);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(HORIZONTALSLIDER, Q, "Q", fHslider1, 1.0f, 0.5f, 1e+01f, 0.01f) \
-		p(HORIZONTALSLIDER, freq, "freq", fHslider0, 0.5f, 0.0f, 1.0f, 0.001f) \
+		p(HORIZONTALSLIDER, Q, "Q", fHslider0, 1.0f, 0.5f, 1e+01f, 0.01f) \
+		p(HORIZONTALSLIDER, freq, "freq", fHslider1, 0.5f, 0.0f, 1.0f, 0.001f) \
 
 	#define FAUST_LIST_PASSIVES(p) \
 

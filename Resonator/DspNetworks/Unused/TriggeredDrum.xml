@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="TriggeredDrum" AllowPolyphonic="1" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="TriggeredDrum" Bypassed="0"
+        Name="TriggeredDrum">
+    <Nodes>
+      <Node ID="repitch" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+            ShowParameters="1">
+        <Nodes>
+          <Node ID="snex_node" FactoryPath="core.snex_node" Bypassed="0" Comment="This node implements a one-shot file player using SNEX. It also sends out a modulation signal when the sample is exhausted that can be propagated to the HISE voice management system."
+                Name="snex_node">
+            <Properties>
+              <Property ID="ClassId" Value="one_shot_player"/>
+            </Properties>
+            <ModulationTargets>
+              <Connection NodeId="voice_manager1" ParameterId="Kill Voice"/>
+            </ModulationTargets>
+            <ComplexData>
+              <Tables/>
+              <SliderPacks/>
+              <AudioFiles>
+                <AudioFile Index="0" EmbeddedData="" MinValue="0" MaxValue="10492368"/>
+              </AudioFiles>
+              <Filters/>
+              <DisplayBuffers/>
+            </ComplexData>
+            <Parameters/>
+          </Node>
+          <Node ID="voice_manager1" FactoryPath="envelope.voice_manager" Bypassed="0"
+                Comment="This forwards the message that the voice is done to the Scriptnode Voice Killer envelope which will then kill the HISE voice."
+                Name="voice_manager1">
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Kill Voice"
+                         DefaultValue="1.0" Automated="1"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                     ID="RepitchFactor" Value="0.9950067189407293" DefaultValue="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                     Value="0.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

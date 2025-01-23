@@ -149,9 +149,9 @@ struct _Salen2ndBPF final : public ::faust::dsp {
 			float fTemp2 = float(input0[i0]) - (fRec0[1] + fRec1[1] * fTemp1);
 			float fTemp3 = fTemp0 * fTemp1 + 1.0f;
 			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
-			float fTemp5 = fRec1[1] + fTemp4;
-			fRec0[0] = fRec0[1] + 2.0f * fTemp0 * fTemp5;
-			float fTemp6 = fRec1[1] + 2.0f * fTemp4;
+			float fTemp5 = fTemp4 + fRec1[1];
+			fRec0[0] = 2.0f * fTemp5 * fTemp0 + fRec0[1];
+			float fTemp6 = 2.0f * fTemp4 + fRec1[1];
 			fRec1[0] = fTemp6;
 			float fRec2 = fTemp5;
 			output0[i0] = FAUSTFLOAT(fRec2);

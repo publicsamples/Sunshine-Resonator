@@ -25,13 +25,14 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 	Factory()
 	{
 		TempoSyncer::initTempoData();
-		// Node registrations ---------------------------------------------------------------------
+		// Node registrations ----------------------------------------------------------------------
 		
 		registerPolyNode<project::wg1<1>, wrap::illegal_poly<project::wg1<1>>>();
 		registerPolyNode<project::vocoder<1>, wrap::illegal_poly<project::vocoder<1>>>();
 		registerPolyNode<project::Salen2ndLPF<1>, wrap::illegal_poly<project::Salen2ndLPF<1>>>();
 		registerPolyNode<project::Salen2ndHPF<1>, wrap::illegal_poly<project::Salen2ndHPF<1>>>();
 		registerPolyNode<project::Salen2ndBPF<1>, wrap::illegal_poly<project::Salen2ndBPF<1>>>();
+		registerPolyNode<project::PitchShifter2<1>, wrap::illegal_poly<project::PitchShifter2<1>>>();
 		registerPolyNode<project::PitchShifter<1>, wrap::illegal_poly<project::PitchShifter<1>>>();
 		registerPolyNode<project::ObLfp<1>, wrap::illegal_poly<project::ObLfp<1>>>();
 		registerPolyNode<project::ObHfp<1>, wrap::illegal_poly<project::ObHfp<1>>>();
@@ -42,35 +43,11 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::granul<1>, wrap::illegal_poly<project::granul<1>>>();
 		registerPolyNode<project::DiodeLPF<1>, wrap::illegal_poly<project::DiodeLPF<1>>>();
 		registerPolyNode<project::comb<1>, wrap::illegal_poly<project::comb<1>>>();
-		registerPolyNode<project::Filetrig<1>, wrap::illegal_poly<project::Filetrig<1>>>();
 		registerPolyNode<project::FilterForRes<1>, wrap::illegal_poly<project::FilterForRes<1>>>();
-		registerPolyNode<project::modtest1<1>, wrap::illegal_poly<project::modtest1<1>>>();
+		registerPolyNode<project::FinStack<1>, wrap::illegal_poly<project::FinStack<1>>>();
 		registerPolyNode<project::res1<1>, wrap::illegal_poly<project::res1<1>>>();
 		registerPolyNode<project::ResStage<1>, wrap::illegal_poly<project::ResStage<1>>>();
-		registerPolyNode<project::ResStage2<1>, wrap::illegal_poly<project::ResStage2<1>>>();
-		registerDataNode<project::AP_networkdata>();
-		registerDataNode<project::ApTest_networkdata>();
-		registerDataNode<project::BpBank_networkdata>();
-		registerDataNode<project::BUF_networkdata>();
-		registerDataNode<project::CableRouting_networkdata>();
-		registerDataNode<project::CloneEmu_networkdata>();
-		registerDataNode<project::_networkdata>();
-		registerDataNode<project::delay_networkdata>();
-		registerDataNode<project::Follow1_networkdata>();
-		registerDataNode<project::_networkdata>();
-		registerDataNode<project::harmonic_filter_networkdata>();
-		registerDataNode<project::modifier_networkdata>();
-		registerDataNode<project::OneAP_networkdata>();
-		registerDataNode<project::POSTRESONATOR_networkdata>();
-		registerDataNode<project::PreTrack_networkdata>();
-		registerDataNode<project::Resonantor_networkdata>();
 		registerDataNode<project::resonate_networkdata>();
-		registerDataNode<project::ResStage3_networkdata>();
-		registerDataNode<project::Restest_networkdata>();
-		registerDataNode<project::reverb_networkdata>();
-		registerDataNode<project::_networkdata>();
-		registerDataNode<project::tilt_networkdata>();
-		registerDataNode<project::_networkdata>();
 	}
 };
 }

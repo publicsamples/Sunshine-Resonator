@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="FinStack" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="FinStack" Bypassed="0" Name="FinStack"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3">
+        <Nodes>
+          <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes/>
+            <Parameters/>
+          </Node>
+          <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain2">
+            <Nodes>
+              <Node ID="gate" FactoryPath="dynamics.gate" Bypassed="0" Name="gate">
+                <ModulationTargets>
+                  <Connection NodeId="minmax" ParameterId="Value"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <DisplayBuffers>
+                    <DisplayBuffer Index="-1"/>
+                  </DisplayBuffers>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Threshhold" Value="-100.0"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.4306765496730804" ID="Attack" Value="50.0"/>
+                  <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.4306765496730804" ID="Release" Value="50.0"/>
+                  <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.2968033850193024" ID="Ratio" Value="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Sidechain" Value="2.0"
+                             DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="modchain" FactoryPath="container.modchain" Bypassed="0" Name="modchain">
+        <Nodes>
+          <Node ID="split" FactoryPath="container.split" Bypassed="0" Name="split">
+            <Nodes>
+              <Node ID="clone_pack" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResFreq"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="0"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack1" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="sampleandhold" ParameterId="Counter"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="1"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack2" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="CompThresh"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="2"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack3" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="CompRel"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="3"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack4" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="CompRatio"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="4"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack5" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="gain" ParameterId="Gain"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="5"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack6" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="jpanner" ParameterId="Pan"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="6"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_pack7" FactoryPath="control.clone_pack" Bypassed="0"
+                    Name="clone_pack">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="Rate"/>
+                </ModulationTargets>
+                <ComplexData>
+                  <SliderPacks>
+                    <SliderPack Index="7"/>
+                  </SliderPacks>
+                </ComplexData>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="split1" FactoryPath="container.split" Bypassed="0" Name="split1">
+            <Nodes>
+              <Node ID="clone_cable1" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="InputTrig"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable2" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResFeed"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable3" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="PostCut"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable4" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="PostRes"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable5" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="Phase"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable8" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="InputHP"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable6" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="CutOffA"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_cable7" FactoryPath="control.clone_cable" Bypassed="0"
+                    Name="clone_cable">
+                <Properties>
+                  <Property ID="Mode" Value="Fixed"/>
+                </Properties>
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="qA"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Gamma" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward6" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="PostMode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward8" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="Fmode1"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResMin"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="220.0" MaxValue="3520.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward1" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResMax"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="220.0" MaxValue="3520.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward3" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResStep"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="256.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward7" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="CompAtk"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="250.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward4" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResMode"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="1.0" MaxValue="4.0" ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+              <Node ID="clone_forward5" FactoryPath="control.clone_forward" Bypassed="0"
+                    Name="clone_forward">
+                <ModulationTargets>
+                  <Connection NodeId="ResStage" ParameterId="ResLP"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="NumClones"
+                             Value="8.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584686382"
+                             ID="Value" Automated="1"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+      <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
+        <Properties>
+          <Property ID="NumParameters" Value="2"/>
+          <Property ID="Mode" Value="Overlap"/>
+        </Properties>
+        <SwitchTargets>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain8" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+          <SwitchTarget>
+            <Connections>
+              <Connection NodeId="gain9" ParameterId="Gain"/>
+            </Connections>
+          </SwitchTarget>
+        </SwitchTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+        <Nodes>
+          <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain8">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+            <Nodes>
+              <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+                    ShowClones="0" ShowParameters="1">
+                <Properties>
+                  <Property ID="IsVertical" Value="0"/>
+                </Properties>
+                <Nodes>
+                  <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                        NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Automated="1"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0" Automated="1"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes" Automated="1"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" DefaultValue="1.0"
+                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan" Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold8" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage15" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain17" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner15" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold9" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage16" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain18" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner16" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold10" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage17" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain19" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner17" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold11" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage18" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain20" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner18" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold12" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage19" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain21" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner19" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold13" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage20" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain22" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner20" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                  <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
+                        Name="clone_child" NodeColour="4287927444">
+                    <Nodes>
+                      <Node ID="sampleandhold14" FactoryPath="fx.sampleandhold" Bypassed="0"
+                            Name="sampleandhold">
+                        <Parameters>
+                          <Parameter MinValue="1.0" MaxValue="2000.0" StepSize="1.0" ID="Counter"
+                                     DefaultValue="1.0" Automated="1"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="ResStage21" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
+                        <ComplexData>
+                          <DisplayBuffers>
+                            <DisplayBuffer Index="-1"/>
+                          </DisplayBuffers>
+                        </ComplexData>
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="CutOffA" DefaultValue="1.0" Value="0.08490649604410391"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="qA" DefaultValue="1.0" Value="0.931458984375"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="CompThresh"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompAtk" DefaultValue="0.0"/>
+                          <Parameter MinValue="1.0" MaxValue="32.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRel" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="250.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.4306765496730804" ID="CompRatio" DefaultValue="10.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" DefaultValue="1.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="InputHP" DefaultValue="1539.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFreq" DefaultValue="1.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMin" DefaultValue="220.0"/>
+                          <Parameter MinValue="220.0" MaxValue="3520.0" SkewFactor="0.2299045622348785"
+                                     ID="ResMax" DefaultValue="220.0"/>
+                          <Parameter MinValue="0.0" MaxValue="256.0" ID="ResStep" DefaultValue="220.0"/>
+                          <Parameter MinValue="1.0" MaxValue="4.0" StepSize="1.0" ID="ResMode" DefaultValue="4.0"/>
+                          <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
+                                     ID="ResLP" DefaultValue="20.0" Value="5646.94826119933"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="ResFeed" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" SkewFactor="0.2391041070222855"
+                                     ID="PostCut" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes"/>
+                          <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" DefaultValue="1.0"/>
+                          <Parameter MinValue="1.0" MaxValue="11.0" StepSize="1.0" ID="Fmode1" Value="11.0"
+                                     DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" DefaultValue="1.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="gain23" FactoryPath="core.gain" Bypassed="0" Name="gain">
+                        <Parameters>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="Gain"/>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="jpanner21" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
+                        <Parameters>
+                          <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan"/>
+                          <Parameter MinValue="0.0" MaxValue="6.0" StepSize="1.0" ID="Rule" Value="1.0"/>
+                        </Parameters>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="1.0" MaxValue="8" StepSize="1.0" ID="NumClones" Value="8.0"
+                             DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                             Value="2.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="minmax" FactoryPath="control.minmax" Bypassed="0" Name="minmax">
+                <ModulationTargets>
+                  <Connection NodeId="gain1" ParameterId="Gain"/>
+                </ModulationTargets>
+                <Parameters>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Minimum" Value="-100.0" DefaultValue="0.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1" SkewFactor="5.422270979580217"
+                             ID="Maximum" Value="0.0" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                             ID="Skew" Value="5.422270979580217" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.1" DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="1.0"
+                             DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain1" FactoryPath="core.gain" Bypassed="0" Name="gain1">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="189.9000028297305"
+                             DefaultValue="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+              <Node ID="gain9" FactoryPath="core.gain" Bypassed="0" Name="gain8">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Resonance" Value="0.3100000023841858"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputTrig" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable2" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PostCut" Value="0.4944802989130435"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes" Value="0.7800000309944153"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.6000000238418579"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable5" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="220.0" MaxValue="3520.0" ID="Min" Value="220.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="220.0" MaxValue="3520.0" ID="Max" Value="3520.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward1" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="256.0" ID="Step" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward3" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="ResMode" Value="2.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward4" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584686382"
+                 ID="InputHP" Value="552.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable8" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="13.0" StepSize="1.0" ID="PostMode" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward6" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="20.0" MaxValue="20000.0" ID="FbLp" Value="4798.33984375"
+                 DefaultValue="0.0" SkewFactor="0.2299045584686382">
+        <Connections>
+          <Connection NodeId="clone_forward5" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="compAttack" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_forward7" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PreCut" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable6" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="13.0" ID="PreMode" Value="1.0" DefaultValue="0.0"
+                 StepSize="1.0">
+        <Connections>
+          <Connection NodeId="clone_forward8" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PreQ" Value="0.0">
+        <Connections>
+          <Connection NodeId="clone_cable7" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="mix" Value="1.0" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="xfader" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

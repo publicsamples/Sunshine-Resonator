@@ -20,38 +20,6 @@
                   <Connection NodeId="sliderbank1" ParameterId="Value"/>
                 </ModulationTargets>
               </Node>
-              <Node ID="global_cable6" FactoryPath="routing.global_cable" Bypassed="0"
-                    Name="global_cable6" NodeColour="4286624327">
-                <Properties>
-                  <Property ID="Connection" Value="Window"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                </Parameters>
-                <ModulationTargets>
-                  <Connection NodeId="ResStage" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage1" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage3" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage4" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage5" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage6" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage7" ParameterId="RateWin"/>
-                  <Connection NodeId="ResStage8" ParameterId="RateWin"/>
-                </ModulationTargets>
-              </Node>
-              <Node ID="global_cable10" FactoryPath="routing.global_cable" Bypassed="0"
-                    Name="global_cable10" NodeColour="4282866866">
-                <Properties>
-                  <Property ID="Connection" Value="InputModifier"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                </Parameters>
-                <ModulationTargets>
-                  <Connection NodeId="pma6" ParameterId="Add"/>
-                  <Connection NodeId="sliderbank9" ParameterId="Value"/>
-                </ModulationTargets>
-              </Node>
               <Node ID="global_cable1" FactoryPath="routing.global_cable" Bypassed="0"
                     Name="global_cable" NodeColour="4289900359">
                 <Properties>
@@ -60,16 +28,6 @@
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
                 </Parameters>
-                <ModulationTargets>
-                  <Connection NodeId="ResStage" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage1" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage3" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage4" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage5" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage6" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage7" ParameterId="CompThresh"/>
-                  <Connection NodeId="ResStage8" ParameterId="CompThresh"/>
-                </ModulationTargets>
               </Node>
               <Node ID="global_cable2" FactoryPath="routing.global_cable" Bypassed="0"
                     Name="global_cable" NodeColour="4289899591">
@@ -109,19 +67,6 @@
                   <Connection NodeId="ResStage8" ParameterId="PostCut"/>
                 </ModulationTargets>
               </Node>
-              <Node ID="global_cable4" FactoryPath="routing.global_cable" Bypassed="0"
-                    Name="global_cable" NodeColour="4288366770">
-                <Properties>
-                  <Property ID="Connection" Value="SamplePhase"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                </Parameters>
-                <ModulationTargets>
-                  <Connection NodeId="pma5" ParameterId="Add"/>
-                  <Connection NodeId="sliderbank8" ParameterId="Value"/>
-                </ModulationTargets>
-              </Node>
               <Node ID="global_cable5" FactoryPath="routing.global_cable" Bypassed="0"
                     Name="global_cable5" NodeColour="4287279688">
                 <Properties>
@@ -133,19 +78,6 @@
                 <ModulationTargets>
                   <Connection NodeId="pma" ParameterId="Add"/>
                   <Connection NodeId="sliderbank3" ParameterId="Value"/>
-                </ModulationTargets>
-              </Node>
-              <Node ID="global_cable7" FactoryPath="routing.global_cable" Bypassed="0"
-                    Name="global_cable7" NodeColour="4289873784">
-                <Properties>
-                  <Property ID="Connection" Value="ShiftOffset"/>
-                </Properties>
-                <Parameters>
-                  <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                </Parameters>
-                <ModulationTargets>
-                  <Connection NodeId="pma2" ParameterId="Add"/>
-                  <Connection NodeId="sliderbank5" ParameterId="Value"/>
                 </ModulationTargets>
               </Node>
               <Node ID="global_cable8" FactoryPath="routing.global_cable" Bypassed="0"
@@ -226,88 +158,6 @@
             <ComplexData>
               <SliderPacks>
                 <SliderPack Index="0" EmbeddedData="32.EtdT+LyLy7SgqGwOb8nv9LyLy5CRgquOMyLy9v0iB6C"/>
-              </SliderPacks>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma1" FactoryPath="control.pma" Bypassed="0" Name="Release">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
-              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" DefaultValue="0.0"
-                         Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma2" FactoryPath="control.pma" Bypassed="0" Name="Rate">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
-              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" DefaultValue="0.0"
-                         Automated="1"/>
-            </Parameters>
-            <ModulationTargets>
-              <Connection NodeId="ResStage" ParameterId="Rate"/>
-              <Connection NodeId="ResStage1" ParameterId="Rate"/>
-              <Connection NodeId="ResStage3" ParameterId="Rate"/>
-              <Connection NodeId="ResStage4" ParameterId="Rate"/>
-              <Connection NodeId="ResStage5" ParameterId="Rate"/>
-              <Connection NodeId="ResStage7" ParameterId="Rate"/>
-              <Connection NodeId="ResStage8" ParameterId="Rate"/>
-              <Connection NodeId="ResStage6" ParameterId="Rate"/>
-            </ModulationTargets>
-          </Node>
-          <Node ID="sliderbank5" FactoryPath="control.sliderbank" Bypassed="0"
-                Name="RateSp">
-            <Properties>
-              <Property ID="NumParameters" Value="8"/>
-            </Properties>
-            <SwitchTargets>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage1" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage3" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage4" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage5" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage6" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage7" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage8" ParameterId="rate2"/>
-                </Connections>
-              </SwitchTarget>
-            </SwitchTargets>
-            <ComplexData>
-              <SliderPacks>
-                <SliderPack Index="2" EmbeddedData="32......35Qg7C...3O...f+....9iBWOxORgqG+....9C"/>
               </SliderPacks>
             </ComplexData>
             <Parameters>
@@ -411,217 +261,14 @@
               <Connection NodeId="ResStage8" ParameterId="Phase"/>
             </ModulationTargets>
           </Node>
-          <Node ID="sliderbank8" FactoryPath="control.sliderbank" Bypassed="0"
-                Name="PHaseSp">
-            <Properties>
-              <Property ID="NumParameters" Value="8"/>
-            </Properties>
-            <SwitchTargets>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage1" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage3" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage4" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage5" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage6" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage7" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage8" ParameterId="Phase1"/>
-                </Connections>
-              </SwitchTarget>
-            </SwitchTargets>
-            <ComplexData>
-              <SliderPacks>
-                <SliderPack Index="4" EmbeddedData="32....f+....9yv0i1OtdTH+PgqG6iBWOhOJb8n8......"/>
-              </SliderPacks>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="pma6" FactoryPath="control.pma" Bypassed="0" Name="Mod">
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
-              <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Value="1.0"/>
-              <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" DefaultValue="0.0"
-                         Automated="1"/>
-            </Parameters>
-            <ModulationTargets>
-              <Connection NodeId="ResStage" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage1" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage3" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage4" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage5" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage6" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage7" ParameterId="Mod1"/>
-              <Connection NodeId="ResStage8" ParameterId="Mod1"/>
-            </ModulationTargets>
-          </Node>
-          <Node ID="sliderbank9" FactoryPath="control.sliderbank" Bypassed="0"
-                Name="ModSp">
-            <Properties>
-              <Property ID="NumParameters" Value="8"/>
-            </Properties>
-            <SwitchTargets>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage1" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage3" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage4" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage5" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage6" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage7" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage8" ParameterId="Mod2"/>
-                </Connections>
-              </SwitchTarget>
-            </SwitchTargets>
-            <ComplexData>
-              <SliderPacks>
-                <SliderPack Index="5" EmbeddedData="32....f+fT358SgqG0OrGEN+ziBW6yv0ipOw0iB+XlYl7C"/>
-              </SliderPacks>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="pack8_writer" FactoryPath="control.pack8_writer" Bypassed="0"
-                Name="pack8_writer">
-            <ComplexData>
-              <SliderPacks>
-                <SliderPack Index="6" EmbeddedData="32............................................"/>
-              </SliderPacks>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value3" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value4" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value5" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value6" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value7" Automated="1"/>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value8" Automated="1"/>
-            </Parameters>
-          </Node>
-          <Node ID="sliderbank10" FactoryPath="control.sliderbank" Bypassed="0"
-                Name="SampleSlot">
-            <Properties>
-              <Property ID="NumParameters" Value="8"/>
-            </Properties>
-            <SwitchTargets>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage1" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage3" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage4" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage5" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage6" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage7" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-              <SwitchTarget>
-                <Connections>
-                  <Connection NodeId="ResStage8" ParameterId="SlotSel1"/>
-                </Connections>
-              </SwitchTarget>
-            </SwitchTargets>
-            <ComplexData>
-              <SliderPacks>
-                <SliderPack Index="6" EmbeddedData="32......7nv02Cov0qOWOJL+....9C...3O35Qg97nv04C"/>
-              </SliderPacks>
-            </ComplexData>
-            <Parameters>
-              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
-            </Parameters>
-          </Node>
         </Nodes>
         <Parameters/>
       </Node>
       <Node ID="modchain1" FactoryPath="container.modchain" Bypassed="0"
             Name="modchain1">
         <Nodes>
-          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" Name="chain10">
+          <Node ID="chain10" FactoryPath="container.chain" Bypassed="0" Name="chain10"
+                Folded="1">
             <Nodes>
               <Node ID="split3" FactoryPath="container.split" Bypassed="0" Name="split3">
                 <Nodes>
@@ -735,8 +382,7 @@
                 </Nodes>
                 <Parameters/>
               </Node>
-              <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split4"
-                    Folded="1">
+              <Node ID="split4" FactoryPath="container.split" Bypassed="0" Name="split4">
                 <Nodes>
                   <Node ID="chain11" FactoryPath="container.chain" Bypassed="0" Name="chain11">
                     <Nodes>
@@ -1020,10 +666,167 @@
         </Nodes>
         <Parameters/>
       </Node>
+      <Node ID="split2" FactoryPath="container.split" Bypassed="0" Name="split2">
+        <Nodes>
+          <Node ID="sliderbank" FactoryPath="control.sliderbank" Bypassed="0"
+                Name="sliderbank">
+            <Properties>
+              <Property ID="NumParameters" Value="8"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections/>
+              </SwitchTarget>
+            </SwitchTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="1"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="sliderbank4" FactoryPath="control.sliderbank" Bypassed="0"
+                Name="sliderbank">
+            <Properties>
+              <Property ID="NumParameters" Value="8"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage1" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage3" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage4" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage5" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage6" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage7" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage8" ParameterId="CompThresh"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="2"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
+            </Parameters>
+          </Node>
+          <Node ID="sliderbank2" FactoryPath="control.sliderbank" Bypassed="0"
+                Name="sliderbank">
+            <Properties>
+              <Property ID="NumParameters" Value="8"/>
+            </Properties>
+            <SwitchTargets>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage1" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage3" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage4" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage5" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage6" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage7" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+              <SwitchTarget>
+                <Connections>
+                  <Connection NodeId="ResStage8" ParameterId="CompRatio"/>
+                </Connections>
+              </SwitchTarget>
+            </SwitchTargets>
+            <ComplexData>
+              <SliderPacks>
+                <SliderPack Index="5"/>
+              </SliderPacks>
+            </ComplexData>
+            <Parameters>
+              <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0" DefaultValue="0.0"/>
+            </Parameters>
+          </Node>
+        </Nodes>
+        <Parameters/>
+      </Node>
       <Node ID="xfader" FactoryPath="control.xfader" Bypassed="0" Name="xfader">
         <Properties>
           <Property ID="NumParameters" Value="2"/>
-          <Property ID="Mode" Value="Linear"/>
+          <Property ID="Mode" Value="Overlap"/>
         </Properties>
         <SwitchTargets>
           <SwitchTarget>
@@ -1045,12 +848,25 @@
         <Nodes>
           <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain3">
             <Nodes>
+              <Node ID="gain10" FactoryPath="core.gain" Bypassed="0" Name="gain10">
+                <Parameters>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="Gain" Value="-23.59999886155128"
+                             DefaultValue="0.0"/>
+                  <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                  <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                             SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                             DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
               <Node ID="gain" FactoryPath="core.gain" Bypassed="0" Name="gain">
                 <Parameters>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="157.600002348423"
+                             DefaultValue="20.0"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                 </Parameters>
@@ -1068,10 +884,10 @@
                       <Node ID="ResStage" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1103,9 +919,8 @@
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                                     Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1146,12 +961,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1159,8 +972,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1189,8 +1001,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain2" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1200,7 +1011,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1217,10 +1029,10 @@
                       <Node ID="ResStage1" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1251,10 +1063,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1295,12 +1105,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1308,9 +1116,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.31" DefaultValue="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="11.0" ID="Fmode2" Value="1.0"/>
@@ -1335,8 +1142,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain3" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1346,7 +1152,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner1" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1363,10 +1170,10 @@
                       <Node ID="ResStage3" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1398,9 +1205,8 @@
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                                     Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1441,12 +1247,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1454,8 +1258,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1481,8 +1284,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain4" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1492,7 +1294,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner2" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1509,10 +1312,10 @@
                       <Node ID="ResStage4" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1543,10 +1346,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1587,12 +1388,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1600,8 +1399,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1627,8 +1425,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain5" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1638,7 +1435,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner3" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1655,10 +1453,10 @@
                       <Node ID="ResStage5" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1689,10 +1487,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1733,12 +1529,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1746,8 +1540,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1773,8 +1566,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain6" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1784,7 +1576,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner4" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1801,10 +1594,10 @@
                       <Node ID="ResStage6" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1835,10 +1628,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -1879,12 +1670,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1892,8 +1681,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -1920,8 +1708,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain7" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -1931,7 +1718,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner5" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -1948,10 +1736,10 @@
                       <Node ID="ResStage7" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -1982,10 +1770,8 @@
                                      Automated="1"/>
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -2026,12 +1812,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -2039,8 +1823,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -2066,8 +1849,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain8" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -2077,7 +1859,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner6" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2094,10 +1877,10 @@
                       <Node ID="ResStage8" FactoryPath="project.ResStage" Bypassed="0" Name="ResStage">
                         <ComplexData>
                           <AudioFiles>
-                            <AudioFile Index="0" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="1" MinValue="0" MaxValue="325661"/>
-                            <AudioFile Index="2" MinValue="0" MaxValue="325662"/>
-                            <AudioFile Index="3" MinValue="0" MaxValue="325662"/>
+                            <AudioFile Index="0" MinValue="0" MaxValue="51819"/>
+                            <AudioFile Index="1" MinValue="0" MaxValue="88116"/>
+                            <AudioFile Index="2" MinValue="0" MaxValue="167522"/>
+                            <AudioFile Index="3" MinValue="0" MaxValue="57424"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
                             <AudioFile Index="-1"/>
@@ -2129,9 +1912,8 @@
                           <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045622348785"
                                      ID="InputHP" DefaultValue="20.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Rate" DefaultValue="0.6181216239929199"
-                                     Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"
-                                     Automated="1"/>
+                                     Value="0.0"/>
+                          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="RateWin" DefaultValue="7.0"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="RateWinDiv"
                                      DefaultValue="31.0" Automated="1"/>
                           <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="ResFreq"
@@ -2172,12 +1954,10 @@
                                      DefaultValue="0.0" Automated="1"/>
                           <Parameter MinValue="1.0" MaxValue="32.0" StepSize="1.0" ID="samplediv"
                                      DefaultValue="10.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase1" DefaultValue="0.764775812625885"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase2" Value="0.2291015684604645"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0" Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod1" DefaultValue="1.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod2" DefaultValue="0.0473320297896862"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="Mod3" Value="0.01773437485098839"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="PhaseMode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -2185,8 +1965,7 @@
                                      Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="24.0" StepSize="1.0" ID="PsStep" DefaultValue="4.0"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="rate2" DefaultValue="0.3392153680324554"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="rate3" Value="0.3072305023670197"/>
                           <Parameter MinValue="1.0" MaxValue="3.0" ID="ratemode" DefaultValue="1.0"
                                      Automated="1"/>
@@ -2212,8 +1991,7 @@
                                      DefaultValue="1.0" Automated="1"/>
                           <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" DefaultValue="0.09205163270235062"
                                      Automated="1"/>
-                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"
-                                     Automated="1"/>
+                          <Parameter MinValue="0.0" MaxValue="3.0" StepSize="1.0" ID="SlotSel1" DefaultValue="1.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="gain9" FactoryPath="core.gain" Bypassed="0" Name="gain2">
@@ -2223,7 +2001,8 @@
                           <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
                                      SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
                           <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
-                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+                                     SkewFactor="5.422270774841309" ID="ResetValue" Value="-100.0"
+                                     DefaultValue="0.0"/>
                         </Parameters>
                       </Node>
                       <Node ID="jpanner7" FactoryPath="jdsp.jpanner" Bypassed="0" Name="jpanner">
@@ -2243,7 +2022,8 @@
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="Gain" Automated="1"/>
                   <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
-                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="0.0" DefaultValue="20.0"/>
+                             SkewFactor="0.3010300099849701" ID="Smoothing" Value="89.50000133365391"
+                             DefaultValue="20.0"/>
                   <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
                              SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
                 </Parameters>
@@ -2256,7 +2036,7 @@
       </Node>
     </Nodes>
     <Parameters>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputImpuse" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputImpuse" Value="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="InputTrig"/>
           <Connection NodeId="ResStage1" ParameterId="InputTrig"/>
@@ -2278,7 +2058,7 @@
           <Connection NodeId="ResStage" ParameterId="InputHP"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="5.0" ID="delaymode" Value="4.0" DefaultValue="0.0">
+      <Parameter MinValue="1.0" MaxValue="5.0" ID="delaymode" Value="3.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="ResMode"/>
           <Connection NodeId="ResStage1" ParameterId="ResMode"/>
@@ -2290,8 +2070,7 @@
           <Connection NodeId="ResStage8" ParameterId="ResMode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="0.9800000190734863"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="feed" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="ResFeed"/>
           <Connection NodeId="ResStage1" ParameterId="ResFeed"/>
@@ -2303,7 +2082,7 @@
           <Connection NodeId="ResStage8" ParameterId="ResFeed"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="220.0" MaxValue="3520.0" ID="min" Value="220.0" DefaultValue="0.0">
+      <Parameter MinValue="220.0" MaxValue="3520.0" ID="min" Value="325.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="ResMin"/>
           <Connection NodeId="ResStage1" ParameterId="ResMin"/>
@@ -2315,7 +2094,7 @@
           <Connection NodeId="ResStage8" ParameterId="ResMin"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="220.0" MaxValue="3520.0" ID="max" Value="3520.0" DefaultValue="0.0">
+      <Parameter MinValue="220.0" MaxValue="3520.0" ID="max" Value="3005.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="ResMax"/>
           <Connection NodeId="ResStage1" ParameterId="ResMax"/>
@@ -2351,24 +2130,12 @@
           <Connection NodeId="ResStage8" ParameterId="CompAtk"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="32.0" ID="CompRel" Value="23.38654891304348"
+      <Parameter MinValue="1.0" MaxValue="32.0" ID="CompRel" Value="12.77505095108696"
                  DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pma1" ParameterId="Add"/>
-        </Connections>
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="256.0" ID="CompRatio" Value="250.0"
-                 DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="ResStage" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage6" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage7" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage8" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage5" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage4" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage3" ParameterId="CompRatio"/>
-          <Connection NodeId="ResStage1" ParameterId="CompRatio"/>
-        </Connections>
+      <Parameter MinValue="0.0" MaxValue="256.0" ID="CompRatio" Value="39.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="InputShiftFB" Value="0.0">
         <Connections>
@@ -2410,7 +2177,8 @@
           <Connection NodeId="ResStage3" ParameterId="ModifierMode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQ" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQ" Value="0.9300000071525574"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="qA"/>
           <Connection NodeId="ResStage1" ParameterId="qA"/>
@@ -2422,8 +2190,7 @@
           <Connection NodeId="ResStage8" ParameterId="qA"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes" Value="0.300000011920929"
-                 DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="PostRes" Value="0.0">
         <Connections>
           <Connection NodeId="ResStage3" ParameterId="PostRes"/>
           <Connection NodeId="ResStage5" ParameterId="PostRes"/>
@@ -2434,7 +2201,7 @@
           <Connection NodeId="ResStage1" ParameterId="PostRes"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="13.0" ID="PostMode" Value="5.0" DefaultValue="0.0">
+      <Parameter MinValue="1.0" MaxValue="13.0" ID="PostMode" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage8" ParameterId="PostMode"/>
           <Connection NodeId="ResStage7" ParameterId="PostMode"/>
@@ -2447,7 +2214,7 @@
           <Connection NodeId="ResStage1" ParameterId="PostMode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="11.0" ID="InFilterModeA" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="11.0" ID="InFilterModeA" Value="3.0"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="Fmode1"/>
@@ -2478,10 +2245,10 @@
           <Connection NodeId="xfader" ParameterId="Value"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQb" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="InputQb" Value="0.0">
         <Connections/>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampAtk" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampAtk" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="Atk"/>
           <Connection NodeId="ResStage1" ParameterId="Atk"/>
@@ -2493,7 +2260,8 @@
           <Connection NodeId="ResStage8" ParameterId="Atk"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampRel" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1000.0" ID="SampRel" Value="692.0499877929688"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="Rel"/>
           <Connection NodeId="ResStage1" ParameterId="Rel"/>
@@ -2517,7 +2285,7 @@
           <Connection NodeId="ResStage8" ParameterId="samplediv"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSync" Value="1.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSync" Value="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="SampleSync"/>
           <Connection NodeId="ResStage1" ParameterId="SampleSync"/>
@@ -2529,7 +2297,7 @@
           <Connection NodeId="ResStage8" ParameterId="SampleSync"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pqn" Value="0.6399999856948853"
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pqn" Value="-0.01976563930511466"
                  DefaultValue="0.0">
         <Connections/>
       </Parameter>
@@ -2544,7 +2312,7 @@
           <Connection NodeId="ResStage8" ParameterId="PhaseMode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="3.0" ID="ModifierModMode" Value="1.0"
+      <Parameter MinValue="1.0" MaxValue="3.0" ID="ModifierModMode" Value="2.024463554050612"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="ModMode"/>
@@ -2579,7 +2347,7 @@
           <Connection NodeId="ResStage8" ParameterId="RateDivMode"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="24.0" ID="PitchStep" Value="23.0" DefaultValue="0.0">
+      <Parameter MinValue="0.0" MaxValue="24.0" ID="PitchStep" Value="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="PsStep"/>
           <Connection NodeId="ResStage1" ParameterId="PsStep"/>
@@ -2617,7 +2385,7 @@
           <Connection NodeId="ResStage8" ParameterId="FilterModShape"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="20.0" MaxValue="20000.0" ID="InputHP" Value="80.0"
+      <Parameter MinValue="20.0" MaxValue="20000.0" ID="InputHP" Value="1539.0"
                  DefaultValue="0.0" SkewFactor="0.2299045622348785">
         <Connections>
           <Connection NodeId="ResStage1" ParameterId="InputHP"/>
@@ -2629,7 +2397,8 @@
           <Connection NodeId="ResStage8" ParameterId="InputHP"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSig" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleSig" Value="0.1700000017881393"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="SampleSigIn"/>
           <Connection NodeId="ResStage8" ParameterId="SampleSigIn"/>
@@ -2641,8 +2410,7 @@
           <Connection NodeId="ResStage1" ParameterId="SampleSigIn"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pitch" Value="0.03838315217391308"
-                 DefaultValue="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pitch" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="fine"/>
           <Connection NodeId="ResStage1" ParameterId="fine"/>
@@ -2654,7 +2422,7 @@
           <Connection NodeId="ResStage8" ParameterId="fine"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="RealRealse" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="RealRealse" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage8" ParameterId="SampRel"/>
           <Connection NodeId="ResStage7" ParameterId="SampRel"/>
@@ -2679,7 +2447,8 @@
           <Connection NodeId="ResStage8" ParameterId="SampleShape"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" Value="0.0">
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="SampleLoop" Value="0.09000000357627869"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="SampleLoop"/>
           <Connection NodeId="ResStage8" ParameterId="SampleLoop"/>
@@ -2692,14 +2461,10 @@
         </Connections>
       </Parameter>
       <Parameter MinValue="1.0" MaxValue="4.0" ID="slot" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value1"/>
-        </Connections>
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="Slot2" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value2"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="Slot2" Value="2.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
       <Parameter MinValue="0.0" MaxValue="1.0" ID="GainMode" Value="0.0" StepSize="1.0">
         <Connections>
@@ -2713,122 +2478,119 @@
           <Connection NodeId="branch11" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="Slot3" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value3"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="Slot3" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot4" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value4"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot4" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot5" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value5"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot5" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot6" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value6"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot6" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot7" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value7"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot7" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot8" Value="1.0" DefaultValue="0.0">
-        <Connections>
-          <Connection NodeId="pack8_writer" ParameterId="Value8"/>
-        </Connections>
+      <Parameter MinValue="1.0" MaxValue="4.0" ID="slot8" Value="3.0" DefaultValue="0.0">
+        <Connections/>
       </Parameter>
-      <Parameter ID="Rat1" MinValue="1.0" MaxValue="32.0" Value="4.400000095367432"
+      <Parameter ID="Rat1" MinValue="1.0" MaxValue="32.0" Value="21.70000076293945"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat2" MinValue="1.0" MaxValue="32.0" Value="12.19999980926514"
-                 DefaultValue="1.0">
+      <Parameter ID="Rat2" MinValue="1.0" MaxValue="32.0" Value="28.0" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage1" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat3" MinValue="1.0" MaxValue="32.0" Value="6.800000190734863"
+      <Parameter ID="Rat3" MinValue="1.0" MaxValue="32.0" Value="8.600000381469727"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage3" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat4" MinValue="1.0" MaxValue="32.0" Value="14.10000038146973"
+      <Parameter ID="Rat4" MinValue="1.0" MaxValue="32.0" Value="1.899999976158142"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage4" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat5" MinValue="1.0" MaxValue="32.0" Value="12.30000019073486"
+      <Parameter ID="Rat5" MinValue="1.0" MaxValue="32.0" Value="3.299999952316284"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage5" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat6" MinValue="1.0" MaxValue="32.0" Value="6.200000286102295"
+      <Parameter ID="Rat6" MinValue="1.0" MaxValue="32.0" Value="5.599999904632568"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage6" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat7" MinValue="1.0" MaxValue="32.0" Value="6.599999904632568"
-                 DefaultValue="1.0">
+      <Parameter ID="Rat7" MinValue="1.0" MaxValue="32.0" Value="1.0">
         <Connections>
           <Connection NodeId="ResStage7" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Rat8" MinValue="1.0" MaxValue="32.0" Value="17.70000076293945"
+      <Parameter ID="Rat8" MinValue="1.0" MaxValue="32.0" Value="4.700000286102295"
                  DefaultValue="1.0">
         <Connections>
           <Connection NodeId="ResStage8" ParameterId="CompRel"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan1" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan1" Value="-1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan2" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan2" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner1" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan3" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="pan3" Value="-0.3899999856948853"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner2" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan4" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan4" Value="2.081668171172169e-17"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner3" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan5" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan5" Value="0.1700000017881393"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner4" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan6" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan6" Value="0.239999994635582"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner5" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan7" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan7" Value="0.6800000071525574"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner6" ParameterId="Pan"/>
         </Connections>
       </Parameter>
-      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan8" Value="0.0">
+      <Parameter MinValue="-1.0" MaxValue="1.0" ID="Pan8" Value="1.0" DefaultValue="0.0">
         <Connections>
           <Connection NodeId="jpanner7" ParameterId="Pan"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Phase" Value="0.6860563858695652"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="pma5" ParameterId="Add"/>
         </Connections>
       </Parameter>
     </Parameters>

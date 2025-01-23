@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="atepitch" Version="0.0.0">
+  <Node FactoryPath="container.chain" ID="atepitch" Bypassed="0" Name="atepitch">
+    <Nodes>
+      <Node ID="clone" FactoryPath="container.clone" Bypassed="0" Name="clone"
+            ShowClones="0" ShowParameters="1">
+        <Properties>
+          <Property ID="IsVertical" Value="0"/>
+        </Properties>
+        <Nodes>
+          <Node ID="clone_child" FactoryPath="container.chain" Bypassed="0" Name="clone_child"
+                NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child1" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch1" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain1" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive1" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay1" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send1" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive1"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child2" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch2" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain2" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive2" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay2" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send2" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive2"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child3" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch3" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain3" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive3" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay3" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send3" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive3"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child4" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch4" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain4" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive4" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay4" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send4" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive4"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child5" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch5" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain5" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive5" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay5" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send5" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive5"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child6" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch6" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain6" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive6" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay6" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send6" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive6"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+          <Node ID="clone_child7" FactoryPath="container.chain" Bypassed="0"
+                Name="clone_child" NodeColour="4287927444" ShowParameters="1">
+            <Nodes>
+              <Node ID="repitch7" FactoryPath="container.repitch" Bypassed="0" Name="repitch"
+                    ShowParameters="1">
+                <Nodes>
+                  <Node ID="chain7" FactoryPath="container.chain" Bypassed="0" Name="chain">
+                    <Nodes>
+                      <Node ID="receive7" FactoryPath="routing.receive" Bypassed="0" Name="receive">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1.0" ID="Feedback" Value="0.791265625"
+                                     DefaultValue="0.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="fix_delay7" FactoryPath="core.fix_delay" Bypassed="0" Name="fix_delay">
+                        <Parameters>
+                          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                                     SkewFactor="0.3010300099849701" ID="DelayTime" Value="3.700000055134296"
+                                     DefaultValue="100.0"/>
+                          <Parameter MinValue="0.0" MaxValue="1024.0" StepSize="1.0" ID="FadeTime"
+                                     Value="512.0"/>
+                        </Parameters>
+                      </Node>
+                      <Node ID="send7" FactoryPath="routing.send" Bypassed="0" Name="send">
+                        <Properties>
+                          <Property ID="Connection" Value="receive7"/>
+                        </Properties>
+                        <Parameters/>
+                      </Node>
+                    </Nodes>
+                    <Parameters/>
+                  </Node>
+                </Nodes>
+                <Parameters>
+                  <Parameter MinValue="0.5" MaxValue="2.0" SkewFactor="0.6309297680854797"
+                             ID="RepitchFactor" Value="0.5" DefaultValue="1.0"/>
+                  <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="Interpolation"
+                             Value="2.0" DefaultValue="0.0"/>
+                </Parameters>
+              </Node>
+            </Nodes>
+            <Parameters/>
+          </Node>
+        </Nodes>
+        <Parameters>
+          <Parameter MinValue="1.0" MaxValue="8" StepSize="1.0" ID="NumClones" Value="8.0"
+                     DefaultValue="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="SplitSignal"
+                     Value="2.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters/>
+  </Node>
+</Network>

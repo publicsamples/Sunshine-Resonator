@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Network ID="Filetrig" Version="0.0.0" AllowCompilation="1">
+  <Node FactoryPath="container.chain" ID="Filetrig" Bypassed="0" Name="Filetrig"
+        ShowParameters="1">
+    <Nodes>
+      <Node ID="gain48" FactoryPath="core.gain" Bypassed="0" Name="gain48">
+        <Parameters>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.5537207004758571" ID="Gain" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     SkewFactor="0.3010300099849701" ID="Smoothing" Value="20.0"/>
+          <Parameter MinValue="-100.0" MaxValue="0.0" StepSize="0.1000000014901161"
+                     SkewFactor="5.422270774841309" ID="ResetValue" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="tempo_sync" FactoryPath="control.tempo_sync" Bypassed="0"
+            Name="tempo_sync">
+        <ModulationTargets>
+          <Connection NodeId="input_toggle" ParameterId="Value2"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="Tempo" DefaultValue="0.0"
+                     Automated="1"/>
+          <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="Multiplier"
+                     DefaultValue="1.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Enabled" DefaultValue="0.0"
+                     Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     ID="UnsyncedTime" DefaultValue="200.0" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="input_toggle" FactoryPath="control.input_toggle" Bypassed="0"
+            Name="input_toggle">
+        <ModulationTargets>
+          <Connection NodeId="ramp" ParameterId="PeriodTime"/>
+        </ModulationTargets>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Input" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value1" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value2" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="converter" FactoryPath="control.converter" Bypassed="0" Name="converter">
+        <Properties>
+          <Property ID="Mode" Value="Freq2Ms"/>
+        </Properties>
+        <Parameters>
+          <Parameter MinValue="20.0" MaxValue="20000.0" ID="Value" Automated="1" StepSize="0.1"
+                     SkewFactor="0.2299045584686382"/>
+        </Parameters>
+        <ModulationTargets>
+          <Connection NodeId="input_toggle" ParameterId="Value1"/>
+        </ModulationTargets>
+      </Node>
+      <Node ID="minmax1" FactoryPath="control.minmax" Bypassed="0" Name="minmax1">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Minimum" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Maximum" Value="1.0"/>
+          <Parameter MinValue="0.1000000014901161" MaxValue="10.0" SkewFactor="0.2890648245811462"
+                     ID="Skew" Value="1.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Step" Value="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Polarity" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="clear" FactoryPath="math.clear" Bypassed="0" Name="clear">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="0.0"/>
+        </Parameters>
+      </Node>
+      <Node ID="ramp" FactoryPath="core.ramp" Bypassed="0" Name="ramp">
+        <ComplexData>
+          <DisplayBuffers>
+            <DisplayBuffer Index="-1"/>
+          </DisplayBuffers>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.1000000014901161" MaxValue="1000.0" StepSize="0.1000000014901161"
+                     ID="PeriodTime" DefaultValue="100.0" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="LoopStart" Automated="1"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Gate" DefaultValue="1.0" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="add108" FactoryPath="math.add" Bypassed="0" Name="add">
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" DefaultValue="0.0" Automated="1"/>
+        </Parameters>
+      </Node>
+      <Node ID="file_player" FactoryPath="core.file_player" Bypassed="0"
+            Name="file_player">
+        <ComplexData>
+          <AudioFiles>
+            <AudioFile Index="0" MinValue="0" MaxValue="120417"/>
+          </AudioFiles>
+        </ComplexData>
+        <Parameters>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="1.0" ID="PlaybackMode"
+                     Value="1.0" DefaultValue="0.0"/>
+          <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="Gate" Value="1.0"/>
+          <Parameter MinValue="20.0" MaxValue="2000.0" ID="RootFrequency" Value="440.0"/>
+          <Parameter MinValue="0.0" MaxValue="2.0" StepSize="0.009999999776482582"
+                     ID="FreqRatio" Value="1.0"/>
+        </Parameters>
+      </Node>
+    </Nodes>
+    <Parameters>
+      <Parameter ID="gate" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="ramp" ParameterId="Gate"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" StepSize="1.0" ID="sync" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Enabled"/>
+          <Connection NodeId="minmax1" ParameterId="Value"/>
+          <Connection NodeId="input_toggle" ParameterId="Input"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="20.0" MaxValue="20000.0" SkewFactor="0.2299045584686382"
+                 ID="freq" Value="1513.624988600632" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="converter" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="Pos" Value="0.0">
+        <Connections>
+          <Connection NodeId="add108" ParameterId="Value"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="18.0" StepSize="1.0" ID="tempo" Value="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Tempo"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="16.0" StepSize="1.0" ID="div" Value="16.0"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="Multiplier"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="1.0" MaxValue="2.0" StepSize="1.0" ID="shape" Value="1.0"
+                 DefaultValue="0.0">
+        <Connections/>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="loop" Value="0.07897418478260869"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="ramp" ParameterId="LoopStart"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1000.0" StepSize="0.1000000014901161"
+                 ID="MS" Value="93.50000139325856" DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="tempo_sync" ParameterId="UnsyncedTime"/>
+        </Connections>
+      </Parameter>
+      <Parameter MinValue="0.0" MaxValue="1.0" ID="input" Value="0.07911459350585938"
+                 DefaultValue="0.0">
+        <Connections>
+          <Connection NodeId="gain48" ParameterId="Gain"/>
+        </Connections>
+      </Parameter>
+    </Parameters>
+  </Node>
+</Network>

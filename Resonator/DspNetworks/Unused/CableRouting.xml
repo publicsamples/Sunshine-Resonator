@@ -1535,12 +1535,13 @@
           </Node>
           <Node ID="chain61" FactoryPath="container.chain" Bypassed="0" Name="chain">
             <Nodes>
-              <Node ID="chain62" FactoryPath="container.chain" Bypassed="0" Name="chain6">
+              <Node ID="chain62" FactoryPath="container.chain" Bypassed="0" Name="chain6"
+                    ShowParameters="1">
                 <Nodes>
                   <Node ID="split12" FactoryPath="container.split" Bypassed="0" Name="split">
                     <Nodes>
                       <Node ID="branch10" FactoryPath="container.branch" Bypassed="0" Name="branch"
-                            ShowParameters="1" Folded="1">
+                            ShowParameters="1">
                         <Nodes>
                           <Node ID="chain63" FactoryPath="container.chain" Bypassed="0" Name="chain1">
                             <Nodes>
@@ -1630,36 +1631,9 @@
                             </Nodes>
                             <Parameters/>
                           </Node>
-                          <Node ID="chain82" FactoryPath="container.chain" Bypassed="0" Name="chain1">
-                            <Nodes>
-                              <Node ID="chain83" FactoryPath="container.chain" Bypassed="0" Name="chain5">
-                                <Nodes>
-                                  <Node ID="global_cable71" FactoryPath="routing.global_cable" Bypassed="0"
-                                        Name="global_cable" NodeColour="4282954377">
-                                    <Properties>
-                                      <Property ID="Connection" Value="FollowMod"/>
-                                    </Properties>
-                                    <ModulationTargets>
-                                      <Connection NodeId="add72" ParameterId="Value"/>
-                                    </ModulationTargets>
-                                    <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Value="1.0"/>
-                                    </Parameters>
-                                  </Node>
-                                  <Node ID="add72" FactoryPath="math.add" Bypassed="0" Name="add46">
-                                    <Parameters>
-                                      <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                                    </Parameters>
-                                  </Node>
-                                </Nodes>
-                                <Parameters/>
-                              </Node>
-                            </Nodes>
-                            <Parameters/>
-                          </Node>
                         </Nodes>
                         <Parameters>
-                          <Parameter MinValue="0.0" MaxValue="4" StepSize="1.0" ID="Index"/>
+                          <Parameter MinValue="0.0" MaxValue="3" StepSize="1.0" ID="Index" Automated="1"/>
                         </Parameters>
                       </Node>
                     </Nodes>
@@ -1690,14 +1664,14 @@
                 </ModulationTargets>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
-                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply"/>
-                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add"/>
+                  <Parameter MinValue="-1.0" MaxValue="1.0" ID="Multiply" Automated="1"/>
+                  <Parameter MinValue="5.551115123125783e-17" MaxValue="1.0" ID="Add" Automated="1"/>
                 </Parameters>
               </Node>
               <Node ID="global_cable54" FactoryPath="routing.global_cable" Bypassed="0"
-                    Name="global_cable" NodeColour="4289898823">
+                    Name="global_cable" NodeColour="4282863282">
                 <Properties>
-                  <Property ID="Connection" Value="blank"/>
+                  <Property ID="Connection" Value="xf"/>
                 </Properties>
                 <Parameters>
                   <Parameter MinValue="0.0" MaxValue="1.0" ID="Value" Automated="1"/>
@@ -1712,12 +1686,13 @@
     </Nodes>
     <Parameters>
       <Parameter ID="ResonatorOffset" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="5.551115123125783e-17" DefaultValue="0.3781268310546875">
+                 Value="1.0" DefaultValue="0.3781268310546875">
         <Connections>
           <Connection NodeId="pma6" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="resMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="resMod" MinValue="-1.0" MaxValue="1.0" Value="-0.009999999776482582"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma" ParameterId="Multiply"/>
         </Connections>
@@ -1735,12 +1710,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="Window" MinValue="5.551115123125783e-17" MaxValue="18.0"
-                 Value="5.551115123125783e-17" DefaultValue="0.5444249877929688">
+                 Value="1.0" DefaultValue="0.5444249877929688">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="WindowMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="WindowMod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma1" ParameterId="Multiply"/>
         </Connections>
@@ -1752,12 +1728,12 @@
         </Connections>
       </Parameter>
       <Parameter ID="InFilterCut" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="1.0">
+                 Value="0.8500000238418579" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma2" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="InFilterMod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+      <Parameter ID="InFilterMod" MinValue="-1.0" MaxValue="1.0" Value="0.5400000214576721"
                  DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma2" ParameterId="Multiply"/>
@@ -1769,18 +1745,19 @@
           <Connection NodeId="branch2" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FbLp" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.9100000262260437"
-                 DefaultValue="1.0">
+      <Parameter ID="FbLp" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="1.0">
         <Connections>
           <Connection NodeId="pma3" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FbLpmod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="FbLpmod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma3" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="FbLpsrc" MinValue="0.0" MaxValue="4.0" StepSize="0.1" Value="1.0">
+      <Parameter ID="FbLpsrc" MinValue="0.0" MaxValue="4.0" StepSize="0.1" Value="2.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch3" ParameterId="Index"/>
         </Connections>
@@ -1801,29 +1778,31 @@
           <Connection NodeId="branch4" ParameterId="Index"/>
         </Connections>
       </Parameter>
-      <Parameter ID="Phase" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="5.551115123125783e-17"
+      <Parameter ID="Phase" MinValue="5.551115123125783e-17" MaxValue="1.0" Value="0.0"
                  DefaultValue="0.1275625">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="PhaseMocd" MinValue="-1.0" MaxValue="1.0" Value="0.0" DefaultValue="0.05966674804687488">
+      <Parameter ID="PhaseMocd" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+                 DefaultValue="0.05966674804687488">
         <Connections>
           <Connection NodeId="pma5" ParameterId="Multiply"/>
         </Connections>
       </Parameter>
-      <Parameter ID="PhaaseSrc" MinValue="0.0" MaxValue="4.0" StepSize="0.1" Value="1.0">
+      <Parameter ID="PhaaseSrc" MinValue="0.0" MaxValue="4.0" StepSize="0.1" Value="2.0"
+                 DefaultValue="1.0">
         <Connections>
           <Connection NodeId="branch5" ParameterId="Index"/>
         </Connections>
       </Parameter>
       <Parameter ID="CompThresh" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="0.1099999994039536" DefaultValue="1.0">
+                 Value="0.09000000357627869" DefaultValue="1.0">
         <Connections>
           <Connection NodeId="pma7" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="CompThreshMod" MinValue="-1.0" MaxValue="1.0" Value="0.0"
+      <Parameter ID="CompThreshMod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
                  DefaultValue="-0.05014575195312498">
         <Connections>
           <Connection NodeId="pma7" ParameterId="Multiply"/>
@@ -1836,12 +1815,13 @@
         </Connections>
       </Parameter>
       <Parameter ID="ShiftMix" MinValue="5.551115123125783e-17" MaxValue="1.0"
-                 Value="0.4699999988079071" DefaultValue="0.490078125">
+                 Value="0.449999988079071" DefaultValue="0.490078125">
         <Connections>
           <Connection NodeId="pma8" ParameterId="Add"/>
         </Connections>
       </Parameter>
-      <Parameter ID="ShiftMod" MinValue="-1.0" MaxValue="1.0" Value="0.0">
+      <Parameter ID="ShiftMod" MinValue="-1.0" MaxValue="1.0" Value="2.081668171172169e-17"
+                 DefaultValue="0.0">
         <Connections>
           <Connection NodeId="pma8" ParameterId="Multiply"/>
         </Connections>
@@ -1866,6 +1846,21 @@
       <Parameter ID="PCutSrc" MinValue="0.0" MaxValue="4.0" Value="1.0" StepSize="0.1">
         <Connections>
           <Connection NodeId="branch8" ParameterId="Index"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="Xfade" MinValue="0.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma11" ParameterId="Add"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfMod" MinValue="-1.0" MaxValue="1.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="pma11" ParameterId="Multiply"/>
+        </Connections>
+      </Parameter>
+      <Parameter ID="XfSrc" MinValue="0.0" MaxValue="4.0" Value="1.0">
+        <Connections>
+          <Connection NodeId="branch10" ParameterId="Index"/>
         </Connections>
       </Parameter>
     </Parameters>
