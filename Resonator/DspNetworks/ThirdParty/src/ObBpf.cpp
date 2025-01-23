@@ -45,8 +45,8 @@ struct _ObBpf final : public ::faust::dsp {
 	float fConst3;
 	float fRec3[2];
 	FAUSTFLOAT fHslider1;
-	float fRec0[2];
 	float fRec1[2];
+	float fRec2[2];
 	
 	_ObBpf() {
 	}
@@ -110,10 +110,10 @@ struct _ObBpf final : public ::faust::dsp {
 			fRec3[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec0[l1] = 0.0f;
+			fRec1[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec1[l2] = 0.0f;
+			fRec2[l2] = 0.0f;
 		}
 	}
 	
@@ -153,21 +153,20 @@ struct _ObBpf final : public ::faust::dsp {
 			fRec3[0] = fSlow0 + fConst3 * fRec3[1];
 			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec3[0] + 1.0f));
 			float fTemp1 = fSlow1 + fTemp0;
-			float fTemp2 = float(input0[i0]) - (fRec0[1] + fRec1[1] * fTemp1);
+			float fTemp2 = float(input0[i0]) - (fRec1[1] + fRec2[1] * fTemp1);
 			float fTemp3 = fTemp0 * fTemp1 + 1.0f;
 			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
-			float fTemp5 = std::max<float>(-1.0f, std::min<float>(1.0f, fRec1[1] + fTemp4));
-			float fTemp6 = 1.0f - 0.33333334f * _ObBpf_faustpower2_f(fTemp5);
-			float fTemp7 = fTemp0 * fTemp5 * fTemp6;
-			fRec0[0] = fRec0[1] + 2.0f * fTemp7;
-			float fTemp8 = fTemp5 * fTemp6;
-			fRec1[0] = fTemp4 + fTemp8;
-			float fRec2 = fTemp8;
-			output0[i0] = FAUSTFLOAT(fRec2);
-			output1[i0] = FAUSTFLOAT(fRec2);
+			float fTemp5 = std::max<float>(-1.0f, std::min<float>(1.0f, fTemp4 + fRec2[1]));
+			float fTemp6 = fTemp5 * (1.0f - 0.33333334f * _ObBpf_faustpower2_f(fTemp5));
+			float fRec0 = fTemp6;
+			float fTemp7 = fTemp6 * fTemp0;
+			fRec1[0] = 2.0f * fTemp7 + fRec1[1];
+			fRec2[0] = fTemp4 + fTemp6;
+			output0[i0] = FAUSTFLOAT(fRec0);
+			output1[i0] = FAUSTFLOAT(fRec0);
 			fRec3[1] = fRec3[0];
-			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
+			fRec2[1] = fRec2[0];
 		}
 	}
 

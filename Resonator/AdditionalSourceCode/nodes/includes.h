@@ -33,6 +33,7 @@
 #include "res1.h"
 #include "resonate_networkdata.h"
 #include "ResStage.h"
+#include "Voice.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

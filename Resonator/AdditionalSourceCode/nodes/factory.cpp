@@ -47,6 +47,7 @@ struct Factory: public scriptnode::dll::StaticLibraryHostFactory
 		registerPolyNode<project::FinStack<1>, wrap::illegal_poly<project::FinStack<1>>>();
 		registerPolyNode<project::res1<1>, wrap::illegal_poly<project::res1<1>>>();
 		registerPolyNode<project::ResStage<1>, wrap::illegal_poly<project::ResStage<1>>>();
+		registerPolyNode<project::Voice<1>, project::Voice<NUM_POLYPHONIC_VOICES>>();
 		registerDataNode<project::resonate_networkdata>();
 	}
 };

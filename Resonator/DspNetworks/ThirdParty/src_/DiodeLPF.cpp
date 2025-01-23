@@ -43,18 +43,18 @@ static float _DiodeLPF_faustpower4_f(float value) {
 
 struct _DiodeLPF final : public ::faust::dsp {
 	
+	FAUSTFLOAT fHslider0;
 	int fSampleRate;
 	float fConst0;
 	float fConst1;
-	float fConst2;
-	FAUSTFLOAT fHslider0;
-	float fConst3;
-	float fRec5[2];
 	FAUSTFLOAT fHslider1;
+	float fConst2;
+	float fRec5[2];
+	float fConst3;
+	float fRec0[2];
 	float fRec1[2];
 	float fRec2[2];
 	float fRec3[2];
-	float fRec4[2];
 	
 	_DiodeLPF() {
 	}
@@ -101,14 +101,14 @@ struct _DiodeLPF final : public ::faust::dsp {
 	void instanceConstants(int sample_rate) {
 		fSampleRate = sample_rate;
 		fConst0 = std::min<float>(1.92e+05f, std::max<float>(1.0f, float(fSampleRate)));
-		fConst1 = 6.2831855f / fConst0;
-		fConst2 = 44.1f / fConst0;
-		fConst3 = 1.0f - fConst2;
+		fConst1 = 44.1f / fConst0;
+		fConst2 = 1.0f - fConst1;
+		fConst3 = 6.2831855f / fConst0;
 	}
 	
 	void instanceResetUserInterface() {
-		fHslider0 = FAUSTFLOAT(0.1f);
-		fHslider1 = FAUSTFLOAT(1.0f);
+		fHslider0 = FAUSTFLOAT(1.0f);
+		fHslider1 = FAUSTFLOAT(0.1f);
 	}
 	
 	void instanceClear() {
@@ -116,16 +116,16 @@ struct _DiodeLPF final : public ::faust::dsp {
 			fRec5[l0] = 0.0f;
 		}
 		for (int l1 = 0; l1 < 2; l1 = l1 + 1) {
-			fRec1[l1] = 0.0f;
+			fRec0[l1] = 0.0f;
 		}
 		for (int l2 = 0; l2 < 2; l2 = l2 + 1) {
-			fRec2[l2] = 0.0f;
+			fRec1[l2] = 0.0f;
 		}
 		for (int l3 = 0; l3 < 2; l3 = l3 + 1) {
-			fRec3[l3] = 0.0f;
+			fRec2[l3] = 0.0f;
 		}
 		for (int l4 = 0; l4 < 2; l4 = l4 + 1) {
-			fRec4[l4] = 0.0f;
+			fRec3[l4] = 0.0f;
 		}
 	}
 	
@@ -150,8 +150,8 @@ struct _DiodeLPF final : public ::faust::dsp {
 	
 	void buildUserInterface(UI* ui_interface) {
 		ui_interface->openVerticalBox("DiodeLPF");
-		ui_interface->addHorizontalSlider("Q", &fHslider1, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.7072f), FAUSTFLOAT(25.0f), FAUSTFLOAT(0.01f));
-		ui_interface->addHorizontalSlider("freq", &fHslider0, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
+		ui_interface->addHorizontalSlider("Q", &fHslider0, FAUSTFLOAT(1.0f), FAUSTFLOAT(0.7072f), FAUSTFLOAT(25.0f), FAUSTFLOAT(0.01f));
+		ui_interface->addHorizontalSlider("freq", &fHslider1, FAUSTFLOAT(0.1f), FAUSTFLOAT(0.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(0.001f));
 		ui_interface->closeBox();
 	}
 	
@@ -159,43 +159,43 @@ struct _DiodeLPF final : public ::faust::dsp {
 		FAUSTFLOAT* input0 = inputs[0];
 		FAUSTFLOAT* output0 = outputs[0];
 		FAUSTFLOAT* output1 = outputs[1];
-		float fSlow0 = fConst2 * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider0)));
-		float fSlow1 = std::max<float>(0.7072f, std::min<float>(25.0f, float(fHslider1))) + -0.70710677f;
-		float fSlow2 = 0.0051455377f * fSlow1;
+		float fSlow0 = std::max<float>(0.7072f, std::min<float>(25.0f, float(fHslider0))) + -0.70710677f;
+		float fSlow1 = fConst1 * std::max<float>(0.0f, std::min<float>(1.0f, float(fHslider1)));
+		float fSlow2 = 0.0051455377f * fSlow0;
 		for (int i0 = 0; i0 < count; i0 = i0 + 1) {
-			fRec5[0] = fSlow0 + fConst3 * fRec5[1];
-			float fTemp0 = std::tan(fConst1 * std::pow(1e+01f, 3.0f * fRec5[0] + 1.0f));
-			float fTemp1 = fTemp0 + 1.0f;
-			float fTemp2 = 0.5f * (fTemp0 * fRec1[1] / fTemp1) + fRec2[1];
-			float fTemp3 = fTemp0 * (1.0f - 0.25f * (fTemp0 / fTemp1)) + 1.0f;
-			float fTemp4 = fTemp0 * fTemp2 / fTemp3;
-			float fTemp5 = 0.5f * fTemp4;
-			float fTemp6 = fTemp5 + fRec3[1];
-			float fTemp7 = fTemp0 * (1.0f - 0.25f * (fTemp0 / fTemp3)) + 1.0f;
-			float fTemp8 = fTemp0 * fTemp6 / fTemp7;
-			float fTemp9 = std::max<float>(-1.0f, std::min<float>(1.0f, 1e+02f * float(input0[i0])));
-			float fTemp10 = 17.0f - 9.7f * std::pow(fRec5[0], 1e+01f);
-			float fTemp11 = fTemp8 + fRec4[1];
-			float fTemp12 = fTemp3 * fTemp7;
-			float fTemp13 = fTemp0 * (1.0f - 0.5f * (fTemp0 / fTemp7)) + 1.0f;
-			float fTemp14 = _DiodeLPF_faustpower2_f(fTemp0);
-			float fTemp15 = fTemp1 * fTemp3;
-			float fTemp16 = fTemp0 * ((1.5f * fTemp9 * (1.0f - 0.33333334f * _DiodeLPF_faustpower2_f(fTemp9)) - fSlow1 * (fTemp10 * (0.02058215f * fTemp4 + 0.0411643f * fRec1[1] + 0.02058215f * fTemp8 + 0.0051455377f * (_DiodeLPF_faustpower3_f(fTemp0) * fTemp11 / (fTemp12 * fTemp13))) / fTemp1)) * (0.5f * (fTemp14 / (fTemp7 * fTemp13)) + 1.0f) / (fSlow2 * (_DiodeLPF_faustpower4_f(fTemp0) * fTemp10 / (fTemp15 * fTemp7 * fTemp13)) + 1.0f) + (fTemp6 + 0.5f * (fTemp0 * fTemp11 / fTemp13)) / fTemp7 - fRec4[1]) / fTemp1;
-			float fTemp17 = (0.5f * ((0.5f * fTemp8 + fTemp2) / fTemp3 + (fRec4[1] + fTemp16) * (0.25f * (fTemp14 / fTemp12) + 1.0f)) - fRec3[1]) * fTemp0 / fTemp1;
-			float fTemp18 = (0.5f * ((fTemp17 + fRec3[1]) * (0.25f * (fTemp14 / fTemp15) + 1.0f) + (fTemp5 + fRec1[1]) / fTemp1) - fRec2[1]) * fTemp0 / fTemp1;
-			float fTemp19 = (0.5f * (fTemp18 + fRec2[1]) - fRec1[1]) * fTemp0 / fTemp1;
-			float fRec0 = fTemp19 + fRec1[1];
-			fRec1[0] = 2.0f * fTemp19 + fRec1[1];
-			fRec2[0] = 2.0f * fTemp18 + fRec2[1];
-			fRec3[0] = 2.0f * fTemp17 + fRec3[1];
-			fRec4[0] = 2.0f * fTemp16 + fRec4[1];
-			output0[i0] = FAUSTFLOAT(fRec0);
-			output1[i0] = FAUSTFLOAT(fRec0);
+			float fTemp0 = std::max<float>(-1.0f, std::min<float>(1.0f, 1e+02f * float(input0[i0])));
+			fRec5[0] = fSlow1 + fConst2 * fRec5[1];
+			float fTemp1 = 17.0f - 9.7f * std::pow(fRec5[0], 1e+01f);
+			float fTemp2 = std::tan(fConst3 * std::pow(1e+01f, 3.0f * fRec5[0] + 1.0f));
+			float fTemp3 = fTemp2 + 1.0f;
+			float fTemp4 = 0.5f * (fRec2[1] * fTemp2 / fTemp3) + fRec0[1];
+			float fTemp5 = fTemp2 * (1.0f - 0.25f * (fTemp2 / fTemp3)) + 1.0f;
+			float fTemp6 = fTemp2 * fTemp4 / fTemp5;
+			float fTemp7 = 0.5f * fTemp6;
+			float fTemp8 = fTemp7 + fRec1[1];
+			float fTemp9 = fTemp2 * (1.0f - 0.25f * (fTemp2 / fTemp5)) + 1.0f;
+			float fTemp10 = fTemp2 * fTemp8 / fTemp9;
+			float fTemp11 = fTemp10 + fRec3[1];
+			float fTemp12 = fTemp5 * fTemp9;
+			float fTemp13 = fTemp2 * (1.0f - 0.5f * (fTemp2 / fTemp9)) + 1.0f;
+			float fTemp14 = _DiodeLPF_faustpower2_f(fTemp2);
+			float fTemp15 = fTemp3 * fTemp5;
+			float fTemp16 = ((1.5f * fTemp0 * (1.0f - 0.33333334f * _DiodeLPF_faustpower2_f(fTemp0)) - fSlow0 * (fTemp1 * (0.0411643f * fRec2[1] + 0.02058215f * fTemp6 + 0.02058215f * fTemp10 + 0.0051455377f * (_DiodeLPF_faustpower3_f(fTemp2) * fTemp11 / (fTemp12 * fTemp13))) / fTemp3)) * (0.5f * (fTemp14 / (fTemp9 * fTemp13)) + 1.0f) / (fSlow2 * (_DiodeLPF_faustpower4_f(fTemp2) * fTemp1 / (fTemp15 * fTemp9 * fTemp13)) + 1.0f) + (0.5f * (fTemp2 * fTemp11 / fTemp13) + fTemp8) / fTemp9 - fRec3[1]) * fTemp2 / fTemp3;
+			float fTemp17 = (0.5f * ((fTemp16 + fRec3[1]) * (0.25f * (fTemp14 / fTemp12) + 1.0f) + (0.5f * fTemp10 + fTemp4) / fTemp5) - fRec1[1]) * fTemp2 / fTemp3;
+			float fTemp18 = (0.5f * ((fTemp17 + fRec1[1]) * (0.25f * (fTemp14 / fTemp15) + 1.0f) + (fRec2[1] + fTemp7) / fTemp3) - fRec0[1]) * fTemp2 / fTemp3;
+			fRec0[0] = 2.0f * fTemp18 + fRec0[1];
+			fRec1[0] = 2.0f * fTemp17 + fRec1[1];
+			float fTemp19 = (0.5f * (fTemp18 + fRec0[1]) - fRec2[1]) * fTemp2 / fTemp3;
+			fRec2[0] = 2.0f * fTemp19 + fRec2[1];
+			fRec3[0] = 2.0f * fTemp16 + fRec3[1];
+			float fRec4 = fTemp19 + fRec2[1];
+			output0[i0] = FAUSTFLOAT(fRec4);
+			output1[i0] = FAUSTFLOAT(fRec4);
 			fRec5[1] = fRec5[0];
+			fRec0[1] = fRec0[0];
 			fRec1[1] = fRec1[0];
 			fRec2[1] = fRec2[0];
 			fRec3[1] = fRec3[0];
-			fRec4[1] = fRec4[0];
 		}
 	}
 
@@ -211,12 +211,12 @@ struct _DiodeLPF final : public ::faust::dsp {
 	#define FAUST_ACTIVES 2
 	#define FAUST_PASSIVES 0
 
-	FAUST_ADDHORIZONTALSLIDER("Q", fHslider1, 1.0f, 0.7072f, 25.0f, 0.01f);
-	FAUST_ADDHORIZONTALSLIDER("freq", fHslider0, 0.1f, 0.0f, 1.0f, 0.001f);
+	FAUST_ADDHORIZONTALSLIDER("Q", fHslider0, 1.0f, 0.7072f, 25.0f, 0.01f);
+	FAUST_ADDHORIZONTALSLIDER("freq", fHslider1, 0.1f, 0.0f, 1.0f, 0.001f);
 
 	#define FAUST_LIST_ACTIVES(p) \
-		p(HORIZONTALSLIDER, Q, "Q", fHslider1, 1.0f, 0.7072f, 25.0f, 0.01f) \
-		p(HORIZONTALSLIDER, freq, "freq", fHslider0, 0.1f, 0.0f, 1.0f, 0.001f) \
+		p(HORIZONTALSLIDER, Q, "Q", fHslider0, 1.0f, 0.7072f, 25.0f, 0.01f) \
+		p(HORIZONTALSLIDER, freq, "freq", fHslider1, 0.1f, 0.0f, 1.0f, 0.001f) \
 
 	#define FAUST_LIST_PASSIVES(p) \
 
