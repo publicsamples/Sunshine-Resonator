@@ -10,30 +10,16 @@
 // Include third party header files ----------------
 
 #include "comb.h"
-#include "DiodeLPF.h"
-#include "granul.h"
-#include "khp2.h"
-#include "klp2.h"
-#include "MoogLadder.h"
-#include "ObBpf.h"
-#include "ObHfp.h"
-#include "ObLfp.h"
-#include "PitchShifter.h"
-#include "PitchShifter2.h"
-#include "Salen2ndBPF.h"
-#include "Salen2ndHPF.h"
-#include "Salen2ndLPF.h"
-#include "vocoder.h"
-#include "wg1.h"
+#include "comb2.h"
+#include "gran.h"
 
 // Include compiled network files ------------------
 
-#include "FilterForRes.h"
-#include "FinStack.h"
+#include "Arrange.h"
+#include "dtest.h"
+#include "FinStack_networkdata.h"
 #include "res1.h"
-#include "resonate_networkdata.h"
-#include "ResStage.h"
-#include "Voice.h"
+#include "_networkdata.h"
 
 #if (defined (_WIN32) || defined (_WIN64))
 #pragma warning( pop )

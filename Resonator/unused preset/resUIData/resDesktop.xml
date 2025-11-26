@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentProperties DeviceType="Desktop">
+  <Component type="ScriptImage" id="ScriptImage1" x="-290.0" y="-160.0" width="1200.0"
+             height="12000.0" fileName="{PROJECT_FOLDER}jsbg.png" locked="1"/>
+  <Component type="ScriptPanel" id="Resonator" x="233.0" y="178.0" width="350.0"
+             height="300.0" itemColour="4291724095" itemColour2="4291724095"
+             bgColour="16777215" textColour="4278190080" tooltip="A multi-stage resonator with several modes">
+    <Component type="ScriptComboBox" id="ResMode" x="16.0" y="227.0" width="50.0"
+               height="30.0" max="7" items="Bell&#10;String&#10;WaveGuide2&#10;WaveGuide3&#10;WaveGuide4&#10;WaveGuide5&#10;File"
+               itemColour="4278190080" itemColour2="4278190080" parentComponent="Resonator"/>
+    <Component type="ScriptLabel" id="ScriptLabel24" x="14.0" y="9.0" width="240.0"
+               height="20.0" parentComponent="Resonator" text="RESONATOR" fontName="Montserrat"
+               fontSize="18.0" editable="0" bgColour="2638813713"/>
+    <Component type="ScriptLabel" id="ScriptLabel25" x="2.0" y="182.0" width="90.0"
+               height="20.0" parentComponent="Resonator" text="freq. offset"
+               fontName="Montserrat" fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptSliderPack" id="SliderPack1" x="19.0" y="40.0" width="320.0"
+               height="60.0" processorId="Resonator" sliderAmount="8.0" parentComponent="Resonator"
+               SliderPackIndex="4" itemColour="4289412612" textColour="16777215"
+               itemColour2="16711680" bgColour="12252759" tooltip="Controls the frequency of each of the resonators"/>
+    <Component type="ScriptSlider" id="ResOffset" x="20.0" y="120.0" width="60.0"
+               height="60.0" processorId="ResModRoute" parameterId="ResonatorOffset"
+               text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" scaleFactor="0.239999994635582" showTextBox="0"
+               parentComponent="Resonator" showValuePopup="Below" min="0.001000000047497451"
+               tooltip="Offsets the resonators frequency sliders"/>
+    <Component type="ScriptSlider" id="Knob2" x="95.0" y="118.0" width="30.0"
+               height="30.0" processorId="ResModRoute" min="-1.0" middlePosition="0.0"
+               parameterId="resMod" filmstripImage="{PROJECT_FOLDER}k9.png"
+               numStrips="125.0" showTextBox="0" parentComponent="Resonator"
+               showValuePopup="Below" isVertical="0" scaleFactor="0.800000011920929"
+               tooltip="Modulates freq. offset"/>
+    <Component type="ScriptComboBox" id="ComboBox1" x="95.0" y="150.0" max="4"
+               width="30.0" height="30.0" processorId="ResModRoute" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4"
+               parameterId="resSrc" parentComponent="Resonator" tooltip="Select a mod source for freq. offset"
+               itemColour="4282126866" itemColour2="4282126866" textColour="4293697329"/>
+    <Component type="ScriptLabel" id="ScriptLabel32" x="225.0" y="175.0" width="60.0"
+               height="30.0" parentComponent="Resonator" text="lowpass" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel33" x="285.0" y="182.0" width="50.0"
+               height="20.0" parentComponent="Resonator" text="mod" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptSlider" id="ResOffset9" x="223.0" y="118.0" width="50.0"
+               height="50.0" processorId="ResModRoute" parameterId="FbLp" text="Re"
+               filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+               scaleFactor="0.2199999988079071" parentComponent="Resonator"
+               min="-1.0" middlePosition="0.0" showValuePopup="Below" showTextBox="0"
+               tooltip="A low pass filter (depending on the mode, this is before or after the feedback network)."/>
+    <Component type="ScriptSlider" id="ResOffset11" x="290.0" y="108.0" width="40.0"
+               height="40.0" processorId="ResModRoute" parameterId="FbLpmod"
+               text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" scaleFactor="0.1500000059604645" parentComponent="Resonator"
+               min="-1.0" middlePosition="0.0" showValuePopup="Below" showTextBox="0"
+               tooltip="Modulate lowpass"/>
+    <Component type="ScriptComboBox" id="ScriptComboBox3" x="294.0" y="148.0"
+               width="30.0" height="30.0" max="4" parentComponent="Resonator"
+               items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4" processorId="ResModRoute"
+               parameterId="FbLpsrc" tooltip="Select a mod source for lowpass"
+               itemColour="4282126866" itemColour2="4282126866" textColour="4293697329"/>
+    <Component type="ScriptPanel" id="Wgresos" x="185.0" y="209.0" width="160.0"
+               height="70.0" parentComponent="Resonator" itemColour="0" itemColour2="0"
+               textColour="16777215" bgColour="16777215" visible="0">
+      <Component type="ScriptLabel" id="ScriptLabel31" x="82.0" y="18.0" width="80.0"
+                 height="30.0" parentComponent="Wgresos" text="feedback" fontName="Montserrat"
+                 fontSize="15.0" editable="0" textColour="4280028166"/>
+      <Component type="ScriptSlider" id="Fb" x="24.0" y="8.0" width="60.0" height="60.0"
+                 processorId="Resonator" parameterId="feed" middlePosition="0.5"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 scaleFactor="0.2199999988079071" parentComponent="Wgresos" showValuePopup="Below"
+                 showTextBox="0"/>
+      <Component type="ScriptLabel" id="FREQ23" x="14.0" y="104.0" width="40.0"
+                 height="40.0" editable="0" text="LOW PASS" parentComponent="Wgresos"
+                 fontSize="11.0"/>
+      <Component type="ScriptLabel" id="FREQ40" x="60.0" y="119.0" width="60.0"
+                 height="20.0" editable="0" text="LP MOD" parentComponent="Wgresos"
+                 fontSize="11.0"/>
+    </Component>
+    <Component type="ScriptComboBox" id="ComboBox5" x="525.0" y="91.0" max="5"
+               width="30.0" height="30.0" processorId="ResModRoute" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+               parameterId="FbLpsrc" parentComponent="Resonator"/>
+    <Component type="ScriptComboBox" id="ScriptComboBox2" x="129.0" y="242.0"
+               width="30.0" height="30.0" max="4" parentComponent="Resonator"
+               processorId="ResModRoute" parameterId="PhaaseSrc" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4"
+               tooltip="Select a mod source for Filter Cutoff" itemColour="4282126866"
+               itemColour2="4282126866" textColour="4293697329"/>
+    <Component type="ScriptSlider" id="Knob10" x="78.0" y="219.0" width="30.0"
+               height="40.0" processorId="ResModRoute" parameterId="Phase" middlePosition="0.5"
+               filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+               scaleFactor="0.1400000005960464" parentComponent="Resonator"
+               showValuePopup="Below" showTextBox="0"/>
+    <Component type="ScriptSlider" id="ResOffset12" x="131.0" y="215.0" width="30.0"
+               height="30.0" processorId="ResModRoute" parameterId="PhaseMocd"
+               text="Re" filmstripImage="{PROJECT_FOLDER}k9.png" numStrips="125.0"
+               scaleFactor="0.800000011920929" parentComponent="Resonator" min="-1.0"
+               middlePosition="0.0" showValuePopup="Below" showTextBox="0" isVertical="0"
+               tooltip="Modulates Filter Cutoff"/>
+    <Component type="ScriptComboBox" id="ScriptComboBox4" x="110.0" y="203.0"
+               width="20.0" height="20.0" max="3" parentComponent="Resonator"
+               processorId="Resonator" parameterId="PhaseMode" items="FIxed&#10;Spread&#10;Triangle"
+               itemColour="1962868736" itemColour2="1962868736" textColour="4280681733"
+               bgColour="1962868736"/>
+    <Component type="ScriptButton" id="ResSync" x="72.0" y="118.0" width="20.0"
+               height="20.0" parentComponent="Resonator"/>
+    <Component type="ScriptLabel" id="FREQ41" x="70.0" y="334.0" width="60.0"
+               height="20.0" editable="0" text="LP MOD" parentComponent="Resonator"
+               fontSize="11.0"/>
+    <Component type="ScriptPanel" id="WgFile" x="178.0" y="223.0" width="170.0"
+               height="80.0" parentComponent="Resonator" itemColour="0" itemColour2="0"
+               textColour="16777215" bgColour="16777215">
+      <Component type="ScriptLabel" id="ScriptLabel54" x="-1.0" y="60.0" width="180.0"
+                 height="20.0" parentComponent="WgFile" text="drop or right click to load sample"
+                 fontName="Montserrat" fontSize="15.0" editable="0" textColour="2871528203"/>
+      <Component type="ScriptAudioWaveform" id="ScriptAudioWaveform1" x="2.0"
+                 y="-2.0" width="130.0" height="60.0" parentComponent="WgFile"
+                 processorId="Resonator" bgColour="4291724095" itemColour2="4289412612"
+                 textColour="16714112" itemColour="16711680"/>
+      <Component type="ScriptSlider" id="ResOffset17" x="138.0" y="0.0" width="40.0"
+                 height="40.0" processorId="Resonator" parameterId="SampleSig"
+                 text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.1400000005960464" parentComponent="WgFile"
+                 middlePosition="0.5" showValuePopup="Below" showTextBox="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel43" x="129.0" y="35.0" width="50.0"
+                 height="20.0" parentComponent="WgFile" text="sig. in" fontName="Montserrat"
+                 fontSize="12.0" editable="0" textColour="4280028166"/>
+    </Component>
+    <Component type="ScriptLabel" id="ScriptLabel26" x="91.0" y="181.0" width="40.0"
+               height="20.0" parentComponent="Resonator" text="mod" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptPanel" id="MinMax" x="130.0" y="113.0" width="90.0"
+               height="90.0" parentComponent="Resonator" itemColour="0" itemColour2="0"
+               textColour="16777215" visible="0">
+      <Component type="ScriptSlider" id="Knob15" x="10.0" y="34.0" width="30.0"
+                 height="30.0" processorId="Resonator" middlePosition="0.5" parameterId="min"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.1099999994039536" parentComponent="MinMax"
+                 showValuePopup="Below" tooltip="Set minimum freq. value"/>
+      <Component type="ScriptSlider" id="Knob17" x="10.0" y="63.0" width="30.0"
+                 height="30.0" processorId="Resonator" middlePosition="0.5" parameterId="max"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.1099999994039536" parentComponent="MinMax"
+                 showValuePopup="Below" tooltip="Set maximum freq. value"/>
+      <Component type="ScriptSlider" id="Knob18" x="10.0" y="5.0" width="30.0"
+                 height="30.0" processorId="Resonator" middlePosition="0.25" parameterId="step"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.1099999994039536" parentComponent="MinMax"
+                 showValuePopup="Below" tooltip="Quantize resonator frequency value"
+                 max="0.5"/>
+      <Component type="ScriptLabel" id="ScriptLabel28" x="38.0" y="37.0" width="40.0"
+                 height="20.0" parentComponent="MinMax" text="min" fontName="Montserrat"
+                 fontSize="15.0" editable="0" textColour="4280028166"/>
+      <Component type="ScriptLabel" id="ScriptLabel29" x="40.0" y="65.0" width="40.0"
+                 height="20.0" parentComponent="MinMax" text="max" fontName="Montserrat"
+                 fontSize="15.0" editable="0" textColour="4280028166"/>
+      <Component type="ScriptLabel" id="ScriptLabel30" x="38.0" y="13.0" width="40.0"
+                 height="10.0" parentComponent="MinMax" text="step" fontName="Montserrat"
+                 fontSize="15.0" editable="0" textColour="4280028166"/>
+    </Component>
+    <Component type="ScriptPanel" id="SyncDiv" x="130.0" y="135.0" width="90.0"
+               height="90.0" parentComponent="Resonator" itemColour="0" itemColour2="0"
+               textColour="16777215">
+      <Component type="ScriptSlider" id="Knob11" x="19.0" y="10.0" width="50.0"
+                 height="50.0" processorId="Resonator" parameterId="SampDiv" middlePosition="16.5"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 scaleFactor="0.1800000071525574" parentComponent="SyncDiv" showValuePopup="Below"
+                 showTextBox="0" min="1.0" max="32.0" stepSize="1.0" defaultValue="1.0"/>
+    </Component>
+    <Component type="ScriptLabel" id="ScriptLabel27" x="32.0" y="121.0" width="40.0"
+               height="10.0" parentComponent="Resonator" text="sync" fontName="Montserrat"
+               fontSize="12.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel44" x="-5.0" y="269.0" width="90.0"
+               height="20.0" parentComponent="Resonator" text="mode" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel45" x="65.0" y="252.0" width="60.0"
+               height="40.0" parentComponent="Resonator" text="mode param."
+               fontName="Montserrat" fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel46" x="100.0" y="269.0" width="90.0"
+               height="20.0" parentComponent="Resonator" text="mod" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel41" x="69.0" y="203.0" width="40.0"
+               height="10.0" parentComponent="Resonator" text="spread" fontName="Montserrat"
+               fontSize="12.0" editable="0" textColour="4280028166"/>
+  </Component>
+  <Component type="ScriptLabel" id="FREQ26" x="13.0" y="579.0" width="580.0"
+             height="20.0" editable="0" text="SUNSHINE RESONATOR" textColour="4293056471"
+             fontName="Montserrat" fontSize="25.0" bgColour="4279632643"/>
+  <Component type="ScriptPanel" id="Presets" x="222.0" y="134.0" width="380.0"
+             height="330.0" bgColour="16777215" itemColour="3489660928" itemColour2="3690987520"
+             textColour="16777215" visible="0">
+    <Component type="ScriptFloatingTile" id="ScriptFloatingTile1" x="22.0" y="18.0"
+               width="350.0" height="530.0" parentComponent="Presets" ContentType="PresetBrowser"
+               bgColour="0" itemColour="4294967295" itemColour2="4294967295"
+               Data="{&#10;  &quot;ShowSaveButton&quot;: true,&#10;  &quot;ShowExpansionsAsColumn&quot;: false,&#10;  &quot;ShowFolderButton&quot;: true,&#10;  &quot;ShowNotes&quot;: true,&#10;  &quot;ShowEditButtons&quot;: true,&#10;  &quot;EditButtonOffset&quot;: 10,&#10;  &quot;ShowAddButton&quot;: true,&#10;  &quot;ShowRenameButton&quot;: true,&#10;  &quot;ShowDeleteButton&quot;: true,&#10;  &quot;ShowFavoriteIcon&quot;: true,&#10;  &quot;ButtonsInsideBorder&quot;: false,&#10;  &quot;NumColumns&quot;: 1,&#10;  &quot;ColumnWidthRatio&quot;: [&#10;    0.3333333333333333,&#10;    0.3333333333333333,&#10;    0.3333333333333333&#10;  ],&#10;  &quot;ListAreaOffset&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;ColumnRowPadding&quot;: [&#10;    0,&#10;    0,&#10;    0,&#10;    0&#10;  ],&#10;  &quot;SearchBarBounds&quot;: [],&#10;  &quot;MoreButtonBounds&quot;: [],&#10;  &quot;SaveButtonBounds&quot;: [],&#10;  &quot;FavoriteButtonBounds&quot;: []&#10;}"
+               itemColour3="16777215"/>
+  </Component>
+  <Component type="ScriptPanel" id="Inputs" x="6.0" y="13.0" width="190.0"
+             height="190.0" itemColour="4291724095" bgColour="16777215" textColour="4278190080"
+             itemColour2="4291724095" tooltip="Basic signal flow: input &gt; filter &gt; shifter &gt; compressor &gt; resonator &gt; output">
+    <Component type="ScriptSlider" id="Knob6" x="13.0" y="41.0" width="40.0"
+               height="40.0" processorId="Resonator" parameterId="InputImpuse"
+               filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+               showTextBox="0" scaleFactor="0.1299999952316284" showValuePopup="Below"
+               parentComponent="Inputs" tooltip="Mix between the input signal and an impulse trigger derived from the input."/>
+    <Component type="ScriptSlider" id="Knob16" x="13.0" y="8.0" width="40.0"
+               height="40.0" processorId="Simple Gain1" parameterId="Gain" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1299999952316284"
+               showValuePopup="Below" mode="Decibel" min="-100.0" max="0.0"
+               stepSize="0.1000000014901161" suffix=" dB" middlePosition="-18.0"
+               parentComponent="Inputs" tooltip="Input Gain"/>
+    <Component type="ScriptSlider" id="Modifier" x="134.0" y="121.0" width="30.0"
+               height="30.0" processorId="ResModRoute" parameterId="InModdMod"
+               filmstripImage="{PROJECT_FOLDER}k9.png" numStrips="125.0" showTextBox="0"
+               showValuePopup="Below" parentComponent="Inputs" middlePosition="0.5"
+               defaultValue="0.5" isVertical="0" scaleFactor="0.800000011920929"
+               tooltip="Modulates FX Adjust"/>
+    <Component type="ScriptComboBox" id="ModiType" x="14.0" y="83.0" width="30.0"
+               height="30.0" max="7" parentComponent="Inputs" items="Off&#10;S&amp;H&#10;Delay&#10;Tanh&#10;Bit&#10;ABS&#10;Gran"
+               processorId="Resonator" parameterId="ModifierSelect" tooltip="Select one of several input waveshapers and FX"
+               itemColour="4282126866" itemColour2="4282126866" textColour="4293697329"/>
+    <Component type="ScriptComboBox" id="ModiSrc" x="133.0" y="78.0" width="30.0"
+               height="30.0" max="5" parentComponent="Inputs" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4&#10;Env Follower"
+               tooltip="Select a mod source for FX adjust" itemColour="4282126866"
+               itemColour2="4282126866" textColour="4293697329"/>
+    <Component type="ScriptComboBox" id="ModiType2" x="60.0" y="116.0" width="20.0"
+               height="20.0" max="3" parentComponent="Inputs" items="FIxed&#10;Spread&#10;Nyquist"
+               processorId="Resonator" parameterId="ModifierModMode" tooltip="Select a spread mode for FX adjust"
+               bgColour="1862205440" itemColour="1929314304" itemColour2="2063532032"
+               textColour="4282256139"/>
+    <Component type="ScriptSlider" id="ModifierMod" x="10.0" y="138.0" width="50.0"
+               height="40.0" processorId="ResModRoute" parameterId="InMod" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1800000071525574"
+               showValuePopup="Below" parentComponent="Inputs" min="-1.0" middlePosition="0.0"
+               tooltip="Changes the FX parameter. "/>
+    <Component type="ScriptLabel" id="ScriptLabel1" x="112.0" y="24.0" width="80.0"
+               height="30.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="16.0" text="INPUT" editable="0" bgColour="2638813713"/>
+    <Component type="ScriptLabel" id="ScriptLabel2" x="54.0" y="39.0" width="50.0"
+               height="40.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="15.0" text="signal/ trig" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel3" x="55.0" y="76.0" width="50.0"
+               height="40.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="15.0" text="FX type" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel4" x="123.0" y="149.0" width="50.0"
+               height="40.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="15.0" text="mod" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel5" x="57.0" y="140.0" width="50.0"
+               height="40.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="15.0" text="FX adjust" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel6" x="55.0" y="-1.0" width="50.0"
+               height="40.0" parentComponent="Inputs" fontName="Montserrat"
+               fontSize="15.0" text="gain" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel42" x="7.0" y="115.0" width="50.0"
+               height="20.0" fontName="Montserrat" fontSize="12.0" text="spread"
+               editable="0" textColour="4280028166" parentComponent="Inputs"/>
+  </Component>
+  <Component type="ScriptPanel" id="GlobalMod9" x="6.0" y="222.0" width="190.0"
+             height="270.0" itemColour="4291724095" itemColour2="4291724095"
+             textColour="4278190080" borderSize="1.0" borderRadius="5.0" text="*"
+             bgColour="16777215">
+    <Component type="ScriptLabel" id="ScriptLabel55" x="6.0" y="5.0" width="80.0"
+               height="20.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="16.0" text="MOD" editable="0" bgColour="2638813713"/>
+    <Component type="ScriptLabel" id="ScriptLabel12" x="6.0" y="234.0" width="50.0"
+               height="30.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="15.0" text="tempo" editable="0" textColour="4280028166"/>
+    <Component type="ScriptComboBox" id="GmodMode9" x="112.0" y="33.0" max="7"
+               width="70.0" height="20.0" items="Sine&#10;Square&#10;Saw&#10;SeeSaw&#10;S&amp;H&#10;Table&#10;Step"
+               bgColour="4288706900" itemColour="4278190080" itemColour2="4279846483"
+               parentComponent="GlobalMod9" textColour="4293450698" processorId="Mod1"/>
+    <Component type="ScriptSlider" id="ScriptSlider20" x="70.0" y="190.0" width="50.0"
+               height="50.0" parentComponent="GlobalMod9" processorId="Mod1"
+               parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" max="32.0" stepSize="1.0" showValuePopup="Below"
+               scaleFactor="0.1800000071525574" middlePosition="16.5" min="1.0"
+               showTextBox="0" defaultValue="2.0"/>
+    <Component type="ScriptSlider" id="TempoS4" x="10.0" y="190.0" width="50.0"
+               height="50.0" parentComponent="GlobalMod9" processorId="Mod1"
+               parameterId="Tempo" mode="TempoSync" max="18.0" stepSize="1.0"
+               middlePosition="9.0" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showValuePopup="Below" scaleFactor="0.1800000071525574"
+               showTextBox="0"/>
+    <Component type="ScriptPanel" id="Step1" x="10.0" y="80.0" width="170.0"
+               height="110.0" parentComponent="GlobalMod9" itemColour="15730439"
+               itemColour2="13083505" textColour="221191173" borderRadius="4.0"
+               bgColour="16777215" processorId="Mod1" visible="0">
+      <Component type="ScriptSliderPack" id="ScriptSliderPack10" x="0.0" y="19.0"
+                 width="170.0" height="60.0" parentComponent="Step1" processorId="Mod1"
+                 itemColour="578895124" itemColour2="0" textColour="4278190080"
+                 bgColour="8666680"/>
+    </Component>
+    <Component type="ScriptButton" id="GmodOneShot2" x="81.0" y="33.0" width="20.0"
+               height="20.0" filmstripImage="{PROJECT_FOLDER}button6.png" scaleFactor="0.1800000071525574"
+               isVertical="0" parentComponent="GlobalMod9" processorId="Mod1"
+               parameterId="Daw"/>
+    <Component type="ScriptPanel" id="Waveform1" x="10.0" y="90.0" width="170.0"
+               height="80.0" parentComponent="GlobalMod9" itemColour="4290212104"
+               bgColour="4290203985" textColour="4286724628" itemColour2="4290212104"
+               processorId="Mod1"/>
+    <Component type="ScriptComboBox" id="TrigMode36" x="11.0" y="33.0" max="5"
+               width="60.0" height="20.0" items="off&#10;sin&#10;asin&#10;cson&#10;log"
+               processorId="Mod1" parameterId="Modifiers" bgColour="4288706900"
+               itemColour="4294967038" itemColour2="4279846483" parentComponent="GlobalMod9"
+               textColour="4293450698"/>
+    <Component type="ScriptSlider" id="ScriptSlider49" x="131.0" y="190.0" width="50.0"
+               height="50.0" parentComponent="GlobalMod9" processorId="Mod1"
+               parameterId="ModiferShape" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showValuePopup="Below" scaleFactor="0.1800000071525574"
+               middlePosition="0.5" showTextBox="0"/>
+    <Component type="ScriptPanel" id="Table1" x="10.0" y="80.0" width="170.0"
+               height="100.0" parentComponent="GlobalMod9" itemColour="15730439"
+               itemColour2="13083505" textColour="221191173" borderRadius="4.0"
+               bgColour="16777215" processorId="Mod1" visible="0">
+      <Component type="ScriptTable" id="ScriptTable1" x="0.0" y="0.0" width="170.0"
+                 height="80.0" parentComponent="Table1" bgColour="3936786" itemColour="3936786"
+                 itemColour2="2046820352" processorId="Mod1" customColours="1"/>
+    </Component>
+    <Component type="ScriptLabel" id="ScriptLabel49" x="66.0" y="236.0" width="50.0"
+               height="30.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="15.0" text="divide" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel50" x="129.0" y="236.0" width="50.0"
+               height="30.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="15.0" text="adjust" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel51" x="7.0" y="54.0" width="70.0"
+               height="20.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="15.0" text="adjust type" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel52" x="75.0" y="56.0" width="40.0"
+               height="20.0" parentComponent="GlobalMod9" fontName="Montserrat"
+               fontSize="15.0" text="DAW" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel53" x="113.0" y="54.0" width="70.0"
+               height="20.0" fontName="Montserrat" fontSize="15.0" text="shape"
+               editable="0" textColour="4280028166" parentComponent="GlobalMod9"/>
+  </Component>
+  <Component type="ScriptPanel" id="Panel1" x="4.0" y="497.0" width="370.0"
+             height="79.0" itemColour="4291724095" itemColour2="4291724095"
+             textColour="4278190080">
+    <Component type="ScriptLabel" id="ScriptLabel34" x="64.0" y="54.0" width="60.0"
+               height="20.0" parentComponent="Panel1" text="out gain" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptSlider" id="ResOffset4" x="139.0" y="10.0" width="40.0"
+               height="40.0" processorId="Resonator" parameterId="Pqn" text="Re"
+               filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+               showTextBox="0" scaleFactor="0.1599999964237213" showValuePopup="Below"
+               min="-1.0" middlePosition="0.0" parentComponent="Panel1"/>
+    <Component type="ScriptSlider" id="Knob9" x="76.0" y="10.0" width="40.0"
+               height="40.0" processorId="Simple Gain2" parameterId="Gain" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+               showValuePopup="Below" mode="Decibel" min="-100.0" max="24.0"
+               stepSize="0.1000000014901161" suffix=" dB" middlePosition="0.0"
+               parentComponent="Panel1"/>
+    <Component type="ScriptSlider" id="ResOffset14" x="203.0" y="11.0" width="40.0"
+               height="40.0" processorId="ResModRoute" parameterId="PostCut"
+               text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+               showValuePopup="Below" middlePosition="0.5" parentComponent="Panel1"/>
+    <Component type="ScriptSlider" id="ResOffset15" x="265.0" y="10.0" width="40.0"
+               height="40.0" processorId="ResModRoute" parameterId="PCutMod"
+               text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+               numStrips="206.0" showTextBox="0" scaleFactor="0.1599999964237213"
+               showValuePopup="Below" min="-1.0" middlePosition="0.0" parentComponent="Panel1"/>
+    <Component type="ScriptComboBox" id="ComboBox6" x="315.0" y="10.0" width="40.0"
+               height="40.0" parentComponent="Panel1" processorId="ResModRoute"
+               parameterId="PCutSrc" items="SVF LP&#10;SVF HP&#10;SVF BP&#10;Salen LP&#10;Salen HP&#10;Salen BP&#10;OB LP&#10;OB HP&#10;OB BP&#10;Ladder"
+               max="10"/>
+    <Component type="ScriptLabel" id="ScriptLabel35" x="117.0" y="53.0" width="80.0"
+               height="20.0" parentComponent="Panel1" text="pan spread" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel36" x="185.0" y="54.0" width="80.0"
+               height="20.0" parentComponent="Panel1" text="cutoff" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel37" x="243.0" y="53.0" width="80.0"
+               height="20.0" parentComponent="Panel1" text="Q" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptLabel" id="ScriptLabel38" x="297.0" y="55.0" width="80.0"
+               height="20.0" parentComponent="Panel1" text="mode" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+    <Component type="ScriptSlider" id="ResOffset16" x="22.0" y="12.0" width="40.0"
+               height="40.0" processorId="Resonator" parameterId="Mix" text="Re"
+               filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+               showTextBox="0" scaleFactor="0.1599999964237213" showValuePopup="Below"
+               middlePosition="0.5" parentComponent="Panel1" defaultValue="0.5"/>
+    <Component type="ScriptLabel" id="ScriptLabel39" x="0.0" y="55.0" width="80.0"
+               height="20.0" parentComponent="Panel1" text="mix" fontName="Montserrat"
+               fontSize="15.0" editable="0" textColour="4280028166"/>
+  </Component>
+  <Component type="ScriptSlider" id="Stages" x="450.0" y="533.0" width="50.0"
+             height="50.0" text="TIME" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+             numStrips="206.0" showTextBox="0" scaleFactor="0.2000000029802322"
+             showValuePopup="Below" max="16.0" stepSize="1.0" min="2.0" middlePosition="9.0"/>
+  <Component type="ScriptFloatingTile" id="FloatingTile1" x="13.0" y="579.0"
+             width="580.0" height="20.0" ContentType="TooltipPanel" bgColour="4280681733"
+             itemColour="4280484095" itemColour2="4278190080" textColour="4293248196"
+             Font="Montserrat" FontSize="12.0" itemColour3="4278240884"/>
+  <Component type="ScriptPanel" id="Panel2" x="235.0" y="12.0" width="350.0"
+             height="150.0" itemColour="4291724095" itemColour2="4291724095"
+             textColour="4278190080">
+    <Component type="ScriptLabel" id="ScriptLabel56" x="15.0" y="7.0" width="170.0"
+               height="20.0" parentComponent="Panel2" text="PROCESSORS" fontName="Montserrat"
+               fontSize="18.0" editable="0" bgColour="2638813713"/>
+    <Component type="ScriptPanel" id="COMP" x="0.0" y="29.0" width="350.0" height="120.0"
+               itemColour="13534015" textColour="0" itemColour2="13534015" bgColour="16777215"
+               tooltip="A simple compressor creates an impuse trigger before the resonator"
+               parentComponent="Panel2" visible="0">
+      <Component type="ScriptLabel" id="ScriptLabel13" x="17.0" y="93.0" width="80.0"
+                 height="20.0" parentComponent="COMP" text="threshold" fontName="Montserrat"
+                 fontSize="15.0" editable="0" alignment="left" textColour="4280028166"/>
+      <Component type="ScriptSlider" id="ResOffset2" x="202.0" y="25.0" width="60.0"
+                 height="60.0" processorId="Resonator" parameterId="CompAtk" text="Re"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.239999994635582" parentComponent="COMP"
+                 showValuePopup="Below" max="250.0" stepSize="1.0" middlePosition="125.0"
+                 tooltip="Compressor Attack"/>
+      <Component type="ScriptSlider" id="ResOffset3" x="267.0" y="25.0" width="60.0"
+                 height="60.0" processorId="Resonator" parameterId="CompRel" text="TIME"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.239999994635582" parentComponent="COMP"
+                 showValuePopup="Below" max="250.0" stepSize="1.0" middlePosition="125.0"
+                 tooltip="Compressor Release"/>
+      <Component type="ScriptSlider" id="ResOffset6" x="27.0" y="25.0" width="60.0"
+                 height="60.0" processorId="ResModRoute" parameterId="CompThresh"
+                 text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" showTextBox="0" scaleFactor="0.239999994635582"
+                 parentComponent="COMP" isMetaParameter="1" showValuePopup="Below"
+                 middlePosition="0.5" tooltip="Threshold control"/>
+      <Component type="ScriptSlider" id="ResOffset7" x="94.0" y="60.0" width="30.0"
+                 height="30.0" processorId="ResModRoute" parameterId="CompThreshMod"
+                 text="Re" filmstripImage="{PROJECT_FOLDER}k9.png" numStrips="125.0"
+                 showTextBox="0" parentComponent="COMP" showValuePopup="Below"
+                 min="-1.0" middlePosition="0.0" isVertical="0" scaleFactor="0.800000011920929"
+                 tooltip="Modulates threshold"/>
+      <Component type="ScriptSlider" id="ResOffset8" x="133.0" y="25.0" width="60.0"
+                 height="60.0" processorId="Resonator" parameterId="CompRatio"
+                 text="TIME" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" showTextBox="0" scaleFactor="0.239999994635582"
+                 parentComponent="COMP" showValuePopup="Below" max="32.0" stepSize="0.1000000014901161"
+                 tooltip="Compress ratio"/>
+      <Component type="ScriptComboBox" id="ScriptComboBox1" x="93.0" y="22.0"
+                 width="30.0" height="30.0" max="4" parentComponent="COMP" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4"
+                 tooltip="Select a mod source for threshold" itemColour="4282126866"
+                 itemColour2="4282126866" textColour="4293697329"/>
+      <Component type="ScriptLabel" id="ScriptLabel14" x="139.0" y="93.0" width="40.0"
+                 height="20.0" parentComponent="COMP" text="ratio" fontName="Montserrat"
+                 fontSize="15.0" editable="0" alignment="left" textColour="4280028166"/>
+      <Component type="ScriptLabel" id="ScriptLabel15" x="200.0" y="93.0" width="80.0"
+                 height="20.0" parentComponent="COMP" text="attack" fontName="Montserrat"
+                 fontSize="15.0" editable="0" alignment="left" textColour="4280028166"/>
+      <Component type="ScriptLabel" id="ScriptLabel16" x="267.0" y="93.0" width="80.0"
+                 height="20.0" parentComponent="COMP" text="release" fontName="Montserrat"
+                 fontSize="15.0" editable="0" alignment="left" textColour="4280028166"/>
+      <Component type="ScriptLabel" id="ScriptLabel17" x="108.0" y="108.0" width="60.0"
+                 height="60.0" parentComponent="COMP" text="thresh. mod" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel47" x="89.0" y="93.0" width="80.0"
+                 height="20.0" parentComponent="COMP" text="mod" fontName="Montserrat"
+                 fontSize="15.0" editable="0" alignment="left" textColour="4280028166"/>
+      <Component type="ScriptComboBox" id="ScriptComboBox5" x="317.0" y="6.0"
+                 width="20.0" height="20.0" max="3" parentComponent="COMP" items="FIxed&#10;Spread&#10;Nyquist"
+                 processorId="Resonator" parameterId="ReMode" tooltip="Select a spread mode for release"
+                 bgColour="1862205440" itemColour="1929314304" itemColour2="2063532032"
+                 textColour="4282256139"/>
+      <Component type="ScriptLabel" id="ScriptLabel48" x="276.0" y="3.0" width="40.0"
+                 height="20.0" parentComponent="COMP" text="spread" fontName="Montserrat"
+                 fontSize="12.0" editable="0" alignment="left" textColour="4280028166"/>
+    </Component>
+    <Component type="ScriptPanel" id="Filter" x="0.0" y="29.0" width="350.0"
+               height="120.0" itemColour="13534015" itemColour2="13534015" textColour="0"
+               bgColour="16777215" parentComponent="Panel2" visible="0">
+      <Component type="ScriptSlider" id="ResOffset5" x="268.0" y="23.0" width="60.0"
+                 height="60.0" processorId="Resonator" parameterId="InputQ" text="Re"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.239999994635582" parentComponent="Filter"
+                 bgColour="0" showValuePopup="Below" tooltip="Fitler resonance"/>
+      <Component type="ScriptComboBox" id="ComboBox2" x="92.0" y="54.0" max="4"
+                 width="30.0" height="30.0" processorId="ResModRoute" parameterId="InFilterModSrc"
+                 items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4" parentComponent="Filter"
+                 bgColour="0" tooltip="Select a mod source for Filter Cutoff"/>
+      <Component type="ScriptSlider" id="Knob3" x="95.0" y="17.0" width="30.0"
+                 height="30.0" processorId="ResModRoute" min="-1.0" middlePosition="0.0"
+                 parameterId="InFilterMod" filmstripImage="{PROJECT_FOLDER}k9.png"
+                 numStrips="125.0" showTextBox="0" parentComponent="Filter" bgColour="0"
+                 showValuePopup="Below" isVertical="0" scaleFactor="0.800000011920929"
+                 tooltip="Modulates Filter Cutoff"/>
+      <Component type="ScriptSlider" id="Knob4" x="21.0" y="23.0" width="60.0"
+                 height="60.0" processorId="ResModRoute" parameterId="InFilterCut"
+                 middlePosition="0.5" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 scaleFactor="0.239999994635582" numStrips="206.0" showTextBox="0"
+                 parentComponent="Filter" showValuePopup="Below" tooltip="Filter Cutoff Frequency"/>
+      <Component type="ScriptLabel" id="ScriptLabel7" x="16.0" y="91.0" width="60.0"
+                 height="20.0" parentComponent="Filter" text="cutoff " fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel8" x="78.0" y="91.0" width="60.0"
+                 height="20.0" parentComponent="Filter" text="mod" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel9" x="265.0" y="91.0" width="60.0"
+                 height="20.0" parentComponent="Filter" text="Q" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel10" x="141.0" y="91.0" width="100.0"
+                 height="20.0" parentComponent="Filter" text="mode" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptComboBox" id="ComboBox8" x="66.0" y="3.0" max="3"
+                 width="20.0" height="20.0" processorId="Resonator" parameterId="CutOffShapeMode"
+                 items="FIxed&#10;Spread&#10;Triangle" parentComponent="Filter"
+                 bgColour="1962868736" tooltip="Select a spread mode for filter cutoff"
+                 itemColour="1962868736" itemColour2="1962868736" textColour="4280681733"/>
+      <Component type="ScriptComboBox" id="ComboBox9" x="211.0" y="3.0" max="3"
+                 width="20.0" height="20.0" processorId="Resonator" parameterId="InFilterModeB"
+                 items="FIxed&#10;Spread&#10;Random" parentComponent="Filter"
+                 bgColour="1962868736" tooltip="Select a spread mode for filter mode"
+                 itemColour="1962868736" itemColour2="1962868736" textColour="4280681733"/>
+      <Component type="ScriptLabel" id="ScriptLabel11" x="16.0" y="0.0" width="50.0"
+                 height="20.0" parentComponent="Filter" text="spread" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel18" x="158.0" y="0.0" width="50.0"
+                 height="20.0" parentComponent="Filter" text="spread" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptComboBox" id="ScriptComboBox6" x="155.0" y="38.0"
+                 width="80.0" height="40.0" parentComponent="Filter" max="10"
+                 items="SVF LP&#10;SVF HP&#10;SVF BP&#10;Salen LP&#10;Salen HP&#10;Salen BP&#10;OB LP&#10;OB HP&#10;OB BP&#10;Ladder"
+                 tooltip="Select a fitler type"/>
+    </Component>
+    <Component type="ScriptPanel" id="PitchShift" x="-3.0" y="31.0" width="360.0"
+               height="120.0" itemColour="13534015" itemColour2="13534015" bgColour="16777215"
+               textColour="0" tooltip="A delay based pitch shifter" parentComponent="Panel2">
+      <Component type="ScriptLabel" id="ScriptLabel19" x="12.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="shift" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptSlider" id="ResOffset1" x="12.0" y="20.0" width="60.0"
+                 height="60.0" processorId="ResModRoute" parameterId="ShiftMix"
+                 text="Re" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" scaleFactor="0.2199999988079071" showTextBox="0"
+                 parentComponent="PitchShift" showValuePopup="Below" tooltip="Adjust the pitch of the input signal"/>
+      <Component type="ScriptSlider" id="Knob7" x="302.0" y="20.0" width="60.0"
+                 height="60.0" processorId="Resonator" middlePosition="12.0" parameterId="PitchStep"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.2199999988079071" parentComponent="PitchShift"
+                 showValuePopup="Below" max="24.0" stepSize="1.0" tooltip="Quantize shift value"/>
+      <Component type="ScriptComboBox" id="ComboBox3" x="77.0" y="50.0" max="4"
+                 width="30.0" height="30.0" processorId="ResModRoute" items="mod 1&#10;mod 2&#10;mod 3&#10;mod 4"
+                 parameterId="ShiftSrc" parentComponent="PitchShift" tooltip="Modulates shift"/>
+      <Component type="ScriptSlider" id="Knob8" x="123.0" y="20.0" width="60.0"
+                 height="60.0" processorId="Resonator" middlePosition="0.5" parameterId="InputShiftFB"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.2199999988079071" parentComponent="PitchShift"
+                 showValuePopup="Below" tooltip="Applies feedback to the pitch shifter"/>
+      <Component type="ScriptSlider" id="Knob13" x="242.0" y="20.0" width="60.0"
+                 height="60.0" processorId="Resonator" min="1.0" middlePosition="16.5"
+                 parameterId="Div" filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png"
+                 numStrips="206.0" showTextBox="0" scaleFactor="0.2199999988079071"
+                 parentComponent="PitchShift" showValuePopup="Below" max="32.0"
+                 stepSize="1.0" tooltip="Divide the tempo value of the window parameter"/>
+      <Component type="ScriptSlider" id="Knob14" x="182.0" y="20.0" width="60.0"
+                 height="60.0" processorId="Resonator" middlePosition="9.0" parameterId="PitchInXfTempo"
+                 filmstripImage="{PROJECT_FOLDER}bigyellowwithfire6.png" numStrips="206.0"
+                 showTextBox="0" scaleFactor="0.2199999988079071" parentComponent="PitchShift"
+                 showValuePopup="Below" mode="TempoSync" max="18.0" stepSize="1.0"
+                 tooltip="Pitch shift window size clocked to tempo"/>
+      <Component type="ScriptLabel" id="ScriptLabel20" x="62.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="mod" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel21" x="122.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="feed" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel22" x="181.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="win" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel23" x="300.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="step" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptLabel" id="ScriptLabel40" x="239.0" y="85.0" width="50.0"
+                 height="20.0" parentComponent="PitchShift" text="div" fontName="Montserrat"
+                 fontSize="15.0" editable="0"/>
+      <Component type="ScriptSlider" id="Knob12" x="79.0" y="18.0" width="40.0"
+                 height="40.0" processorId="ResModRoute" middlePosition="0.0"
+                 parameterId="ShiftMod" filmstripImage="{PROJECT_FOLDER}k9.png"
+                 numStrips="125.0" showTextBox="0" parentComponent="PitchShift"
+                 showValuePopup="Below" min="-1.0" isVertical="0" scaleFactor="0.800000011920929"
+                 tooltip="Select a mod source for shift"/>
+      <Component type="ScriptComboBox" id="ComboBox10" x="59.0" y="5.0" max="3"
+                 width="20.0" height="20.0" processorId="Resonator" items="FIxed&#10;Harmonic&#10;Scale"
+                 parameterId="PitchModShape" parentComponent="PitchShift" tooltip="Select a spread mode for Pitch Shift"/>
+    </Component>
+    <Component type="ScriptComboBox" id="ProcMode" x="200.0" y="5.0" width="120.0"
+               height="25.0" max="3" parentComponent="Panel2" items="COMPRESSOR&#10;SHIFTER&#10;FILTER"/>
+  </Component>
+  <Component type="ScriptPanel" id="CompWave" x="494.0" y="182.0" width="80.0"
+             height="30.0"/>
+</ContentProperties>

@@ -1,12 +1,11 @@
-Content.makeFrontInterface(460, 600);
+Content.makeFrontInterface(460, 570);
 Engine.loadFontAs("{PROJECT_FOLDER}Montserrat-Medium.ttf", "Montserrat");
-include("sliderpacks.js");
-
+include("macros.js");
+include("quant.js");
 
 const var Presets = Content.getComponent("Presets");
 const var Resonator = Synth.getEffect("Resonator");
 const var Fb = Content.getComponent("Fb");
-
 
 inline function onButton1Control(component, value)
 {
@@ -46,6 +45,9 @@ inline function onResModeControl(component, value)
 };
 
 Content.getComponent("ResMode").setControlCallback(onResModeControl);
+
+
+
 
 function onNoteOn()
 {

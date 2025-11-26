@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Network ID="FinStack" Version="0.0.0" AllowCompilation="1">
+<Network ID="FinStack" Version="0.0.0">
   <Node FactoryPath="container.chain" ID="FinStack" Bypassed="0" Name="FinStack"
         ShowParameters="1">
     <Nodes>

@@ -1,6 +1,6 @@
 import("stdfaust.lib");
 
-intdel = hslider("del",0,0,1000,1.0);
+intdel = hslider("del",0,0,1024,1.0);
 maxdel = 1024;
 
 b0 = 1;
